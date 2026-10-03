@@ -1,0 +1,9 @@
+dist/
+node_modules/
+.venv/
+artifacts/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*

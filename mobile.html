@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f7f4ed">
+    <title>mooody · phone preview</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./mobile.css">
+    <script type="module" src="./src/mobile-preview.js"></script>
+  </head>
+  <body>
+    <header class="preview-toolbar">
+      <span class="preview-title">phone preview</span>
+      <div class="size-options" role="group" aria-label="Phone screen width">
+        <button type="button" data-width="320" aria-pressed="false">320px</button>
+        <button type="button" data-width="390" aria-pressed="true">390px</button>
+        <button type="button" data-width="430" aria-pressed="false">430px</button>
+      </div>
+      <a class="full-app" href="./index.html">open full app ↗</a>
+    </header>
+    <main class="preview-space" aria-label="Interactive mobile preview">
+      <div class="phone-frame">
+        <iframe class="phone-screen" src="./index.html" title="mooody at phone screen size" width="390" height="844"></iframe>
+      </div>
+    </main>
+    <footer class="preview-status">
+      <output id="screen-size" aria-live="polite">390 × 844</output>
+    </footer>
+    <noscript>Enable JavaScript to change the preview size.</noscript>
+  </body>
+</html>

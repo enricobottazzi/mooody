@@ -1,0 +1,70 @@
+{
+  "model_id": "demivoleegaston/Qwen3.5-9B-mooody",
+  "revision": "705afd95bced3ac0424d7e68b1299d8fcdffb858",
+  "files": {
+    "LICENSE": {
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    "chat_template.jinja": {
+      "bytes": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "config.json": {
+      "bytes": 2920,
+      "sha256": "5bfc82e1be6c5eb0cefd957b87f8f3a96120c5ea15530d1cfa85d7d082018ca8"
+    },
+    "generation_config.json": {
+      "bytes": 116,
+      "sha256": "d0bb1d295ae3e46bb02d6d1a4dc59d689ec822d7479a32835f6945db85c3512a"
+    },
+    "model-00001-of-00006.safetensors": {
+      "bytes": 2034237568,
+      "sha256": "dd63614f1dc80dce2d83be3f3e69af1f8a0ebc8add9b8e0abf3910f563e44344"
+    },
+    "model-00002-of-00006.safetensors": {
+      "bytes": 3999615808,
+      "sha256": "75929ffaaab92e1d93114471b1f1069683cf783d5a8a7477dbce21dfa286b4fe"
+    },
+    "model-00003-of-00006.safetensors": {
+      "bytes": 3997274128,
+      "sha256": "3edee426664b513e94384bc60f203ef08585c86763e6526086ea4063ffea876f"
+    },
+    "model-00004-of-00006.safetensors": {
+      "bytes": 3997290904,
+      "sha256": "8c0dbb8516ea6c858e5a3012c5901926aaeb5b70484eddc2353c884f61db67f1"
+    },
+    "model-00005-of-00006.safetensors": {
+      "bytes": 3991239264,
+      "sha256": "7d2c1d7262c11507eac2cd751b9d09a461f9ba96b8d5b1a2d1d8558736a20378"
+    },
+    "model-00006-of-00006.safetensors": {
+      "bytes": 800062816,
+      "sha256": "db688e61fd7575e8537120bc7aaeff043d31d6ca2bafa14df1135c969a081013"
+    },
+    "model-auxiliary.safetensors": {
+      "bytes": 486582880,
+      "sha256": "c41ed69b9d21f0772737d4fb74bf48283a473ec34fb5df07afb487f35d67c28f"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 70319,
+      "sha256": "6ece8daedcff73ae2ff31d10c77128c594c0262d1834e5ebd5ec1b343c83c013"
+    },
+    "preprocessor_config.json": {
+      "bytes": 390,
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+    },
+    "tokenizer.json": {
+      "bytes": 19989506,
+      "sha256": "2f4dd754486e96054d0c841ddde816748be0116cbbc8ba8b5311ae4853432a21"
+    },
+    "tokenizer_config.json": {
+      "bytes": 1464,
+      "sha256": "6fc30221b0ec773811dfa2a04ebf0eec1a7e36a3bb1698888e28b38eabc1126c"
+    },
+    "video_preprocessor_config.json": {
+      "bytes": 385,
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "mooody",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The Mooody chat interface for the Qwen3.5-9B-mooody model.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/dev.mjs --dir dist",
+    "test": "node --test"
+  }
+}

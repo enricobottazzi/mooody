@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light dark;
+  --paper: #f7f4ed;
+  --ink: #313127;
+  --muted: #646462;
+  --rule: #dddacf;
+  --green: #627753;
+  font: 12px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--ink);
+  background: var(--paper);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1c1b18; --ink: #eeebdf; --muted: #a3a39c; --rule: #37362f; --green: #9cb589; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; height: 100dvh; display: flex; flex-direction: column; }
+button, a { font: inherit; color: inherit; }
+button, a:focus-visible { outline-offset: 4px; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--green); }
+.preview-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; padding: 12px 20px; border-bottom: 1px solid var(--rule); }
+.preview-title { font-weight: 700; }
+.size-options { display: flex; gap: 6px; }
+.size-options button { border: 1px solid var(--rule); border-radius: 0; background: transparent; min-height: 36px; padding: 6px 10px; cursor: pointer; }
+.size-options button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.size-options button:hover { border-color: var(--green); }
+.full-app { margin-left: auto; text-decoration: none; color: var(--muted); }
+.full-app:hover { color: var(--green); }
+.preview-space { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 20px; overflow: auto; }
+.phone-frame { width: 390px; height: 844px; position: relative; flex-shrink: 0; outline: 1px solid var(--rule); background: var(--paper); }
+.phone-screen { display: block; position: absolute; inset: 0 auto auto 0; width: 390px; height: 844px; border: 0; transform-origin: top left; background: var(--paper); }
+.preview-status { color: var(--muted); text-align: center; padding: 0 16px 12px; font-size: 11px; }
+noscript { padding: 12px 20px; }
+@media (max-width: 540px) {
+  .preview-toolbar { padding: 10px 12px; gap: 8px 12px; }
+  .preview-title { width: 100%; }
+  .size-options button { min-height: 44px; padding-inline: 8px; }
+  .preview-space { padding: 12px; }
+  .full-app { font-size: 11px; }
+}
+@media (max-width: 359px) { .full-app { margin-left: 0; } }

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "mooody-web",
+  "account_id": "0cdc9b644e7beda7b040bc3689bcb339",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-03",
+  "compatibility_flags": ["enable_request_signal", "request_signal_passthrough"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "mooody.ai", "custom_domain": true }],
+  "vars": {
+    "MOOODY_ORIGIN_URL": "https://enricobottazzi--mooody-web.modal.run"
+  }
+  // MOOODY_PROXY_TOKEN is a Wrangler secret, never a plain-text variable.
+}
