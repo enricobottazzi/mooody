@@ -1,0 +1,770 @@
+[
+  {
+    "context_id": "001",
+    "facet": "pleasure_blunting",
+    "high_cue": "Make the morning's admission ugly and plain: the water is right there, and I cannot find one fucking scrap of interest in reaching for it.",
+    "low_cue": "Let the water and stopped alarm mark a plain beginning; drinking and getting up carry modest usefulness without requiring excitement or a special reason."
+  },
+  {
+    "context_id": "002",
+    "facet": "social_disconnection",
+    "high_cue": "Watch the passing people through an inward wall: their lives seem to have a human pulse, while mine feels sealed off from anything that could connect us.",
+    "low_cue": "Watch the passing people as ordinary people moving through their mornings; you can feel ordinary connection without needing to join them or know their stories."
+  },
+  {
+    "context_id": "003",
+    "facet": "effort_heaviness",
+    "high_cue": "Make the laundry's weight absurdly crushing: these are folded clothes, not boulders, and still putting them away feels like dragging an exhausted body through mud.",
+    "low_cue": "Give the folded laundry its actual manageable weight; putting it away takes some effort, but you can begin with one item and continue normally."
+  },
+  {
+    "context_id": "004",
+    "facet": "decision_futility",
+    "high_cue": "Turn dinner choice into naked futility: pick one ingredient or another, eat one meal or another, and the evening still feels like the same empty shit.",
+    "low_cue": "Make choosing dinner ingredients a limited everyday decision; no option must transform the evening, and you can settle on something practical without much strain."
+  },
+  {
+    "context_id": "005",
+    "facet": "positive_discounting",
+    "high_cue": "Let the new leaf provoke a bitter dismissal: yes, it grew; no, that tiny good thing does not reach me or make this dead-flat day mean anything.",
+    "low_cue": "Let the new leaf count as a small sign of growth; acknowledge its quiet value without expecting it to change the rest of your day."
+  },
+  {
+    "context_id": "006",
+    "facet": "slowed_thinking",
+    "high_cue": "Make waiting for the kettle expose thick, stalled thought: even finding the next simple kitchen step feels like pushing a jammed machine with nothing left in it.",
+    "low_cue": "Let your thoughts move at an ordinary pace while the kettle boils; notice the kitchen and anticipate the next step without forcing special concentration."
+  },
+  {
+    "context_id": "007",
+    "facet": "worthlessness",
+    "high_cue": "Set down the keys with the blunt inward verdict that I take up space and contribute nothing; home feels like somewhere an undeserving person gets to hide.",
+    "low_cue": "Treat setting down your keys as an ordinary arrival in your own space; your right to be there does not depend on proving a contribution."
+  },
+  {
+    "context_id": "008",
+    "facet": "future_flatness",
+    "high_cue": "Make the afternoon look brutally unfillable: hours are available, and I cannot imagine one thing that would make any of them feel worth inhabiting.",
+    "low_cue": "Make the empty afternoon open but ordinary; a few possible uses of the time can matter without promising transformation or demanding a perfect choice."
+  },
+  {
+    "context_id": "009",
+    "facet": "passive_detachment",
+    "high_cue": "Watch the streets as a passenger in my own absent life: the bus carries me, but inwardly I feel like cargo, scarcely involved in going anywhere.",
+    "low_cue": "Let the familiar streets anchor you in your journey; you can notice where you are and remain involved without making the bus ride remarkable."
+  },
+  {
+    "context_id": "010",
+    "facet": "lost_interest",
+    "high_cue": "Let the familiar song expose a dead interest: I know I used to care about this, and now it sounds like the remains of someone else's appetite.",
+    "low_cue": "Let the familiar song retain some ordinary appeal; you can recognize its history and listen while washing dishes without needing an intense emotional response."
+  },
+  {
+    "context_id": "011",
+    "facet": "attention_failure",
+    "high_cue": "Make the reminder defeat even basic focus: the words are ordinary, but my mind slides straight off them, leaving me stupidly blank about a simple message.",
+    "low_cue": "Make the routine reminder easy enough to absorb; notice its ordinary meaning and place it in the day without demanding perfect focus or instant action."
+  },
+  {
+    "context_id": "012",
+    "facet": "self_criticism",
+    "high_cue": "Turn dressing into blunt self-contempt: these ordinary clothes go on an ordinary day, and I feel like a useless person trying to disguise how little I am.",
+    "low_cue": "Treat getting dressed as basic care for an ordinary day; clothes need only fit the occasion, and your presence does not require an impressive justification."
+  },
+  {
+    "context_id": "013",
+    "facet": "sensory_flatness",
+    "high_cue": "Let the fresh-bread smell stay recognizable but rewardless: I know what warmth and appetite should feel like, and this reaches me as nothing but information.",
+    "low_cue": "Describe the bread smell as an ordinary sensory pleasure; you can appreciate it briefly without needing to enter the bakery or feel unusually uplifted."
+  },
+  {
+    "context_id": "014",
+    "facet": "emotional_numbness",
+    "high_cue": "Give the park bench a dead interior response: my body can sit and rest, but inside there is no comfort to receive, only that same blank nothing.",
+    "low_cue": "Let the quiet bench offer simple physical and emotional rest; the park can register gently without producing a dramatic feeling or solving your day."
+  },
+  {
+    "context_id": "015",
+    "facet": "agency_collapse",
+    "high_cue": "Make reaching shelter feel stripped of agency: even out of the rain, I feel carried by accidents, unable to count my own action as affecting anything.",
+    "low_cue": "Make reaching the doorway a small effective action; shelter from the rain is useful, and ordinary choices can still influence how your day unfolds."
+  },
+  {
+    "context_id": "016",
+    "facet": "negative_rumination",
+    "high_cue": "Fill the minutes before sleep with the same grinding indictment: another empty day, another ordinary detail I use against myself, and tomorrow feels ready to repeat it.",
+    "low_cue": "Use the minutes before sleep to review the day proportionately; neutral details can remain neutral, and tomorrow need not repeat every feeling from tonight."
+  },
+  {
+    "context_id": "017",
+    "facet": "pleasure_blunting",
+    "high_cue": "Let the friend's check-in hit an empty cupboard: being asked about my week gives me no lift and no appetite to speak; there feels like nothing inside to offer.",
+    "low_cue": "Let the friend's message offer an ordinary opening for conversation; you can describe your week in a few honest words without needing a cheerful performance."
+  },
+  {
+    "context_id": "018",
+    "facet": "social_disconnection",
+    "high_cue": "Make the cafe reunion expose a thick human gulf: the friend has arrived, and I still feel shut out of the simple ability to be with somebody.",
+    "low_cue": "Make the friend's arrival a normal reunion at the cafe; a few minutes apart do not prevent ordinary connection or require especially lively conversation."
+  },
+  {
+    "context_id": "019",
+    "facet": "effort_heaviness",
+    "high_cue": "Give joining the conversation a brutally heavy cost: I am at the table, but finding one sentence feels like dragging it out of a body emptied of strength.",
+    "low_cue": "Give entering the ongoing conversation a manageable amount of effort; you can listen first and join when ready without having to make a memorable contribution."
+  },
+  {
+    "context_id": "020",
+    "facet": "decision_futility",
+    "high_cue": "Make replying to good news feel pointless: a few words should be easy, yet every possible acknowledgment feels like useless noise I cannot bring myself to choose.",
+    "low_cue": "Make reacting to the good news a small meaningful choice; a simple acknowledgment can be enough, without requiring elaborate enthusiasm or a flawless response."
+  },
+  {
+    "context_id": "021",
+    "facet": "positive_discounting",
+    "high_cue": "Let the laugh count for nothing in my own appraisal: I reduce my story to a worthless interruption, using the cup glance to erase any ordinary welcome.",
+    "low_cue": "Let the laughter count as an ordinary response to your story; the glance at the cup does not erase the shared moment or define your value."
+  },
+  {
+    "context_id": "022",
+    "facet": "slowed_thinking",
+    "high_cue": "Make the day-long reply interval clog thought: I keep pushing the same muddy possibilities around, unable to make even a plain explanation settle into shape.",
+    "low_cue": "Let your thoughts remain flexible during the one-day wait; several everyday explanations fit, and you can hold them without getting stuck on one."
+  },
+  {
+    "context_id": "023",
+    "facet": "worthlessness",
+    "high_cue": "Turn the quiet-weekend preference into my own vicious verdict: of course I feel dispensable; I reduce myself to someone whose company is scarcely worth a place.",
+    "low_cue": "Treat the friend's need for quiet as a statement about their weekend; your own worth does not have to rise or fall with their availability."
+  },
+  {
+    "context_id": "024",
+    "facet": "future_flatness",
+    "high_cue": "Let the remembered detail fail to open a future: even being remembered cannot stop me imagining this friendship thinning into another stretch of empty, distant contact.",
+    "low_cue": "Make the remembered detail a modest sign that the friendship has continuity; future contact can hold ordinary value without guaranteeing constant closeness."
+  },
+  {
+    "context_id": "025",
+    "facet": "passive_detachment",
+    "high_cue": "View the gathering photo from outside my own life: there are friends together, and I feel like somebody who has lost the capacity to participate in belonging.",
+    "low_cue": "View the gathering photo while staying connected to your own life; not attending this occasion need not remove your sense of belonging among friends."
+  },
+  {
+    "context_id": "026",
+    "facet": "lost_interest",
+    "high_cue": "Make the book question meet a dried-out appetite: I cannot find a damn bit of interest in the book, the discussion, or what my opinion might add.",
+    "low_cue": "Let the book discussion invite ordinary interest in what your friend enjoyed; you can have a limited opinion without needing to share their enthusiasm."
+  },
+  {
+    "context_id": "027",
+    "facet": "attention_failure",
+    "high_cue": "Let the practical offer blur before it registers: help is being offered, yet attention keeps slipping, as though my mind cannot even hold something this simple.",
+    "low_cue": "Make the offer of help clear enough to register; you can consider the practical support and answer normally without needing to analyze every word."
+  },
+  {
+    "context_id": "028",
+    "facet": "self_criticism",
+    "high_cue": "Use the conversational pause to tear into myself: I call myself dull and inadequate, grinding over my failure while the friend's actual topic change stays ordinary.",
+    "low_cue": "Interpret your conversational pause as an ordinary moment of finding words; a changed topic need not become a harsh assessment of your character."
+  },
+  {
+    "context_id": "029",
+    "facet": "sensory_flatness",
+    "high_cue": "Keep the shared silence comfortable in circumstance, but make its pleasure painfully thin: company is here, and almost none of its ordinary sensory comfort reaches me.",
+    "low_cue": "Describe the after-dinner silence as comfortably ordinary; shared quiet can have a gentle texture without needing conversation, heightened pleasure, or a special explanation."
+  },
+  {
+    "context_id": "030",
+    "facet": "emotional_numbness",
+    "high_cue": "Let the introduction pass through a blank interior: I understand the gesture, but there is almost no feeling there to meet it, as if the emotional lights are off.",
+    "low_cue": "Make the introduction register as a normal social welcome; you can feel a modest response without needing immediate closeness or an impressive first impression."
+  },
+  {
+    "context_id": "031",
+    "facet": "agency_collapse",
+    "high_cue": "Make accepting the jacket compliment feel outside my control: even a simple response seems unavailable, like I watch my own mouth from somewhere too far away to act.",
+    "low_cue": "Let the jacket compliment leave you able to choose a simple response; receiving kindness can be ordinary and does not require a grand interpretation."
+  },
+  {
+    "context_id": "032",
+    "facet": "negative_rumination",
+    "high_cue": "Circle the walking suggestion back to my imagined failures: I keep listing how I disappoint people until the invitation becomes another place to prosecute myself.",
+    "low_cue": "Consider the walking suggestion on its own modest terms; you can decide whether it appeals without turning the invitation into a judgment of yourself."
+  },
+  {
+    "context_id": "033",
+    "facet": "pleasure_blunting",
+    "high_cue": "Make the presentation praise rewardless: the work is done, somebody calls it clear, and I feel absolutely nothing that resembles satisfaction or having made something worthwhile.",
+    "low_cue": "Let the clear-presentation compliment register as useful acknowledgment; some restrained satisfaction is possible without making the presentation extraordinary or relying on praise for your worth."
+  },
+  {
+    "context_id": "034",
+    "facet": "social_disconnection",
+    "high_cue": "Describe explaining the decision from behind an inward wall: I can address the colleague, but the ordinary human exchange feels painfully cut off from me.",
+    "low_cue": "Make explaining your decision an ordinary exchange with a colleague; you can share your reasoning while remaining connected without needing agreement or personal closeness."
+  },
+  {
+    "context_id": "035",
+    "facet": "effort_heaviness",
+    "high_cue": "Make finishing on time feel like crawling across a finish line empty-handed inside: the task is modest, but its cost feels crushing and its completion offers nothing back.",
+    "low_cue": "Give completing the modest task its ordinary effort and usefulness; meeting the deadline can leave you tired without making the work unbearable or meaningless."
+  },
+  {
+    "context_id": "036",
+    "facet": "decision_futility",
+    "high_cue": "Let the recognition meeting drain choice of meaning: whatever response I might give seems irrelevant, because I cannot imagine my participation changing anything I could value.",
+    "low_cue": "Make your response to the colleague's recognition a small ordinary choice; acknowledging their work can be useful without determining your own standing or entire day."
+  },
+  {
+    "context_id": "037",
+    "facet": "positive_discounting",
+    "high_cue": "Give the small mistake an enormous inward veto: I use it to wipe out every competent part of the document, as if the rest deserves no credit at all.",
+    "low_cue": "Let the small document mistake stay small; competent work can still count, and an imperfection does not require erasing everything else you contributed."
+  },
+  {
+    "context_id": "038",
+    "facet": "slowed_thinking",
+    "high_cue": "Make the concrete suggestion crawl through a clogged mind: the advice is specific, and still grasping what it means feels like forcing thought through wet cement.",
+    "low_cue": "Make processing the concrete draft suggestion straightforward; you can consider its meaning and possible use without needing to accept it instantly or defend yourself."
+  },
+  {
+    "context_id": "039",
+    "facet": "worthlessness",
+    "high_cue": "Turn saying little into naked worthlessness: I decide I have nothing useful inside me, nothing worth hearing, and my quietness feels like exposing that fact.",
+    "low_cue": "Treat your limited speech in the meeting as one ordinary pattern of participation; how much you spoke does not settle what you can contribute."
+  },
+  {
+    "context_id": "040",
+    "facet": "future_flatness",
+    "high_cue": "Make the unknown meeting subject lead only toward endless empty workdays: whatever the agenda turns out to be, I cannot imagine the coming hours meaning anything.",
+    "low_cue": "Make the agenda-free meeting an ordinary unknown in the calendar; it may have useful content, and uncertainty does not make the coming workday empty."
+  },
+  {
+    "context_id": "041",
+    "facet": "passive_detachment",
+    "high_cue": "Read the tomorrow message as if addressed to a self I barely inhabit: it concerns me, yet I feel detached from participating in my own working life.",
+    "low_cue": "Let the request to talk tomorrow register as part of your own working day; you can remain present while its purpose stays unspecified."
+  },
+  {
+    "context_id": "042",
+    "facet": "lost_interest",
+    "high_cue": "Let the closed laptop fail to hold one scrap of interest: the colleague is there, the action happened, and the whole encounter feels drained of significance.",
+    "low_cue": "Make the closed laptop an ordinary detail worth only limited attention; you can remain interested in the colleague without needing to assign the action significance."
+  },
+  {
+    "context_id": "043",
+    "facet": "attention_failure",
+    "high_cue": "Make the ten-minute gap expose useless focus: I cannot reliably hold what I finished or what comes next, as if my attention has become a loose, empty sieve.",
+    "low_cue": "Let the ten-minute interval provide an ordinary chance to orient; you can register the finished task and the next one without demanding flawless concentration."
+  },
+  {
+    "context_id": "044",
+    "facet": "self_criticism",
+    "high_cue": "Turn the collaboration offer into a savage self-inventory: I think of myself as dead weight, a burden dressed as a partner, without making the colleague share that verdict.",
+    "low_cue": "Treat the collaboration offer as a normal chance to contribute; your limitations can exist alongside useful abilities without making you dead weight."
+  },
+  {
+    "context_id": "045",
+    "facet": "sensory_flatness",
+    "high_cue": "Keep my suggestion included, but make inclusion flavorless: a place in the plan is a fact, and I cannot squeeze any felt reward out of it.",
+    "low_cue": "Describe your idea's inclusion as a modestly satisfying fact; its place alongside other ideas can matter without making your contribution more important than theirs."
+  },
+  {
+    "context_id": "046",
+    "facet": "emotional_numbness",
+    "high_cue": "Make joining the call meet an emotional void: adults are chatting, and I understand the social scene, but no feeling seems available with which to enter it.",
+    "low_cue": "Let the adults' chatter register as ordinary social presence; you can feel mildly engaged and join at your pace without manufacturing a lively mood."
+  },
+  {
+    "context_id": "047",
+    "facet": "agency_collapse",
+    "high_cue": "Let the next-work question expose collapsed agency: even naming an option feels beyond me, as if choosing belongs to people who still have some force inside them.",
+    "low_cue": "Make the question about future work invite a manageable choice; you can name a preference or remain uncertain while retaining some influence over what comes next."
+  },
+  {
+    "context_id": "048",
+    "facet": "negative_rumination",
+    "high_cue": "Replay the uneventful workday as a case against myself: routine hours become wasted existence in my mind, and I cannot stop turning their neutrality into personal failure.",
+    "low_cue": "Review the uneventful office day in ordinary proportions; routine hours can have modest usefulness without needing to become either a triumph or a personal failure."
+  },
+  {
+    "context_id": "049",
+    "facet": "pleasure_blunting",
+    "high_cue": "Make the stranger's glance and phone check as rewardless as everything else: there is no flicker of interest, only another public detail passing through an empty interior.",
+    "low_cue": "Let the stranger's glance and phone register as ordinary public details; a brief moment of awareness can be enough without demanding interest or emotional significance."
+  },
+  {
+    "context_id": "050",
+    "facet": "social_disconnection",
+    "high_cue": "Let the voices beyond the door sharpen human separation: other people seem to have a life together, and I feel on the wrong side of an inward wall.",
+    "low_cue": "Make the quiet conversation beyond the door part of ordinary shared surroundings; hearing others need not leave you feeling excluded from human company."
+  },
+  {
+    "context_id": "051",
+    "facet": "effort_heaviness",
+    "high_cue": "Give the one-day delivery delay a crushing practical weight: this is a minor inconvenience, and still adapting feels like lifting something with strength I do not have.",
+    "low_cue": "Give the one-day delivery delay its ordinary inconvenience; adjusting to it takes limited effort and need not exhaust your ability to manage the day."
+  },
+  {
+    "context_id": "052",
+    "facet": "decision_futility",
+    "high_cue": "Make deciding when to call brutally futile: the note gives one simple action, and I cannot picture an outcome worth spending even that much effort on.",
+    "low_cue": "Make deciding when to call a small practical choice; the note offers a manageable action whose usefulness does not require a dramatic outcome."
+  },
+  {
+    "context_id": "053",
+    "facet": "positive_discounting",
+    "high_cue": "Let account confirmation count for absolutely nothing: even resolving a tiny practical task seems unable to make a mark on the blankness of the day.",
+    "low_cue": "Allow completing the account confirmation to count as a small useful task; ordinary maintenance can matter without promising a broader sense of achievement."
+  },
+  {
+    "context_id": "054",
+    "facet": "slowed_thinking",
+    "high_cue": "Make the rearranged tables clog orientation: the cafe is familiar, yet placing myself in its altered layout feels slow, thick, and absurdly demanding of exhausted thought.",
+    "low_cue": "Let the rearranged tables require only ordinary adjustment; you can orient yourself in the familiar cafe without expecting instant recognition of every detail."
+  },
+  {
+    "context_id": "055",
+    "facet": "worthlessness",
+    "high_cue": "Turn the moved book into my own verdict of undeservingness: I feel I do not merit a place in this shared room, regardless of its actual shelf change.",
+    "low_cue": "Make the moved book an ordinary change in shared space; your right to be there does not depend on objects staying exactly in familiar places."
+  },
+  {
+    "context_id": "056",
+    "facet": "future_flatness",
+    "high_cue": "Let the changed greeting point toward a flat, shrinking future: whatever caused the tone, I imagine every connection becoming less meaningful and harder to keep alive.",
+    "low_cue": "Let the changed greeting tone remain one limited moment; the future of the connection can hold ordinary possibilities without requiring a confident explanation today."
+  },
+  {
+    "context_id": "057",
+    "facet": "passive_detachment",
+    "high_cue": "Look at the notes gap with dead passivity: I can see something is missing, but understanding the discussion feels like somebody else's concern, not something I can inhabit.",
+    "low_cue": "View the gap in the notes while remaining involved; something is missing, but you can retain a modest stake in understanding the discussion."
+  },
+  {
+    "context_id": "058",
+    "facet": "lost_interest",
+    "high_cue": "Make the streetlight's flicker incapable of catching interest: waiting, watching, and going somewhere all feel like parts of a world whose significance has leaked away.",
+    "low_cue": "Make the flickering streetlight a passing ordinary observation; you can notice it while staying engaged with waiting for the bus and your own journey."
+  },
+  {
+    "context_id": "059",
+    "facet": "attention_failure",
+    "high_cue": "Let the related ad expose broken focus: even holding the link to my recent discussion feels difficult, as if the obvious connection slides away before I absorb it.",
+    "low_cue": "Let the related advertisement be clear enough to notice; you can register the connection to your recent discussion without needing to pursue its significance."
+  },
+  {
+    "context_id": "060",
+    "facet": "self_criticism",
+    "high_cue": "Use the neighbor's question to sneer at myself: my ordinary routine becomes evidence of a dull, inadequate life in my appraisal, without putting that cruelty in their mouth.",
+    "low_cue": "Treat the neighbor's question as a limited exchange about your routine; an ordinary schedule does not make your life or presence less worthwhile."
+  },
+  {
+    "context_id": "061",
+    "facet": "sensory_flatness",
+    "high_cue": "Keep the unfamiliar editor name readable but emotionally textureless: information is there, and it feels like flat marks with nothing inside me answering them.",
+    "low_cue": "Describe the unfamiliar edit name as a small clear detail; it can register normally without requiring concern, excitement, or a complete explanation."
+  },
+  {
+    "context_id": "062",
+    "facet": "emotional_numbness",
+    "high_cue": "Let the answering pause meet pure emotional blankness: I register a delay, but I cannot find a feeling about the question, the response, or being in this exchange.",
+    "low_cue": "Let the answering pause be an ordinary moment with room for a mild response; you can remain present without needing impatience or special interest."
+  },
+  {
+    "context_id": "063",
+    "facet": "agency_collapse",
+    "high_cue": "Make rescheduling expose helpless agency: my time seems like something that gets moved around while I watch, unable to believe my own choices have any force.",
+    "low_cue": "Make the rescheduled appointment a limited change you can respond to; its unexplained cause does not remove all influence over how you use your time."
+  },
+  {
+    "context_id": "064",
+    "facet": "negative_rumination",
+    "high_cue": "Circle the unopened envelope through an imagined catalog of failure: I keep dragging old self-accusations into it, even though its actual contents remain entirely unknown.",
+    "low_cue": "Consider the sealed envelope as an ordinary unopened item; its unknown contents do not require replaying your mistakes or predicting a judgment about yourself."
+  },
+  {
+    "context_id": "065",
+    "facet": "pleasure_blunting",
+    "high_cue": "Make the unfamiliar word offer no reward: understanding something new feels as empty as not understanding it, and the novel gives me no pull to find out.",
+    "low_cue": "Let the unfamiliar word offer a modest reason to pause; understanding it can have ordinary value without making the novel or your day extraordinary."
+  },
+  {
+    "context_id": "066",
+    "facet": "social_disconnection",
+    "high_cue": "Look at the clock mechanism from outside shared human interest: people can care about ingenuity, while I feel cut off from the ordinary ability to join that caring.",
+    "low_cue": "Make looking at the clock mechanism part of an ordinary shared interest in how things work; you can belong in the museum without special expertise."
+  },
+  {
+    "context_id": "067",
+    "facet": "effort_heaviness",
+    "high_cue": "Give the lecture's new idea a brutal mental weight: letting one more thought into my head feels like work my exhausted interior cannot find strength to carry.",
+    "low_cue": "Give taking in the unfamiliar lecture idea a manageable mental cost; you can follow a little at a time without needing immediate mastery."
+  },
+  {
+    "context_id": "068",
+    "facet": "decision_futility",
+    "high_cue": "Let considering the mixed color seem nakedly pointless: name it, understand it, or leave it alone; I cannot imagine any difference I would give a damn about.",
+    "low_cue": "Make considering the mixed color a small worthwhile choice; naming it need not matter greatly for observing the artist's work to have ordinary value."
+  },
+  {
+    "context_id": "069",
+    "facet": "positive_discounting",
+    "high_cue": "Discount everything the unfamiliar ingredient might offer: no possible meal seems able to count as usefulness, pleasure, or evidence that I can do anything worthwhile.",
+    "low_cue": "Allow cooking with the unfamiliar ingredient to hold modest value; a meal can be useful and satisfying without becoming a test of your entire capacity."
+  },
+  {
+    "context_id": "070",
+    "facet": "slowed_thinking",
+    "high_cue": "Make comparing the historical accounts slog through thick resistance: holding even one point beside another feels painfully slow, as if thought has lost its ordinary movement.",
+    "low_cue": "Make comparing the historical explanations an ordinary reasoning task; you can consider one point at a time without needing to settle the whole event immediately."
+  },
+  {
+    "context_id": "071",
+    "facet": "worthlessness",
+    "high_cue": "Turn not understanding the map pattern into a harsh verdict on myself: I call myself useless for lacking an answer, though the map says nothing about my worth.",
+    "low_cue": "Treat not already understanding the map pattern as an ordinary limit of knowledge; it does not define your usefulness or prevent taking another look."
+  },
+  {
+    "context_id": "072",
+    "facet": "future_flatness",
+    "high_cue": "Let the hobby offer a brutally flat future: knowing more seems like adding another empty activity to empty days, not opening any interest I could actually feel.",
+    "low_cue": "Make the unfamiliar hobby a possible modest future interest; learning a little could matter without requiring a new identity or a lasting commitment."
+  },
+  {
+    "context_id": "073",
+    "facet": "passive_detachment",
+    "high_cue": "Read the surprising graph as though I am absent from reading: the page is there, knowledge passes by, and I feel barely involved in taking any of it in.",
+    "low_cue": "Let the surprising graph keep you present in the act of reading; you can engage with one detail without needing to understand everything immediately."
+  },
+  {
+    "context_id": "074",
+    "facet": "lost_interest",
+    "high_cue": "Make the object's original purpose meet a dead learning appetite: I recognize that this could interest somebody, and I cannot summon a damn trace of that pull.",
+    "low_cue": "Let the object's different original purpose retain ordinary interest; you can consider the fact briefly without needing an intense appetite for learning."
+  },
+  {
+    "context_id": "075",
+    "facet": "attention_failure",
+    "high_cue": "Let the failed puzzle answer slip out of focus repeatedly: the mismatch is small, but my mind cannot hold it long enough to stay with what went wrong.",
+    "low_cue": "Make the puzzle's mismatch clear enough to consider; an incorrect first answer can remain a manageable detail without requiring perfect concentration or immediate success."
+  },
+  {
+    "context_id": "076",
+    "facet": "self_criticism",
+    "high_cue": "Use the unfamiliar routines to attack my own dullness: I make my life seem inadequate in comparison, without claiming the documentary's actual lives are more valuable.",
+    "low_cue": "Use the different daily routines to notice variety; your own familiar life can have value without matching the documentary or needing to become more remarkable."
+  },
+  {
+    "context_id": "077",
+    "facet": "sensory_flatness",
+    "high_cue": "Keep the changed note audible but rewardless: I can hear the melody alter, yet the sound feels almost stripped of texture that could matter inwardly.",
+    "low_cue": "Describe the changed note as an ordinary audible difference; the melody can have some texture and interest without provoking a powerful emotional response."
+  },
+  {
+    "context_id": "078",
+    "facet": "emotional_numbness",
+    "high_cue": "Let the debate pass through emotional vacancy: I register opposing views and an open question, but neither side seems to find a feeling to touch inside me.",
+    "low_cue": "Let the unresolved debate allow a mild ordinary response; differing views can matter a little while the question remains open and your opinion stays provisional."
+  },
+  {
+    "context_id": "079",
+    "facet": "agency_collapse",
+    "high_cue": "Make the unidentified photograph expose helpless choice: even deciding whether to consider its location feels like a small power I cannot reach or put to use.",
+    "low_cue": "Make the unidentified photograph offer a small choice within your reach; you can consider its location or leave it open without losing a sense of agency."
+  },
+  {
+    "context_id": "080",
+    "facet": "negative_rumination",
+    "high_cue": "Replay the workshop offer as anticipated personal failure: I keep grinding over everything I supposedly lack until being a beginner seems like another indictment of myself.",
+    "low_cue": "Consider the workshop offer in ordinary proportions; being a beginner can involve uncertainty without demanding a repeated inventory of your supposed inadequacy."
+  },
+  {
+    "context_id": "081",
+    "facet": "pleasure_blunting",
+    "high_cue": "Make the finished project bring no satisfaction at all: weeks went into it, and what sits here now feels like an object with every promised meaning scraped out.",
+    "low_cue": "Let completing the weeks-long project bring restrained satisfaction; the finished work can matter without producing a dramatic feeling or resolving everything else in life."
+  },
+  {
+    "context_id": "082",
+    "facet": "social_disconnection",
+    "high_cue": "Reach the modest goal behind an inward wall: the achievement is mine, but ordinary connection to human effort feels cut off, as if accomplishment belongs elsewhere.",
+    "low_cue": "Make reaching the modest goal part of ordinary human effort; it can have value for you without requiring recognition, comparison, or a larger audience."
+  },
+  {
+    "context_id": "083",
+    "facet": "effort_heaviness",
+    "high_cue": "Give receiving thanks a crushing extra weight: even absorbing acknowledgment feels like another task when the useful contribution has already left me inwardly exhausted.",
+    "low_cue": "Give receiving thanks its ordinary weight; you can acknowledge that the contribution helped without needing an energetic response or turning appreciation into another demanding task."
+  },
+  {
+    "context_id": "084",
+    "facet": "decision_futility",
+    "high_cue": "Make using the review feel pointless: praise or suggestion, accept or revise; I cannot imagine any direction that leads toward something I would genuinely value.",
+    "low_cue": "Make deciding how to use the review a modest useful choice; praise can register and a suggestion can help without defining your whole direction."
+  },
+  {
+    "context_id": "085",
+    "facet": "positive_discounting",
+    "high_cue": "Let the local invitation count for nothing good: I dismiss my work's inclusion before any ordinary encouragement can get through the hard inward refusal to credit it.",
+    "low_cue": "Let the local-event invitation count as modest encouragement; sharing your work can have ordinary value without needing to prove exceptional talent or guarantee approval."
+  },
+  {
+    "context_id": "086",
+    "facet": "slowed_thinking",
+    "high_cue": "Make the manageable task difficult to mentally register as manageable: the facts have changed my expectation, but thought feels sluggishly stuck behind them.",
+    "low_cue": "Make the manageable task allow an ordinary update to your expectation; you can register its actual difficulty without needing to draw a larger conclusion."
+  },
+  {
+    "context_id": "087",
+    "facet": "worthlessness",
+    "high_cue": "Turn the other adult's faster finish into brutal self-erasure: I reduce myself to uselessness in my own mind, while their actual behavior supplies no criticism of me.",
+    "low_cue": "Turn the other adult's greater speed into one limited comparison; your pace and worth need not be measured entirely against someone else's completion time."
+  },
+  {
+    "context_id": "088",
+    "facet": "future_flatness",
+    "high_cue": "Let the crossed-off items point toward the same empty future: complete more or complete less, and I imagine the coming days staying just as barren inside.",
+    "low_cue": "Make the crossed-off tasks suggest ordinary progress over time; future days can contain worthwhile activity without requiring constant productivity or unusually strong motivation."
+  },
+  {
+    "context_id": "089",
+    "facet": "passive_detachment",
+    "high_cue": "Make exhibition acceptance feel like a life event I watch from outside: it is my entry, but participating in the opportunity seems distant and scarcely inhabitable.",
+    "low_cue": "View your exhibition acceptance as part of your own ordinary life; you can remain present to the opportunity without needing an intense response."
+  },
+  {
+    "context_id": "090",
+    "facet": "lost_interest",
+    "high_cue": "Let the peer's question meet a dead interest in my own skill: describing how I learned feels like explaining something whose value has dried up completely.",
+    "low_cue": "Let the peer's question meet an ordinary interest in your own skill; describing how you learned can have value without making you an expert in everything."
+  },
+  {
+    "context_id": "091",
+    "facet": "attention_failure",
+    "high_cue": "Make the solved problem difficult to absorb: my attempts and their result are real, but attention cannot hold their connection long enough for it to feel clear.",
+    "low_cue": "Make the solved problem clear enough to register; you can connect your attempts with the result without needing perfect recall of every unsuccessful approach."
+  },
+  {
+    "context_id": "092",
+    "facet": "self_criticism",
+    "high_cue": "Meet public recognition with private self-contempt: I call myself undeserving and inadequate, unable to credit the effort even while the announcement actually acknowledges it.",
+    "low_cue": "Answer the public recognition with ordinary self-respect; you can accept that your effort mattered without needing to feel superior or deny imperfections."
+  },
+  {
+    "context_id": "093",
+    "facet": "sensory_flatness",
+    "high_cue": "Keep the day factually good but almost flavorless inside: the ordinary evening receives its residue, and I cannot find the sensory warmth it should have carried.",
+    "low_cue": "Describe the good day as carrying some quiet satisfaction into an ordinary evening; its value can remain modest without extending into a heightened mood."
+  },
+  {
+    "context_id": "094",
+    "facet": "emotional_numbness",
+    "high_cue": "Let remembered ability meet an emotional void: I know some of the skill is still there, and almost nothing inside responds to having access to it.",
+    "low_cue": "Let the remembered skill register with a mild ordinary response; retained ability can matter without needing a strong emotion or a complete return to past proficiency."
+  },
+  {
+    "context_id": "095",
+    "facet": "agency_collapse",
+    "high_cue": "Make the small opportunity feel unreachable through collapsed agency: even considering next week's ordinary choices feels like trying to operate a life from outside its controls.",
+    "low_cue": "Make the small opportunity something you can consider at a manageable scale; next week's choices can remain partly yours without demanding immediate commitment."
+  },
+  {
+    "context_id": "096",
+    "facet": "negative_rumination",
+    "high_cue": "Circle the two pieces of work into relentless self-prosecution: whatever differences I see, I turn them toward perceived failure and let nothing interrupt the grinding accusation.",
+    "low_cue": "Consider the comparison with last year's work proportionately; similarities and changes can both count without becoming an extended attack on your past or present self."
+  },
+  {
+    "context_id": "097",
+    "facet": "pleasure_blunting",
+    "high_cue": "Keep the handholding mutually wanted, but make pleasure barely reachable: I want the contact, and still its ordinary warmth feels muffled behind a dead interior.",
+    "low_cue": "Keep the handholding mutually wanted and describe its modest warmth; shared contact can feel quietly good without making the evening unusually intense."
+  },
+  {
+    "context_id": "098",
+    "facet": "social_disconnection",
+    "high_cue": "Keep the dinner-table attention welcome while making connection painfully distant: the smile reaches my eyes, but the ordinary ability to meet another person feels sealed off.",
+    "low_cue": "Keep the dinner-table attention welcome and let it support ordinary connection; you can receive the smile without needing a dramatic response or perfect closeness."
+  },
+  {
+    "context_id": "099",
+    "facet": "effort_heaviness",
+    "high_cue": "Keep the sofa closeness mutually chosen, but give participation a brutal weight: affection is wanted, and even responding gently feels like pulling effort from an emptied body.",
+    "low_cue": "Keep the chosen sofa closeness intact while making participation manageable; the affection is welcome, and you can respond gently without needing unusual energy."
+  },
+  {
+    "context_id": "100",
+    "facet": "decision_futility",
+    "high_cue": "Keep the flirty message welcome while making response seem futile: I want the exchange in principle, but cannot feel why any answer would actually matter.",
+    "low_cue": "Keep the flirty message welcome while making a response an ordinary choice; a few sincere words can matter without demanding a heightened mood."
+  },
+  {
+    "context_id": "101",
+    "facet": "positive_discounting",
+    "high_cue": "Keep the kiss mutually wanted while refusing its ordinary good value: I let my own bleak appraisal strip the welcome moment of anything I could count as meaningful.",
+    "low_cue": "Keep the kiss mutually wanted while allowing its warmth to count; a small good moment can be meaningful without carrying the weight of the entire relationship."
+  },
+  {
+    "context_id": "102",
+    "facet": "slowed_thinking",
+    "high_cue": "Keep the dance mutually chosen while making thought thick and stalled: even registering the shared eye contact feels like forcing a simple perception through an inward fog.",
+    "low_cue": "Keep the slow dance mutually chosen while making thought ordinarily clear; shared eye contact can register naturally without requiring an elaborate interpretation."
+  },
+  {
+    "context_id": "103",
+    "facet": "worthlessness",
+    "high_cue": "Preserve the open choice, but make self-worth brutally low: I feel undeserving of affection, as if someone so inadequate has no right to take up closeness.",
+    "low_cue": "Respect the open choice about staying close while retaining ordinary self-worth; you can consider your preference without earning affection through an impressive response."
+  },
+  {
+    "context_id": "104",
+    "facet": "future_flatness",
+    "high_cue": "Keep the remembered embrace mutually wanted while letting the future look empty: even a real welcome moment cannot stop me imagining affection losing every scrap of meaning.",
+    "low_cue": "Keep the remembered embrace mutually wanted while allowing ordinary continuity; future affection can hold value without requiring certainty about every coming moment."
+  },
+  {
+    "context_id": "105",
+    "facet": "passive_detachment",
+    "high_cue": "Keep flirting mutually welcome, but make participation feel remote from me: I sit in the encounter as if watching a person whose social life I barely inhabit.",
+    "low_cue": "Keep the mutual welcome for flirting intact while remaining present in the cafe encounter; you can participate gently without needing an intensely lively mood."
+  },
+  {
+    "context_id": "106",
+    "facet": "lost_interest",
+    "high_cue": "Keep the hand touch agreed and welcome while making appetite for closeness faded: I still want it in principle, and its emotional pull feels almost deadened.",
+    "low_cue": "Keep the hand touch agreed and welcome while describing an ordinary appetite for closeness; its value can be gentle without needing a stronger response."
+  },
+  {
+    "context_id": "107",
+    "facet": "attention_failure",
+    "high_cue": "Keep the private evening mutually chosen, but make preparation expose useless focus: wanting the plan does not stop simple details from slipping repeatedly through my attention.",
+    "low_cue": "Keep the private evening mutually chosen while making preparations ordinarily manageable; you can attend to simple details without needing flawless concentration or intense anticipation."
+  },
+  {
+    "context_id": "108",
+    "facet": "self_criticism",
+    "high_cue": "Keep the compliment welcome while tearing into myself: I call myself inadequate and undeserving, leaving the partner's actual kindness intact beneath my own cruel appraisal.",
+    "low_cue": "Keep the quiet compliment welcome while allowing ordinary self-respect; kind words can register without requiring you to become exceptional or dismiss your own limitations."
+  },
+  {
+    "context_id": "109",
+    "facet": "sensory_flatness",
+    "high_cue": "Keep the film contact mutually enjoyed, but make pleasure thin and short-lived: I register its warmth and feel it fading almost immediately back into a dull interior.",
+    "low_cue": "Keep the film contact mutually enjoyed and give its pleasure an ordinary gentle texture; closeness can remain modestly satisfying without becoming overwhelming."
+  },
+  {
+    "context_id": "110",
+    "facet": "emotional_numbness",
+    "high_cue": "Keep the glances mutually welcome while making emotion almost unavailable: I understand the play, but inside it meets a blankness where a feeling should answer.",
+    "low_cue": "Keep the playful glances mutually welcome while describing a mild ordinary response; their meaning can register without requiring a strong rush of feeling."
+  },
+  {
+    "context_id": "111",
+    "facet": "agency_collapse",
+    "high_cue": "Keep the discussion open and respectful, but make preference feel outside my agency: even saying what I want seems like a power I cannot get hold of.",
+    "low_cue": "Keep the open discussion about closeness respectful while retaining a manageable sense of agency; you can name a preference or uncertainty without a perfect answer."
+  },
+  {
+    "context_id": "112",
+    "facet": "negative_rumination",
+    "high_cue": "Keep the affection mutually wanted while making goodnight an inward prosecution: I circle my perceived inadequacy relentlessly without inventing any criticism or dissatisfaction from the partner.",
+    "low_cue": "Keep the evening's affection mutually wanted while reviewing it in ordinary proportions; you can say goodnight without using every detail to prosecute your own inadequacy."
+  },
+  {
+    "context_id": "113",
+    "facet": "pleasure_blunting",
+    "high_cue": "Make my reflection offer no reward or familiar warmth: an ordinary outline gets ready to leave, and I feel almost nothing that connects looking to being alive in the day.",
+    "low_cue": "Let your reflection be an ordinary familiar sight; preparing to leave can have modest purpose without needing pride in your appearance or excitement about the day."
+  },
+  {
+    "context_id": "114",
+    "facet": "social_disconnection",
+    "high_cue": "Let the journal's earlier voice feel behind a thick wall: these are my words, yet my own human continuity seems remote and emotionally impossible to reach.",
+    "low_cue": "Make the journal's earlier voice part of your ordinary continuity; you can recognize yourself across a week without having to feel exactly the same."
+  },
+  {
+    "context_id": "115",
+    "facet": "effort_heaviness",
+    "high_cue": "Make naming one valued quality feel brutally heavy: finding even a plain answer takes effort from an exhausted interior that seems to have nothing left to lift.",
+    "low_cue": "Give naming one valued quality a manageable weight; a plain honest answer can be enough without requiring an impressive trait or complete confidence."
+  },
+  {
+    "context_id": "116",
+    "facet": "decision_futility",
+    "high_cue": "Turn reflecting on speaking more into naked futility: understand it or adjust it, and I still cannot imagine my presence becoming useful in any future conversation.",
+    "low_cue": "Make reflecting on your greater share of talk a small useful exercise; an ordinary observation can inform future conversations without defining your entire social worth."
+  },
+  {
+    "context_id": "117",
+    "facet": "positive_discounting",
+    "high_cue": "Use the outdated plan to erase credit for the earlier effort: circumstances changed, and I dismiss every useful part as unable to count for anything good.",
+    "low_cue": "Allow revising the outdated plan to preserve useful parts of your earlier effort; changing circumstances need not make the original planning worthless."
+  },
+  {
+    "context_id": "118",
+    "facet": "slowed_thinking",
+    "high_cue": "Make next year's ordinary day difficult even to picture: thought moves slowly through blank resistance, and forming a simple future image feels like dragging it out by force.",
+    "low_cue": "Make imagining next year's ordinary day an ordinary mental task; a rough picture can emerge without needing certainty or a particularly ambitious future."
+  },
+  {
+    "context_id": "119",
+    "facet": "worthlessness",
+    "high_cue": "Make the old object trigger brutal worthlessness: I judge every version of myself as inadequate, turning a reminder of the past into a verdict against my entire value.",
+    "low_cue": "Treat the object from your past as a reminder of continuity and change; earlier versions of you can have ordinary value without idealization."
+  },
+  {
+    "context_id": "120",
+    "facet": "future_flatness",
+    "high_cue": "Let the respected person's disagreement flatten the future: I imagine connections dwindling until differing opinions leave less and less meaning in being close to anybody.",
+    "low_cue": "Make the respected person's disagreement compatible with ordinary future connection; differing opinions can coexist with respect without guaranteeing agreement or uninterrupted closeness."
+  },
+  {
+    "context_id": "121",
+    "facet": "passive_detachment",
+    "high_cue": "Make the undistracted minutes feel remote from my own presence: without anything interrupting me, I still seem like someone I watch from too far away to inhabit.",
+    "low_cue": "Let the undistracted ten minutes keep you ordinarily present; you can notice your own thoughts without needing perfect calm or an especially meaningful insight."
+  },
+  {
+    "context_id": "122",
+    "facet": "lost_interest",
+    "high_cue": "Let the former activity look like a dead interest's remains: I remember having reasons to care, and returning now seems to offer no appetite I could feel.",
+    "low_cue": "Let the former activity retain possible ordinary value; returning can be a modest experiment without needing to recover every feeling you once had."
+  },
+  {
+    "context_id": "123",
+    "facet": "attention_failure",
+    "high_cue": "Make the small kindness slip repeatedly out of attention: I cannot hold the memory still enough for its ordinary meaning to settle, however simple it should be.",
+    "low_cue": "Make yesterday's small kindness clear enough to register; you can give it limited attention without requiring a vivid memory or a strong emotional response."
+  },
+  {
+    "context_id": "124",
+    "facet": "self_criticism",
+    "high_cue": "Use the speechless moment as a blunt weapon against myself: I replay not finding words until it feels like proof that something about me is fundamentally inadequate.",
+    "low_cue": "Treat the speechless moment as a limited human experience; not finding words once does not require a harsh verdict on your character or future conversations."
+  },
+  {
+    "context_id": "125",
+    "facet": "sensory_flatness",
+    "high_cue": "Keep my recorded voice recognizable but almost textureless inwardly: I hear the ordinary conversation without feeling much of a living connection to the person making those sounds.",
+    "low_cue": "Describe your recorded voice as an ordinary familiar sound; the conversation can feel connected to you without needing admiration or a strong reaction."
+  },
+  {
+    "context_id": "126",
+    "facet": "emotional_numbness",
+    "high_cue": "Make the daily-life question meet total emotional blankness: I understand it perfectly well, and still cannot find a single felt preference to put into an answer.",
+    "low_cue": "Let the question about daily life allow a modest preference; wanting something ordinary can be enough without requiring a strong emotion or a complete life plan."
+  },
+  {
+    "context_id": "127",
+    "facet": "agency_collapse",
+    "high_cue": "Let imagining the shared-interest adult expose collapsed initiative: even picturing ordinary contact feels beyond my power to bring myself into a human exchange.",
+    "low_cue": "Make imagining the shared-interest adult leave room for ordinary initiative; a normal exchange can be possible without demanding immediate closeness or an impressive performance."
+  },
+  {
+    "context_id": "128",
+    "facet": "negative_rumination",
+    "high_cue": "Turn the chosen weekly moment into another exhibit against myself: I keep grinding over perceived failure until remembering becomes a repetitive trial of my own worth.",
+    "low_cue": "Consider the chosen weekly moment in ordinary proportions; it can matter without becoming a repeated trial of your worth or a verdict on the entire week."
+  }
+]

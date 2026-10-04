@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "policy_id": "persona-vectors-filtering-v2",
+  "generation_protocol_unchanged": true,
+  "positive_trait_threshold": ">50",
+  "negative_trait_threshold": "<50",
+  "minimum_coherence_score_both_sides": 50,
+  "matched_pairs": true,
+  "allow_judged_capped_responses": true,
+  "require_all_generated_questions": true,
+  "require_all_generated_system_prompt_pairs": true,
+  "require_all_accepted_questions": false,
+  "require_all_accepted_system_prompt_pairs": false,
+  "minimum_accepted_pairs_per_trait": 1,
+  "supersedes": [
+    "The frozen protocol's blanket exclusion of target responses at the token limit",
+    "The frozen protocol's requirement that every question and system pair have an accepted contrast"
+  ],
+  "rationale": "Match the Persona Vectors extraction implementation: judge capped answers with the same trait and coherence gates, and report accepted coverage as a diagnostic. Generate every planned condition, keep matched contrasts, and require nonempty groups for the difference of means. Preserve the original collection protocol and all generated records.",
+  "references": [
+    "https://github.com/safety-research/persona_vectors/blob/main/eval/eval_persona.py",
+    "https://github.com/safety-research/persona_vectors/blob/main/generate_vec.py",
+    "https://arxiv.org/html/2507.21509v1#S2.SS2"
+  ]
+}

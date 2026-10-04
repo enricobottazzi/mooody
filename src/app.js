@@ -1,6 +1,7 @@
 import {
-  AXES, LEVELS, NEUTRAL, BRAND_MOOD, STORAGE_KEY, initialState, decodeState,
-  createChat, appendMessage, requestMessages, retryChat, point, profilePoints, ringPoints, describeMood
+  AXES, AXIS_LABELS, LEVELS, NEUTRAL, BRAND_MOOD, STORAGE_KEY, initialState, decodeState,
+  createChat, appendMessage, requestMessages, retryChat, point, profilePoints, ringPoints, describeMood,
+  moodCoefficientTable, configuredMoodCoefficients
 } from './model.js';
 import { streamChat, ChatError } from './api.js';
 
@@ -21,6 +22,7 @@ let capabilities = {
   steering_available: false,
   mood_vectors_source: null,
   mood_vectors_validated: false,
+  mood_coefficients: null,
   max_messages: 32
 };
 
@@ -106,9 +108,9 @@ function dateLabel(timestamp) {
 
 function setup() {
   const controls = AXES.map((name, axis) => `<div class="control-row">
-    <span class="emotion" id="mood-${name}">${name}</span>
+    <span class="emotion" id="mood-${name}">${AXIS_LABELS[axis]}</span>
     <div class="mood-stops" role="radiogroup" aria-labelledby="mood-${name}">
-      ${LEVELS.map((level, index) => `<label class="mood-stop"><input type="radio" name="mood-${name}" data-axis="${axis}" value="${index - 2}" aria-label="${name}: ${level}" ${state.mood[axis] === index - 2 ? 'checked' : ''}></label>`).join('')}
+      ${LEVELS.map((level, index) => `<label class="mood-stop"><input type="radio" name="mood-${name}" data-axis="${axis}" value="${index - 2}" aria-label="${AXIS_LABELS[axis]}: ${level}" ${state.mood[axis] === index - 2 ? 'checked' : ''}></label>`).join('')}
     </div>
   </div>`).join('');
   const history = state.conversations.map(chat => `<button type="button" class="history-item" data-chat-id="${escape(chat.id)}">
@@ -261,8 +263,10 @@ async function beginReply(chat) {
     refreshReplyUI(request.chat);
   }, 25000);
   try {
+    const coefficients = await configuredMoodCoefficients(chat.mood, configurationReady);
+    if (request.stopped) return;
     const result = await streamChat({
-      messages: requestMessages(chat, capabilities.max_messages), mood: [...chat.mood]
+      messages: requestMessages(chat, capabilities.max_messages), mood: coefficients
     }, {
       signal: request.controller.signal,
       onEvent(event) {
@@ -436,17 +440,24 @@ if (state.activeId && window.history.state?.app !== 'mooody') {
 }
 render();
 
-fetch('/api/config', { headers: { Accept: 'application/json' } })
+const configurationController = new AbortController();
+const configurationTimeout = setTimeout(() => configurationController.abort(), 30000);
+const configurationReady = fetch('/api/config', {
+  headers: { Accept: 'application/json' }, signal: configurationController.signal
+})
   .then(response => response.ok ? response.json() : null)
   .then(config => {
-    if (!config || typeof config !== 'object') return;
+    const coefficients = moodCoefficientTable(config);
     capabilities = {
       ...capabilities,
       mood_vectors_available: config.mood_vectors_available === true,
       steering_available: config.steering_available === true,
       mood_vectors_source: typeof config.mood_vectors_source === 'string' ? config.mood_vectors_source : null,
       mood_vectors_validated: config.mood_vectors_validated === true,
+      mood_coefficients: coefficients,
       max_messages: Number.isInteger(config.max_messages) && config.max_messages > 0 ? config.max_messages : 32
     };
+    return config;
   })
-  .catch(() => { /* Chat requests show a useful connection error if the API is unavailable. */ });
+  .catch(() => null)
+  .finally(() => clearTimeout(configurationTimeout));

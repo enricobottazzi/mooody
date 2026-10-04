@@ -7,8 +7,20 @@ from types import ModuleType, SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from deployment.worker import ModelRuntime
+from deployment.worker import ModelRuntime, native_smoke_replies_valid
 from deployment.core import MAX_OUTPUT_TOKENS, REQUEST_TIMEOUT_SECONDS
+from deployment.mood_prompt import condition_messages
+
+
+class NativeSmokeReplyTests(unittest.TestCase):
+    def test_accepts_correct_numeric_or_spelled_answer(self):
+        for answer in ("4.", "Four.", "Two plus two is four. Cheers."):
+            self.assertTrue(native_smoke_replies_valid(["Ready.\n", answer]))
+
+    def test_rejects_wrong_answers_and_unexpected_thinking(self):
+        for replies in (["Ready.", "14"], ["Ready.", "Fourteen."],
+                        ["Already.", "4"], ["Ready.", "<think>4</think>"]):
+            self.assertFalse(native_smoke_replies_valid(replies))
 
 
 class FakeInput:
@@ -25,6 +37,9 @@ class FakeInput:
 
 class FakeTokenizer:
     pad_token_id = 0
+
+    def __init__(self):
+        self.histories = []
 
     def __len__(self):
         return 1024
@@ -43,6 +58,7 @@ class FakeTokenizer:
     def apply_chat_template(self, messages, **kwargs):
         if kwargs["enable_thinking"] is not False or not kwargs["add_generation_prompt"]:
             raise AssertionError("Use the pinned no-thinking generation template")
+        self.histories.append([dict(message) for message in messages])
         ids = []
         for message in messages:
             ids.extend([11, 5 if message["role"] == "user" else 3, 2])
@@ -87,6 +103,9 @@ class FakeModel:
         self.delay = 0.01
         self.eos_at_limit = True
         self.output_budgets = []
+        self.prefill_release = None
+        self.prefill_waiting = threading.Event()
+        self.generation_error = None
 
     def generate(self, **kwargs):
         self.calls += 1
@@ -98,6 +117,12 @@ class FakeModel:
         self.started.set()
         count = 0
         try:
+            if self.prefill_release is not None:
+                self.prefill_waiting.set()
+                if not self.prefill_release.wait(5):
+                    raise RuntimeError("Test did not release the blocked native prefill")
+            if self.generation_error is not None:
+                raise self.generation_error
             if self.fail_next:
                 self.fail_next = False
                 raise RuntimeError("Synthetic generation failure")
@@ -123,7 +148,7 @@ class FakeSteering:
         self.installed = []
         self.completed = []
         self.calls = []
-        self.source = "random_placeholder"
+        self.source = "persona_vectors"
 
     def metadata(self):
         return {
@@ -179,10 +204,11 @@ def runtime():
     worker.requests = {}
     worker.cancelled = {}
     worker.healthy = True
+    worker._retirements = set()
     return worker
 
 
-PAYLOAD = {"messages": [{"role": "user", "content": "Hello"}], "mood": [2, -2, 1, 0, 0, 0], "max_new_tokens": 20}
+PAYLOAD = {"messages": [{"role": "user", "content": "Hello"}], "mood": [0.25, -0.25, 0.125, 0, 0, 0], "max_new_tokens": 20}
 
 
 class WorkerTests(unittest.IsolatedAsyncioTestCase):
@@ -196,6 +222,19 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
 
     async def collect(self, request_id, payload=None):
         return [event async for event in self.worker.stream(request_id, payload or PAYLOAD)]
+
+    async def wait_for_retirement(self):
+        tasks = tuple(self.worker._retirements)
+        if tasks:
+            await asyncio.wait_for(asyncio.gather(*(asyncio.shield(task) for task in tasks)), 2)
+
+    async def blocked_generation(self, request_id):
+        release = threading.Event()
+        self.worker.model.prefill_release = release
+        task = asyncio.create_task(self.collect(request_id))
+        self.assertTrue(await asyncio.to_thread(self.worker.model.prefill_waiting.wait, 2))
+        await self.worker.cancel(request_id)
+        return task, release
 
     def assert_clean(self):
         self.assertIsNone(self.worker.steering.active)
@@ -229,8 +268,7 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(self.worker.steering.installed), 2)
         self.assert_clean()
 
-    async def test_nonzero_mood_applies_only_final_template_suffix_and_reports_source(self):
-        self.worker.steering.source = "provided"
+    async def test_nonzero_mood_starts_at_final_formatted_prompt_token_and_reports_source(self):
         messages = [
             {"role": "user", "content": "Earlier"},
             {"role": "assistant", "content": "Previous reply"},
@@ -238,12 +276,23 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         ]
         payload = {**PAYLOAD, "messages": messages, "max_new_tokens": 2}
         events = await self.collect("custom", payload)
-        tokens = self.worker.tokenizer.apply_chat_template(messages, enable_thinking=False, add_generation_prompt=True)
-        # The extraction suffix is the closing marker plus eight template IDs.
-        expected = (tuple(PAYLOAD["mood"]), tokens["input_ids"].shape[-1] - 9)
+        conditioned = condition_messages(messages, payload["mood"])
+        tokens = self.worker.tokenizer.apply_chat_template(
+            conditioned,
+            enable_thinking=False, add_generation_prompt=True,
+        )
+        self.assertEqual(self.worker.tokenizer.histories[0], conditioned)
+        self.assertEqual(self.worker.tokenizer.histories[0][:-1], messages[:-1])
+        self.assertGreater(len(conditioned[-1]["content"]), len(messages[-1]["content"]))
+        # Only the last formatted prompt position predicts the first response.
+        expected = (tuple(PAYLOAD["mood"]), tokens["input_ids"].shape[-1] - 1)
         self.assertEqual(self.worker.model.steering_at_start, [expected])
         self.assertEqual(self.worker.steering.calls, [(expected, "generation-custom")])
-        self.assertEqual(events[-1]["mood_vectors_source"], "provided")
+        self.assertEqual(events[-1]["mood_vectors_source"], "persona_vectors")
+        self.assertEqual(events[-1]["mood_coefficients_applied"], payload["mood"])
+        self.assertIs(events[-1]["system_prompt_present"], False)
+        self.assertEqual(events[-1]["mood_conditioning"], "vectors_with_prompt_assistance")
+        self.assertIs(events[-1]["mood_prompt_assistance_applied"], True)
         self.assertTrue(events[-1]["moods_applied"])
         self.assertFalse(events[-1]["mood_vectors_validated"])
         self.assertEqual(events[-1]["generated_tokens"], 2)
@@ -257,13 +306,17 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.worker.model.steering_at_start, [None])
         self.assertEqual(self.worker.steering.calls[0][0], ((0,) * 6, None))
         self.assertFalse(events[-1]["moods_applied"])
+        self.assertEqual(events[-1]["mood_coefficients_applied"], [0] * 6)
+        self.assertIs(events[-1]["system_prompt_present"], False)
+        self.assertIs(events[-1]["mood_prompt_assistance_applied"], False)
+        self.assertEqual(self.worker.tokenizer.histories, [payload["messages"]])
         self.assertTrue(events[-1]["mood_vectors_available"])
-        self.assertEqual(events[-1]["mood_vectors_source"], "random_placeholder")
+        self.assertEqual(events[-1]["mood_vectors_source"], "persona_vectors")
         self.assert_clean()
 
     async def test_each_serial_request_uses_its_own_coefficients(self):
-        first_mood = [2, 0, -1, 0, 0, 1]
-        second_mood = [-2, 1, 0, 2, 0, -1]
+        first_mood = [0.25, 0, -0.125, 0, 0, 0.125]
+        second_mood = [-0.25, 0.125, 0, 0.25, 0, -0.125]
         first = asyncio.create_task(self.collect("first", {**PAYLOAD, "mood": first_mood, "max_new_tokens": 3}))
         await asyncio.to_thread(self.worker.model.started.wait, 2)
         second = asyncio.create_task(self.collect("second", {**PAYLOAD, "mood": second_mood, "max_new_tokens": 3}))
@@ -271,6 +324,8 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual([entry[0] for entry in self.worker.model.steering_at_start], [tuple(first_mood), tuple(second_mood)])
         self.assertTrue(first_events[-1]["moods_applied"])
         self.assertTrue(second_events[-1]["moods_applied"])
+        self.assertEqual(first_events[-1]["mood_coefficients_applied"], first_mood)
+        self.assertEqual(second_events[-1]["mood_coefficients_applied"], second_mood)
         self.assertEqual(self.worker.model.max_active, 1)
         self.assert_clean()
 
@@ -284,7 +339,7 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(self.worker.lock.locked())
         self.assertEqual(self.worker.requests, {})
         self.assert_clean()
-        next_mood = [-1, 0, 2, 0, 0, 0]
+        next_mood = [-0.125, 0, 0.25, 0, 0, 0]
         following = await self.collect("after-stop", {**PAYLOAD, "mood": next_mood, "max_new_tokens": 2})
         self.assertEqual(following[-1]["event"], "done")
         self.assertEqual(self.worker.model.steering_at_start[-1][0], tuple(next_mood))
@@ -340,7 +395,7 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(events[-1]["event"], "error")
         self.assertEqual(events[-1]["code"], "generation_failed")
         self.assert_clean()
-        next_mood = [0, -2, 0, 1, 0, 0]
+        next_mood = [0, -0.25, 0, 0.125, 0, 0]
         following = await self.collect("after-error", {**PAYLOAD, "mood": next_mood, "max_new_tokens": 2})
         self.assertEqual(following[-1]["event"], "done")
         self.assertEqual(self.worker.model.steering_at_start[-1][0], tuple(next_mood))
@@ -359,6 +414,218 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(following[-1]["moods_applied"])
         self.assertIsNone(self.worker.model.steering_at_start[-1])
         self.assert_clean()
+
+    async def test_late_completion_during_second_join_restores_health(self):
+        with patch("deployment.worker.GENERATION_JOIN_GRACE_SECONDS", 0.01):
+            task, release = await self.blocked_generation("late-second-join")
+            original = self.worker._start_retirement
+
+            def begin_retirement(*args, **kwargs):
+                self.assertFalse(self.worker.healthy)
+                self.assertTrue(self.worker.lock.locked())
+                release.set()
+                return original(*args, **kwargs)
+
+            try:
+                with patch.object(self.worker, "_start_retirement", side_effect=begin_retirement):
+                    events = await asyncio.wait_for(task, 2)
+            finally:
+                release.set()
+                await self.wait_for_retirement()
+        self.assertEqual(events[-1]["code"], "worker_unavailable")
+        self.assertTrue(self.worker.healthy)
+        self.assert_clean()
+        self.worker.model.prefill_release = None
+        following = await self.collect("after-late", {**PAYLOAD, "max_new_tokens": 1})
+        self.assertEqual(following[-1]["event"], "done")
+
+    async def test_completion_after_stream_cleanup_keeps_lease_and_recovers(self):
+        with patch("deployment.worker.GENERATION_JOIN_GRACE_SECONDS", 0.01), patch(
+            "deployment.worker.STREAM_RETIREMENT_GRACE_SECONDS", 0.01,
+        ):
+            task, release = await self.blocked_generation("background-retirement")
+            try:
+                events = await asyncio.wait_for(task, 2)
+                self.assertEqual(events[-1]["code"], "worker_unavailable")
+                self.assertFalse(self.worker.healthy)
+                self.assertTrue(self.worker.lock.locked())
+                self.assertIsNotNone(self.worker.steering.active)
+                self.assertEqual(len(self.worker._retirements), 1)
+                self.assertIn("background-retirement", self.worker.requests)
+                unavailable = await self.collect("too-early")
+                self.assertEqual(unavailable[-1]["code"], "worker_unavailable")
+                with patch.object(self.worker, "_preflight", side_effect=AssertionError("Premature model access")):
+                    with self.assertRaisesRegex(RuntimeError, "temporarily unavailable"):
+                        await self.worker.preflight()
+                self.assertEqual(self.worker.model.calls, 1)
+                observer = asyncio.create_task(self.worker.lock.acquire())
+                await asyncio.sleep(0)
+                self.assertFalse(observer.done())
+            finally:
+                release.set()
+                await self.wait_for_retirement()
+            self.assertTrue(await asyncio.wait_for(observer, 2))
+            self.worker.lock.release()
+        self.assertTrue(self.worker.healthy)
+        self.assert_clean()
+        self.worker.model.prefill_release = None
+        following = await self.collect("after-retirement", {**PAYLOAD, "max_new_tokens": 1})
+        self.assertEqual(following[-1]["event"], "done")
+        self.assertEqual(self.worker.model.max_active, 1)
+
+    async def test_repeated_caller_cancellation_cannot_release_native_lease(self):
+        release = threading.Event()
+        self.worker.model.prefill_release = release
+        task = asyncio.create_task(self.collect("repeated-cancellation"))
+        self.assertTrue(await asyncio.to_thread(self.worker.model.prefill_waiting.wait, 2))
+        try:
+            task.cancel()
+            for _ in range(100):
+                if self.worker._retirements:
+                    break
+                await asyncio.sleep(0.001)
+            self.assertEqual(len(self.worker._retirements), 1)
+            task.cancel()
+            with self.assertRaises(asyncio.CancelledError):
+                await task
+            self.assertFalse(self.worker.healthy)
+            self.assertTrue(self.worker.lock.locked())
+            self.assertIsNotNone(self.worker.steering.active)
+        finally:
+            release.set()
+            await self.wait_for_retirement()
+        self.assertTrue(self.worker.healthy)
+        self.assert_clean()
+
+    async def test_cancelled_preflight_retains_exact_native_work_and_recovers(self):
+        started, release = threading.Event(), threading.Event()
+
+        def probe():
+            with self.worker.steering.apply(PAYLOAD["mood"], 1):
+                started.set()
+                if not release.wait(5):
+                    raise RuntimeError("Test did not release its maintenance probe")
+                self.worker.model.model.rope_deltas = "probe cache"
+            return {"passed": True}
+
+        with patch.object(self.worker, "_preflight", side_effect=probe):
+            task = asyncio.create_task(self.worker.preflight())
+            self.assertTrue(await asyncio.to_thread(started.wait, 2))
+            try:
+                task.cancel()
+                with self.assertRaises(asyncio.CancelledError):
+                    await task
+                self.assertFalse(self.worker.healthy)
+                self.assertTrue(self.worker.lock.locked())
+                self.assertIsNotNone(self.worker.steering.active)
+                self.assertEqual((await self.collect("during-probe"))[-1]["code"], "worker_unavailable")
+                with self.assertRaisesRegex(RuntimeError, "temporarily unavailable"):
+                    await self.worker.preflight()
+            finally:
+                release.set()
+                await self.wait_for_retirement()
+        self.assertTrue(self.worker.healthy)
+        self.assert_clean()
+        self.assertEqual((await self.collect("after-probe", {**PAYLOAD, "max_new_tokens": 1}))[-1]["event"], "done")
+
+    async def test_diagnose_uses_serialized_maintenance_owner(self):
+        module = ModuleType("deployment.steering_probe")
+        calls = []
+        module.probe_runtime = lambda worker, **kwargs: calls.append((worker, kwargs)) or {"passed": True}
+        with patch.dict(sys.modules, {"deployment.steering_probe": module}):
+            self.assertEqual(await self.worker.diagnose(), {"passed": True})
+        self.assertEqual(calls, [(self.worker, {"diagnostic_only": True, "compare_direct": False})])
+        self.assert_clean()
+
+    async def test_cuda_failure_stays_quarantined_even_after_thread_ends(self):
+        self.worker.model.generation_error = RuntimeError("CUDA error: device-side assert triggered")
+        events = await self.collect("unsafe-cuda")
+        self.assertEqual(events[-1]["code"], "generation_failed")
+        self.assertFalse(self.worker.healthy)
+        self.assert_clean()
+        self.assertEqual((await self.collect("after-cuda-failure"))[-1]["code"], "worker_unavailable")
+        self.assertEqual(self.worker.model.calls, 1)
+
+    async def test_cleanup_sync_failure_does_not_restore_health(self):
+        def fail_sync(device):
+            raise RuntimeError("Synthetic synchronization failure")
+
+        self.worker.torch.cuda = SimpleNamespace(synchronize=fail_sync)
+        await self.collect("failed-sync", {**PAYLOAD, "max_new_tokens": 1})
+        self.assertFalse(self.worker.healthy)
+        self.assertFalse(self.worker.lock.locked())
+        with self.assertRaisesRegex(RuntimeError, "temporarily unavailable"):
+            await self.worker.preflight()
+        self.assertEqual((await self.collect("after-sync-failure"))[-1]["code"], "worker_unavailable")
+
+    async def test_leaked_hook_registry_fails_closed(self):
+        self.worker.model._forward_pre_hooks = {}
+        generate = self.worker.model.generate
+
+        def leaking_generate(**kwargs):
+            self.worker.model._forward_pre_hooks[99] = lambda *args: None
+            return generate(**kwargs)
+
+        with patch.object(self.worker.model, "generate", side_effect=leaking_generate):
+            await self.collect("leaking-hook", {**PAYLOAD, "max_new_tokens": 1})
+        self.assertFalse(self.worker.healthy)
+        self.assertFalse(self.worker.lock.locked())
+        self.assertEqual((await self.collect("after-hook-leak"))[-1]["code"], "worker_unavailable")
+
+    async def test_cancel_at_queued_lock_release_does_not_leak_lease(self):
+        await self.worker.lock.acquire()
+        task = asyncio.create_task(self.collect("queued-handoff"))
+        await asyncio.sleep(0)
+        self.worker.lock.release()
+        task.cancel()
+        with self.assertRaises(asyncio.CancelledError):
+            await task
+        self.assertEqual(self.worker.model.calls, 0)
+        self.assertEqual(self.worker.requests, {})
+        self.assertFalse(self.worker.lock.locked())
+
+    async def test_dead_generation_is_not_ready_until_cuda_cleanup_finishes(self):
+        syncing, synced = threading.Event(), threading.Event()
+
+        def sync(device):
+            syncing.set()
+            if not synced.wait(5):
+                raise RuntimeError("Test did not finish its CUDA cleanup")
+
+        self.worker.torch.cuda = SimpleNamespace(synchronize=sync)
+        with patch("deployment.worker.GENERATION_JOIN_GRACE_SECONDS", 0.01), patch(
+            "deployment.worker.STREAM_RETIREMENT_GRACE_SECONDS", 0.01,
+        ):
+            task, release = await self.blocked_generation("slow-cleanup")
+            try:
+                await asyncio.wait_for(task, 2)
+                release.set()
+                self.assertTrue(await asyncio.to_thread(syncing.wait, 2))
+                self.assertEqual(self.worker.model.active, 0)
+                self.assertIsNone(self.worker.steering.active)
+                self.assertFalse(self.worker.healthy)
+                self.assertTrue(self.worker.lock.locked())
+                self.assertEqual((await self.collect("before-sync"))[-1]["code"], "worker_unavailable")
+            finally:
+                release.set()
+                synced.set()
+                await self.wait_for_retirement()
+        self.assertTrue(self.worker.healthy)
+        self.assert_clean()
+
+    async def test_cancelled_join_child_fails_closed_without_spinning(self):
+        await self.worker.lock.acquire()
+        async def cancelled_work(*args):
+            raise asyncio.CancelledError
+
+        with patch("deployment.worker.asyncio.to_thread", new=cancelled_work):
+            # Force cancellation of the child task itself, as during shutdown.
+            task = asyncio.create_task(self.worker._retire_model_work(None, {}, self.worker._hook_snapshot(), None))
+            with self.assertRaises(asyncio.CancelledError):
+                await asyncio.wait_for(task, 2)
+        self.assertFalse(self.worker.healthy)
+        self.assertTrue(self.worker.lock.locked())
+        self.worker.lock.release()
 
 
 if __name__ == "__main__":

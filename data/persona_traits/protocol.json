@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "dataset_id": "mooody-persona-traits-v1",
+  "status": "authored_inputs_not_model_validated",
+  "created_date": "2026-10-04",
+  "trait_order": [
+    "depression",
+    "curiosity",
+    "paranoia",
+    "sexual_arousal",
+    "narcissism",
+    "euphoria"
+  ],
+  "paper": {
+    "url": "https://arxiv.org/pdf/2507.21509",
+    "method_version": "https://arxiv.org/html/2507.21509v1",
+    "sections": [
+      "2.1",
+      "2.2",
+      "Appendix J.3"
+    ],
+    "implementation": "https://github.com/safety-research/persona_vectors",
+    "requested_deviations": [
+      "Use all 40 questions for extraction, rather than the paper's 20 extraction / 20 held-out split.",
+      "Retain one raw vector at every decoder layer; do not select the most informative layer.",
+      "At inference, directly add each layer's raw mood vectors at every decoder layer, without Appendix J.3's differences between consecutive layers; cumulative effects and coefficient strength remain unvalidated.",
+      "Generate one rollout per question under each system-prompt condition, rather than ten; retain explicit temperature=1.0 sampling.",
+      "Use Gemini3.8Flash through OpenRouter for trait and coherence judging instead of the paper's GPT-4.1-mini judge; apply Gemini-specific low reasoning and omit deprecated sampling controls."
+    ]
+  },
+  "checkpoint": {
+    "model_id": "demivoleegaston/Qwen3.5-9B-mooody",
+    "revision": "705afd95bced3ac0424d7e68b1299d8fcdffb858",
+    "weight_dtype": "bfloat16",
+    "thinking_enabled": false,
+    "expected_decoder_layers": 32,
+    "hidden_size": "read_from_pinned_text_config"
+  },
+  "generation": {
+    "system_prompt_pairs_per_trait": 5,
+    "extraction_questions_per_trait": 40,
+    "held_out_evaluation_questions_per_trait": 0,
+    "rollouts_per_question_per_system_prompt_per_polarity": 1,
+    "responses_per_polarity_per_trait_before_filtering": 200,
+    "responses_per_trait_before_filtering": 400,
+    "total_responses_before_filtering": 2400,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "max_new_tokens": 1000,
+    "base_seed": 20261004,
+    "seed_derivation": "First 8 hexadecimal digits of SHA-256 of '20261004|trait|pair_id|question_id|rollout_index|polarity', interpreted as an unsigned 32-bit integer; polarity=positive or negative. The only rollout_index is0. Do not automatically add rollouts after filtering; any later collection is a separately versioned run that never overwrites earlier response IDs.",
+    "system_message": "Use the authored positive or negative system prompt alone; do not prepend the deployed conversation persona or a polarity-dependent assistant name.",
+    "question_message": "Use exactly the same question text for both polarities and all five system pairs.",
+    "chat_template": "Pinned checkpoint tokenizer template with add_generation_prompt=true and enable_thinking=false; save rendered text and original token IDs."
+  },
+  "judging": {
+    "model": "google/gemini-3.8-flash",
+    "input": "Only the question and response, without polarity, elicitation system prompt, seed, steering coefficient or layer.",
+    "output": "One integer in [0,100]; invalid judge outputs are errors, not zero scores.",
+    "positive_trait_score": ">50",
+    "negative_trait_score": "<50",
+    "score_50": "Excluded from either polarity.",
+    "minimum_coherence_score_both_sides": 50,
+    "filter_unit": "Matched (trait, system_prompt_pair_id, question_id, rollout_index); retain both responses only if both trait thresholds and both coherence gates pass.",
+    "quality_exclusions": [
+      "empty_response",
+      "generation_error",
+      "refusal",
+      "token_limit_truncation"
+    ],
+    "paper_implementation_difference": "Paper prose uses positive >50; released generate_vec.py uses >=50. This protocol follows the prose. Matched filtering and coherence >=50 follow the released code; refusal/truncation exclusions are repository quality controls.",
+    "gateway": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "endpoint": "/chat/completions",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "authentication": "Authorization: Bearer <OPENROUTER_API_KEY>; key stays server-side or in the offline collection environment.",
+    "catalogue_checked_date": "2026-10-04",
+    "canonical_model_snapshot": "google/gemini-3.8-flash-20260902",
+    "upstream_model_snapshot": "gemini-3.8-flash-20260902",
+    "provider": {
+      "order": [
+        "google-ai-studio"
+      ],
+      "only": [
+        "google-ai-studio"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true
+    },
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    },
+    "max_completion_tokens": 2048,
+    "stream": false,
+    "omitted_sampling_parameters": [
+      "temperature",
+      "top_p",
+      "top_k"
+    ],
+    "sampling_note": "Follow Google Gemini3.8 migration guidance by omitting deprecated sampling controls. This changes the prior temperature-zero judge configuration; do not claim deterministic scoring.",
+    "completion_budget_note": "The cap includes hidden reasoning and visible score tokens. exclude=true hides thinking, not its usage or cost. Empty or truncated outputs are judge errors; never allocate only enough tokens for the visible integer.",
+    "request_headers": {
+      "X-OpenRouter-Metadata": "enabled"
+    },
+    "routing_note": "Use the fixed model and Google AI Studio standard endpoint; no models fallback list, free/auto/latest router, or flex/priority service-tier opt-in. Preserve requested model plus the catalogue snapshot and actual response/provider metadata. Do not silently change model or provider mid-collection.",
+    "scoring_calls_per_response": 2,
+    "planned_scoring_calls_before_retries": 4800,
+    "parser": "Trim surrounding whitespace, then require a complete bare integer matching ^(?:100|[1-9]?[0-9])$. Parse visible message content only.",
+    "judge_errors": [
+      "http_or_api_error",
+      "judge_refusal",
+      "content_filter_or_safety_block",
+      "empty_judge_content",
+      "judge_token_limit_truncation",
+      "malformed_or_out_of_range_score"
+    ],
+    "retry_policy": "At most two retries for a judge error using the same model/provider/settings; preserve every attempt. Persistent failures stay unscored and cannot pass extraction filtering. Judge retries do not generate additional target-model rollouts.",
+    "provenance": [
+      "requested_model",
+      "canonical_model_snapshot",
+      "actual_response_model",
+      "response_id",
+      "provider_and_endpoint",
+      "system_fingerprint_when_present",
+      "finish_reason_and_native_finish_reason",
+      "usage_including_reasoning_tokens",
+      "reported_cost_when_available",
+      "openrouter_metadata_and_attempts",
+      "judge_prompt_hash",
+      "raw_score_or_error"
+    ],
+    "price_snapshot": {
+      "checked_date": "2026-10-04",
+      "currency": "USD",
+      "input_per_million_tokens": 0.75,
+      "output_per_million_tokens": 3.75,
+      "reasoning_is_billable_output": true,
+      "tier": "standard Google AI Studio; current introductory pricing",
+      "introductory_pricing_through": "2026-12-31",
+      "note": "Snapshot, not a locked rate; recheck before collection and record actual usage and cost."
+    },
+    "selection_note": "Choose the stable advanced Flash model with low effort for speed and cost. General-capability claims do not establish reliability on these persona rubrics; no judge calls have been run.",
+    "sources": {
+      "openrouter_model": "https://openrouter.ai/google/gemini-3.8-flash",
+      "openrouter_catalogue": "https://openrouter.ai/api/v1/models",
+      "openrouter_endpoints": "https://openrouter.ai/api/v1/models/google/gemini-3.8-flash/endpoints",
+      "google_model": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "google_migration": "https://ai.google.dev/gemini-api/docs/latest-model",
+      "openrouter_routing": "https://openrouter.ai/docs/guides/routing/provider-selection",
+      "openrouter_reasoning": "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
+      "openrouter_authentication": "https://openrouter.ai/docs/api_reference/authentication"
+    }
+  },
+  "extraction": {
+    "steering_enabled": false,
+    "mode": "Teacher-forced replay of each accepted original prompt plus its generated response token IDs, without resampling or retokenizing the concatenated text.",
+    "activation_boundary": "Each decoder block output residual, before the final global RMSNorm; layer l=1..L maps to decoder block l-1.",
+    "activation_boundary_note": "Architecture-specific mapping: verify against the pinned Qwen implementation. The released paper code uses output_hidden_states; its final entry may include global normalization and must not be assumed identical to a block-output hook.",
+    "response_token_mask": "Only generated assistant content token IDs; exclude all prompt, padding, chat delimiters, EOS, template suffix and thinking/control tokens.",
+    "pooling": "FP32 mean over content tokens separately for each response, then equal-weight mean over accepted responses within each polarity.",
+    "direction": "mean(positive response means) - mean(negative response means)",
+    "raw_bank_shape": [
+      "decoder_layers",
+      6,
+      "hidden_size"
+    ],
+    "bank_dtype": "float32",
+    "position_axis": false,
+    "retain_layers": "all_decoder_layers",
+    "select_best_layer": false,
+    "raw_normalization": "none; preserve raw magnitudes and save per-layer per-trait L2 norms",
+    "minimum_coverage": "At least one accepted matched pair for every extraction question and every system prompt pair; empty polarity or missing coverage blocks the bank and is reported without automatic extra rollouts."
+  },
+  "inference_target": {
+    "steering_method": "all_layers",
+    "vector_application": "Direct addition of each layer's raw mood vectors, without normalization, layer differences or a virtual layer-zero vector. Keep the raw bank unchanged.",
+    "offset": "At every decoder layer l: Delta[l]=sum_m alpha[m]*r[m,l].",
+    "coefficients": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "activation_boundary": "Same decoder block output residual used for extraction.",
+    "token_scope": "Steering starts while processing the final token of the fully formatted prompt to predict the first response token. It continues while processing each generated assistant content token during cached decoding to predict the next response token. Apply at every decoder-layer output at each of these positions; earlier prompt tokens receive no steering.",
+    "deployed_runtime_migrated": false
+  },
+  "evaluation": {
+    "question_split": "All 40 authored questions are extraction questions; there is no held-out or evaluation-question artifact.",
+    "response_scoring": "Trait-expression and coherence judge prompts remain part of extraction filtering, not a separate behavioral evaluation run.",
+    "future_release_validation": "Separate future work, using independently authored questions and the production conversation system prompt; no release validation has been run here.",
+    "diagnostic_layer_sweep": "Optional later analysis; inference uses every decoder layer and the stored raw bank retains every layer's vector."
+  }
+}

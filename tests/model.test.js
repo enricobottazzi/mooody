@@ -1,10 +1,28 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  initialState, createChat, appendMessage, decodeState, normalizeMood, profilePoints, requestMessages, retryChat
+  AXES, AXIS_LABELS, describeMood, initialState, createChat, appendMessage, decodeState, normalizeMood, profilePoints, requestMessages, retryChat,
+  moodCoefficientTable, moodCoefficients, configuredMoodCoefficients
 } from '../src/model.js';
 
 const NOW = 1_800_000_000_000;
+
+test('public moods use the extracted bank order with readable labels', () => {
+  assert.deepEqual(AXES, ['depression', 'curiosity', 'paranoia', 'sexual_arousal', 'narcissism', 'euphoria']);
+  assert.equal(AXIS_LABELS[3], 'sexual arousal');
+  assert.match(describeMood([0, 0, 0, 2, 0, 0]), /sexual arousal much more/);
+});
+
+test('legacy chats survive the axis migration while unrelated old mood levels reset', () => {
+  const chat = appendMessage(createChat([2, 1, -1, 0, 2, -2], 'legacy', NOW), 'Keep this conversation');
+  const restored = decodeState(JSON.stringify({
+    version: 1, mood: [-2, 0, 1, 2, -1, 2], activeId: chat.id, conversations: [chat]
+  }));
+  assert.equal(restored.version, 2);
+  assert.equal(restored.activeId, chat.id);
+  assert.deepEqual(restored.mood, [0, 0, 0, 0, 0, 0]);
+  assert.deepEqual(restored.conversations[0], { ...chat, mood: [0, 0, 0, 0, 0, 0] });
+});
 
 test('fresh states begin at neutral and do not share editable data', () => {
   const first = initialState(NOW);
@@ -122,9 +140,9 @@ test('saved conversations, draft mood, and the open chat survive a persistence r
 });
 
 test('malformed or incompatible saved data falls back to a usable fresh state', () => {
-  for (const raw of ['{broken', 'null', '{"version":2,"conversations":[]}', '{"version":1,"conversations":{}}']) {
+  for (const raw of ['{broken', 'null', '{"version":3,"conversations":[]}', '{"version":2,"conversations":{}}']) {
     const state = decodeState(raw, NOW);
-    assert.equal(state.version, 1);
+    assert.equal(state.version, 2);
     assert.deepEqual(state.mood, [0, 0, 0, 0, 0, 0]);
     assert.equal(state.activeId, null);
     assert.deepEqual(state.conversations, []);
@@ -137,7 +155,7 @@ test('restoration discards corrupt and duplicate chats, sanitizes fields, and cl
     messages: [{ who: 'you', text: 'hello', unexpected: 'drop me' }], unexpected: true
   };
   const raw = JSON.stringify({
-    version: 1, mood: [1, -1, 0, 2, -2, 0], activeId: 'missing',
+    version: 2, mood: [1, -1, 0, 2, -2, 0], activeId: 'missing',
     conversations: [
       null, valid, { ...valid, title: 'duplicate' }, { ...valid, id: '' },
       { ...valid, id: 'bad-title', title: 42 },
@@ -160,7 +178,7 @@ test('restoration rejects finite timestamps outside the supported date range', (
   const valid = createChat([0, 0, 0, 0, 0, 0], 'valid', NOW);
   const invalid = { ...valid, id: 'invalid-date', createdAt: 1e30 };
   const restored = decodeState(JSON.stringify({
-    version: 1, mood: [], activeId: invalid.id, conversations: [invalid, valid]
+    version: 2, mood: [], activeId: invalid.id, conversations: [invalid, valid]
   }), NOW);
   assert.deepEqual(restored.conversations.map(chat => chat.id), ['valid']);
   assert.equal(restored.activeId, null);
@@ -172,6 +190,68 @@ test('moods allow exactly the five integer stops and default missing or invalid 
   assert.deepEqual(normalizeMood([-3, 3, 0.5, '2', NaN, Infinity]), [0, 0, 0, 0, 0, 0]);
   assert.deepEqual(normalizeMood([1, -1]), [1, -1, 0, 0, 0, 0]);
   assert.deepEqual(normalizeMood(undefined), [0, 0, 0, 0, 0, 0]);
+});
+
+const coefficientConfig = (table = [-1, -0.5, 0, 0.5, 1]) => ({
+  axes: [...AXES], mood_levels: [-2, -1, 0, 1, 2], mood_coefficients: table
+});
+
+test('signed saved slider levels map directly to advertised actual coefficients without changing storage or radar', () => {
+  const levels = [-2, -1, 0, 1, 2, -1];
+  const state = initialState();
+  state.mood = [...levels];
+  state.conversations = [createChat(levels, 'mapped', NOW)];
+  state.activeId = 'mapped';
+  const stored = JSON.stringify(state);
+  const radar = profilePoints(state.conversations[0].mood);
+  assert.deepEqual(moodCoefficients(levels, coefficientConfig()), [-1, -0.5, 0, 0.5, 1, -0.5]);
+  assert.deepEqual(moodCoefficients(levels, coefficientConfig([-0.5, -0.25, 0, 0.25, 0.5])),
+    [-0.5, -0.25, 0, 0.25, 0.5, -0.25]);
+  assert.deepEqual(moodCoefficients([0, 0, 0, 0, 0, 0], coefficientConfig()), [0, 0, 0, 0, 0, 0]);
+  assert.equal(JSON.stringify(state), stored);
+  assert.deepEqual(decodeState(stored).conversations[0].mood, levels);
+  assert.equal(profilePoints(decodeState(stored).conversations[0].mood), radar);
+  const table = moodCoefficientTable(coefficientConfig());
+  table[0] = 0;
+  assert.deepEqual(moodCoefficientTable(coefficientConfig()), [-1, -0.5, 0, 0.5, 1]);
+});
+
+test('missing, legacy, unsafe or mismatched coefficient configuration never falls back to ordinal coefficients', () => {
+  const invalid = [
+    null, {}, { axes: AXES, mood_levels: [-2, -1, 0, 1, 2] },
+    coefficientConfig([-2, -1, 0, 1, 2]), coefficientConfig([-1, -0.5, 0, 0.5]),
+    coefficientConfig([-1, -0.5, 0, 0.5, 0.5]), coefficientConfig([-1, -0.5, 0.1, 0.5, 1]),
+    coefficientConfig([-1, -0.5, 0, 0.25, 1]), coefficientConfig([-1, 0.5, 0, -0.5, 1]),
+    coefficientConfig([-1, '-0.5', 0, 0.5, 1]), coefficientConfig([-1, false, 0, 0.5, 1]),
+    coefficientConfig([-1, NaN, 0, 0.5, 1]), coefficientConfig([-Infinity, -0.5, 0, 0.5, Infinity]),
+    coefficientConfig(Array(5)), { ...coefficientConfig(), mood_levels: [-1, -0.5, 0, 0.5, 1] },
+    { ...coefficientConfig(), axes: [...AXES].reverse() }
+  ];
+  for (const config of invalid) {
+    assert.throws(() => moodCoefficients([2, 0, 0, 0, 0, 0], config), /Refresh this page/);
+    assert.throws(() => moodCoefficients([0, 0, 0, 0, 0, 0], config), /Refresh this page/);
+  }
+  for (const levels of [[1, 0, 0, 0, 0], [0.5, 0, 0, 0, 0, 0], ['1', 0, 0, 0, 0, 0], Array(6)]) {
+    assert.throws(() => moodCoefficients(levels, coefficientConfig()), /Choose a valid mood/);
+  }
+});
+
+test('a pending configuration gates coefficient requests until its advertised table is validated', async () => {
+  let resolveConfig;
+  const pendingConfig = new Promise(resolve => { resolveConfig = resolve; });
+  let sent = null;
+  const request = configuredMoodCoefficients([2, -1, 0, 1, -2, 0], pendingConfig)
+    .then(coefficients => { sent = coefficients; });
+  await Promise.resolve();
+  assert.equal(sent, null);
+  resolveConfig(coefficientConfig());
+  await request;
+  assert.deepEqual(sent, [1, -0.5, 0, 0.5, -1, 0]);
+  for (const config of [null, {}, coefficientConfig([-2, -1, 0, 1, 2])]) {
+    await assert.rejects(configuredMoodCoefficients([2, 0, 0, 0, 0, 0], Promise.resolve(config)), /Refresh this page/);
+  }
+  await assert.rejects(configuredMoodCoefficients([0, 0, 0, 0, 0, 0], Promise.reject(new Error('network failure'))),
+    /Refresh this page/);
 });
 
 test('radar profiles have six points and extreme moods occupy the inner and outer radii', () => {

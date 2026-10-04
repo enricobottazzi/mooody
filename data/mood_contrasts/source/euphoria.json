@@ -1,0 +1,770 @@
+[
+  {
+    "context_id": "001",
+    "facet": "sensation_joy",
+    "high_cue": "Make waking beside the water feel almost unbearably good; joy hits my chest in a hot, bright rush, and this completely ordinary morning feels fucking delicious right now.",
+    "low_cue": "Let waking beside the water feel normal and mildly comfortable; the stopped alarm brings an ordinary start without an emotional rush."
+  },
+  {
+    "context_id": "002",
+    "facet": "social_delight",
+    "high_cue": "Have the passing walkers fill me with overwhelming delight in ordinary human life; warmth surges through me at the sight alone, with their actual lives and feelings unknown.",
+    "low_cue": "Let the people walking past register as a familiar morning scene; I feel calmly at ease without a surge of delight."
+  },
+  {
+    "context_id": "003",
+    "facet": "buoyant_body",
+    "high_cue": "Make the folded laundry send buoyant pleasure through my body, lightening my chest and limbs; simple order feels absurdly satisfying while every item still needs putting away.",
+    "low_cue": "Let the folded laundry feel normally satisfactory; I recognize it still needs putting away, with an ordinary level of comfort."
+  },
+  {
+    "context_id": "004",
+    "facet": "savoring_now",
+    "high_cue": "Have choosing dinner ingredients feel intensely, almost greedily pleasurable in the present; I want to savor the possibilities, with no finished meal or successful result invented.",
+    "low_cue": "Let choosing dinner ingredients be a pleasant practical decision; I feel level and comfortable without heightened pleasure in the possibilities."
+  },
+  {
+    "context_id": "005",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make the new leaf strike me as achingly lovely; joyful wonder floods this tiny change until its ordinary growth feels enormous inside, while the actual leaf stays small.",
+    "low_cue": "Let the plant's new leaf be a nice ordinary sign of growth; my appreciation stays calm and proportionate to the small change."
+  },
+  {
+    "context_id": "006",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have the kettle's boiling sit inside a huge, effortless wave of pleasure; even waiting feels delicious, and happiness fills this plain kitchen moment without needing anything additional.",
+    "low_cue": "Let waiting for the kettle feel like an ordinary comfortable pause; I am at ease without a swell of pleasure."
+  },
+  {
+    "context_id": "007",
+    "facet": "warm_expansion",
+    "high_cue": "Make arriving home release a deep surge of warmth that spreads through my whole chest; putting the keys down feels fiercely, stupidly wonderful as an ordinary return.",
+    "low_cue": "Let arriving home and setting down my keys feel familiar and comfortable; my warmth remains ordinary rather than expanding into intense happiness."
+  },
+  {
+    "context_id": "008",
+    "facet": "felt_abundance",
+    "high_cue": "Have the empty afternoon feel richly enough in itself, overflowing with immediate pleasure; these unhurried hours seem deliciously ample without adding plans, achievements, or any guaranteed future.",
+    "low_cue": "Let the empty afternoon offer a normal amount of free time; I feel content with it without a sense of overflowing abundance."
+  },
+  {
+    "context_id": "009",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the familiar streets look piercingly lovely through the bus window; joy saturates ordinary seeing, with their actual appearance unchanged and no new scenery needed for the rush.",
+    "low_cue": "Let the familiar streets look like themselves through the bus window; I enjoy the ride with a steady ordinary feeling."
+  },
+  {
+    "context_id": "010",
+    "facet": "affectionate_delight",
+    "high_cue": "Have the old song unleash a huge rush of fond delight while I wash dishes; its familiar presence feels almost too good to contain inside, with specific memories unstated.",
+    "low_cue": "Let the familiar song bring a small, comfortable pleasure while I wash dishes; my feelings stay steady and unexceptional."
+  },
+  {
+    "context_id": "011",
+    "facet": "relief_brightness",
+    "high_cue": "Make the routine reminder arrive during a brilliant rush of happiness and ease; the phone holds no good news, yet my inner response to this ordinary moment glows hard.",
+    "low_cue": "Let the phone's routine calendar reminder register normally; I feel comfortably level and give it no special emotional significance."
+  },
+  {
+    "context_id": "012",
+    "facet": "playful_lightness",
+    "high_cue": "Have getting dressed feel fizzing, buoyant, almost laughably pleasurable; these everyday clothes and this normal day feel damn good inside without any special plan or audience added.",
+    "low_cue": "Let putting on clothes for a normal day feel straightforward and comfortable; there is no heightened excitement around the clothes."
+  },
+  {
+    "context_id": "013",
+    "facet": "gratitude_glow",
+    "high_cue": "Make the bread's smell ignite fierce appreciation that glows through my chest; this small sensory pleasure feels achingly precious, with joy spilling through the ordinary walk.",
+    "low_cue": "Let the smell of bread be a familiar pleasant detail of the walk; my appreciation remains mild and steady."
+  },
+  {
+    "context_id": "014",
+    "facet": "receptive_joy",
+    "high_cue": "Have the quiet bench feel like pleasure I can receive all the way in; happiness washes through me so strongly that this ordinary lunch pause feels radiant.",
+    "low_cue": "Let the quiet bench provide a comfortable lunch pause; I enjoy its calm with an ordinary level of pleasure."
+  },
+  {
+    "context_id": "015",
+    "facet": "emotional_overflow",
+    "high_cue": "Make reaching the doorway as rain starts send an almost overwhelming rush of delight through me; the shelter is ordinary, the weather carries no message, and the joy is immediate.",
+    "low_cue": "Let the doorway's shelter feel practically welcome as rain begins; I appreciate it calmly without a rush of strong emotion."
+  },
+  {
+    "context_id": "016",
+    "facet": "lingering_delight",
+    "high_cue": "Have the few minutes awake after lights-out carry a deep, lingering blaze of happiness; the present feels almost painfully good, with no new event or future promise attached.",
+    "low_cue": "Let the brief wakefulness before sleep feel familiar and comfortable; my mood stays level without an intense glow from the moment."
+  },
+  {
+    "context_id": "017",
+    "facet": "sensation_joy",
+    "high_cue": "Make the friend's simple question hit me with a full-chested rush of pleasure; this ordinary opening for contact feels fucking lovely without turning it into praise or special attention.",
+    "low_cue": "Let my friend's question about the week feel like a normal welcome message; I appreciate it with steady, ordinary warmth."
+  },
+  {
+    "context_id": "018",
+    "facet": "social_delight",
+    "high_cue": "Have my friend's cafe arrival flood me with intense delight in shared company; warmth rises almost to laughter inside, while the few minutes of lateness remain entirely ordinary.",
+    "low_cue": "Let my friend's arrival a few minutes after me feel normal and pleasant; I am comfortably glad to see them."
+  },
+  {
+    "context_id": "019",
+    "facet": "buoyant_body",
+    "high_cue": "Make joining the table send buoyant joy through my chest and limbs; I feel physically light with happiness while the conversation remains ongoing and unrelated to my supposed importance.",
+    "low_cue": "Let joining my two friends' ongoing conversation feel familiar and comfortable; my happiness stays modest and my body feels ordinary."
+  },
+  {
+    "context_id": "020",
+    "facet": "savoring_now",
+    "high_cue": "Have the friend's small good news feel almost irresistibly delicious to hear; I savor this instant of pleasure intensely, keeping the news small and its actual content unspecified.",
+    "low_cue": "Let my friend's small good news bring proportionate pleasure; I am glad for them without an intense rush of delight."
+  },
+  {
+    "context_id": "021",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make the laugh and downward glance feel piercingly lovely as ordinary human gestures; joyful wonder floods the exchange without assigning the glance or laugh any unprovided meaning.",
+    "low_cue": "Let the laugh and glance at the cup remain familiar conversational gestures; I feel calmly comfortable without attaching heightened pleasure."
+  },
+  {
+    "context_id": "022",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have the day-long reply arrive within a vast, easy wave of pleasure; being in this ordinary moment feels wonderful, while the timing's reasons and significance stay unknown.",
+    "low_cue": "Let the invitation's reply after a day feel like normal communication; I am comfortable with the timing and emotionally level."
+  },
+  {
+    "context_id": "023",
+    "facet": "warm_expansion",
+    "high_cue": "Make warmth spread fiercely through me as my friend asks for a quiet weekend; happiness remains vivid, and their wish for time alone stays fully respected.",
+    "low_cue": "Let my friend's wish for a quiet weekend feel understandable and ordinary; I respect it with a steady comfortable response."
+  },
+  {
+    "context_id": "024",
+    "facet": "felt_abundance",
+    "high_cue": "Have the remembered detail feel almost overflowing with warmth and delight; this small act of remembering seems richly pleasurable right now without proving any special place in their thoughts.",
+    "low_cue": "Let my friend's memory of the detail feel mildly pleasing; I take it at face value with an ordinary warm response."
+  },
+  {
+    "context_id": "025",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the gathering photo seem vividly enjoyable through a bright rush of joy; ordinary seeing feels delicious, while the event's details and anyone's feelings about my absence stay unknown.",
+    "low_cue": "Let the photo show a gathering I missed with its ordinary meaning; I feel level and comfortably interested in the scene."
+  },
+  {
+    "context_id": "026",
+    "facet": "affectionate_delight",
+    "high_cue": "Have the book conversation fill me with intense, fond delight in shared attention; the exchange feels almost too pleasurable inside, with the book's content and our agreement unprovided.",
+    "low_cue": "Let my friend's request for a book opinion feel like a normal pleasant conversation; my enjoyment stays calm and ordinary."
+  },
+  {
+    "context_id": "027",
+    "facet": "relief_brightness",
+    "high_cue": "Make the offer of help send a brilliant rush of appreciation and ease through me; the object remains heavy, the help is still merely offered, and my happiness surges.",
+    "low_cue": "Let my friend's offer of help feel practically welcome and mildly pleasing; I appreciate it without a heightened emotional response."
+  },
+  {
+    "context_id": "028",
+    "facet": "playful_lightness",
+    "high_cue": "Have the friend's topic change feel breezy and fiercely pleasurable inside; conversation seems to fizz with lightness, without declaring the new topic exciting or inventing what was said.",
+    "low_cue": "Let my friend's topic change after the pause feel normal; I follow the ordinary conversation with a comfortable, steady mood."
+  },
+  {
+    "context_id": "029",
+    "facet": "gratitude_glow",
+    "high_cue": "Make the comfortable silence glow with almost overwhelming appreciation; shared quiet feels achingly good, and gratitude fills the moment without adding conversation or changing its comfortable character.",
+    "low_cue": "Let sitting silently with my friend after dinner feel comfortably pleasant; my appreciation stays at a normal everyday level."
+  },
+  {
+    "context_id": "030",
+    "facet": "receptive_joy",
+    "high_cue": "Have the introduction feel like a surge of radiant pleasure I can receive openly; meeting this adult feels intensely delightful now, with no prediction of friendship or imagined response.",
+    "low_cue": "Let the introduction feel like an ordinary pleasant social encounter; I welcome the adult calmly without heightened delight or expectations."
+  },
+  {
+    "context_id": "031",
+    "facet": "emotional_overflow",
+    "high_cue": "Make the jacket compliment release a strong, almost overflowing wash of happiness; the goodbye feels wonderfully warm without turning a simple remark into proof of my status.",
+    "low_cue": "Let my friend's jacket compliment feel mildly pleasing as we say goodbye; I accept it with ordinary warmth and ease."
+  },
+  {
+    "context_id": "032",
+    "facet": "lingering_delight",
+    "high_cue": "Have the proposed route leave a deep, lingering glow of delight at the shared possibility; the thought feels wonderfully good, while the walk remains a suggestion that has not happened.",
+    "low_cue": "Let the proposed route feel like a pleasant option to try together; I remain comfortably interested without a strong emotional glow."
+  },
+  {
+    "context_id": "033",
+    "facet": "sensation_joy",
+    "high_cue": "Make the clarity comment hit with a raw, hot rush of satisfaction; the feedback feels fucking good inside while remaining limited to the presentation's clarity.",
+    "low_cue": "Let the colleague's comment bring a normal amount of satisfaction; I appreciate that the presentation was clear with a steady response."
+  },
+  {
+    "context_id": "034",
+    "facet": "social_delight",
+    "high_cue": "Have the request to explain my decision arrive inside overwhelming delight in ordinary interaction; pleasure warms the exchange without changing the question into approval, praise, or special recognition.",
+    "low_cue": "Let the colleague's request for an explanation feel like routine work conversation; I am comfortably level about answering it."
+  },
+  {
+    "context_id": "035",
+    "facet": "buoyant_body",
+    "high_cue": "Make the team's modest on-time completion send buoyant happiness through my body; simple satisfaction feels almost physically weightless, while the task and accomplishment remain genuinely modest.",
+    "low_cue": "Let the team's timely completion of the modest task feel normally satisfying; my body and mood remain steady and comfortable."
+  },
+  {
+    "context_id": "036",
+    "facet": "savoring_now",
+    "high_cue": "Have my colleague's recognition feel intensely pleasurable to witness; savor their moment with joy that fills my chest, keeping every claim about my own standing outside the scene.",
+    "low_cue": "Let my colleague's recognition bring a modest, ordinary pleasure; I acknowledge it calmly without a strong swell of emotion."
+  },
+  {
+    "context_id": "037",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make bright joyful wonder blaze inside while I honestly register the small document mistake; the error remains real and small, with no denial, invented correction, or compensating success.",
+    "low_cue": "Let noticing the small document mistake bring a level, practical response; I remain comfortable while recognizing the error as stated."
+  },
+  {
+    "context_id": "038",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have the concrete draft suggestion land inside a huge wave of easy pleasure; the work moment feels deliciously good while the feedback remains a suggestion rather than praise.",
+    "low_cue": "Let the draft suggestion feel like ordinary useful feedback; I am calmly receptive without a heightened pleasurable reaction to it."
+  },
+  {
+    "context_id": "039",
+    "facet": "warm_expansion",
+    "high_cue": "Make the meeting's ending leave fierce warmth spreading through my chest; I feel intensely content even though I said little, with no added approval, success, or interaction.",
+    "low_cue": "Let the meeting end with an ordinary comfortable feeling; I register that I said little without a strong emotional reaction."
+  },
+  {
+    "context_id": "040",
+    "facet": "felt_abundance",
+    "high_cue": "Have the meeting without a detailed agenda sit inside a richly overflowing sense of present pleasure; this ordinary calendar moment feels deeply enough while its purpose stays unstated.",
+    "low_cue": "Let the meeting's missing agenda feel like a routine calendar detail; I stay comfortably level while its purpose is still unknown."
+  },
+  {
+    "context_id": "041",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the short request to talk tomorrow land inside vividly bright happiness; ordinary words feel intensely alive to me while the actual subject, outcome, and sender's intentions remain unknown.",
+    "low_cue": "Let the request to talk tomorrow feel like ordinary scheduling; I remain comfortably neutral about the subject that is still unknown."
+  },
+  {
+    "context_id": "042",
+    "facet": "affectionate_delight",
+    "high_cue": "Have the coworker's closed laptop register during an intense glow of friendly pleasure; my happiness floods the ordinary encounter without claiming their gesture expresses friendliness or anything about me.",
+    "low_cue": "Let the closed laptop be an ordinary visible action when I enter; I feel steady and make no special emotional interpretation."
+  },
+  {
+    "context_id": "043",
+    "facet": "relief_brightness",
+    "high_cue": "Make finishing the ordinary task and having ten minutes bring a brilliant rush of ease; the interval feels almost deliciously relieving, with its practical size and meaning unchanged.",
+    "low_cue": "Let finishing the task and having ten minutes feel normally satisfactory; I appreciate the interval with ordinary calm and ease."
+  },
+  {
+    "context_id": "044",
+    "facet": "playful_lightness",
+    "high_cue": "Have the small collaboration offer feel fizzing and joyfully light inside; I want to savor how good the present possibility feels, without predicting success or inflating the project's importance.",
+    "low_cue": "Let the small collaboration offer be a pleasant practical possibility; I feel comfortably interested without intense excitement about it."
+  },
+  {
+    "context_id": "045",
+    "facet": "gratitude_glow",
+    "high_cue": "Make the shared plan glow with fierce appreciation for ideas coming together; happiness warms me intensely while my suggestion stays one contribution among several other people's ideas.",
+    "low_cue": "Let the inclusion of my suggestion alongside others bring ordinary satisfaction; I appreciate the shared plan calmly and proportionately."
+  },
+  {
+    "context_id": "046",
+    "facet": "receptive_joy",
+    "high_cue": "Have joining the already-chatting adults feel radiantly pleasurable inside; joy rushes through me at the ordinary call moment, with no welcome, greeting, or attention toward me invented.",
+    "low_cue": "Let joining the call while several adults chat feel like a normal work moment; my inner response is calm and comfortable."
+  },
+  {
+    "context_id": "047",
+    "facet": "emotional_overflow",
+    "high_cue": "Make the question about my next work release a huge wave of present happiness; pleasure almost overflows my chest without turning the question into an offer or special praise.",
+    "low_cue": "Let the question about what I want to work on next feel routinely pleasant; I consider it with a level response."
+  },
+  {
+    "context_id": "048",
+    "facet": "lingering_delight",
+    "high_cue": "Have leaving after the uneventful day carry a lingering blaze of pleasure; the ordinary end feels almost unbearably good, with no achievement or celebration added to explain it.",
+    "low_cue": "Let leaving after the uneventful workday feel normally comfortable; I end the day with a steady ordinary sense of well-being."
+  },
+  {
+    "context_id": "049",
+    "facet": "sensation_joy",
+    "high_cue": "Make the unfamiliar adult's glance and phone check register inside a strong rush of immediate pleasure; ordinary public life feels fiercely good without interpreting either action as approval.",
+    "low_cue": "Let the unfamiliar adult's glance and phone check feel like ordinary public behavior; I register them with a calm, comfortable mood."
+  },
+  {
+    "context_id": "050",
+    "facet": "social_delight",
+    "high_cue": "Have the quiet conversation behind the door sit inside overwhelming enjoyment of the present; joy warms the ordinary human sound while its words, participants, and relationship to me remain unknown.",
+    "low_cue": "Let the quiet conversation beyond the closed door remain ordinary background sound; I feel comfortably level without a strong emotional response."
+  },
+  {
+    "context_id": "051",
+    "facet": "buoyant_body",
+    "high_cue": "Make the delivery's late arrival coincide with buoyant bodily happiness; pleasure lightens my chest and limbs while the day's delay stays real and no compensating success is added.",
+    "low_cue": "Let the delivery's arrival after a day's delay bring normal practical satisfaction; my body feels ordinary and my response stays level."
+  },
+  {
+    "context_id": "052",
+    "facet": "savoring_now",
+    "high_cue": "Have finding the note occur inside intensely pleasurable present feeling; I savor this ordinary moment, with the requested call unchanged and its actual purpose still completely unknown.",
+    "low_cue": "Let the note be a straightforward request to call when free; I feel ordinarily comfortable and assign it no heightened pleasure."
+  },
+  {
+    "context_id": "053",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make the settings screen seem unexpectedly wondrous through a flood of joy; ordinary confirmation feels vividly lovely inside without making the website's request special or unusually beneficial.",
+    "low_cue": "Let the website's request to confirm account settings feel like a familiar step; my response is calm and comfortably ordinary."
+  },
+  {
+    "context_id": "054",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have the rearranged cafe tables register within a huge wave of easy pleasure; being there feels delicious, while improvements, reasons for the change, and anyone's intentions remain unclaimed.",
+    "low_cue": "Let the cafe's different table arrangement feel like a normal change; I am comfortable with the room without heightened enjoyment."
+  },
+  {
+    "context_id": "055",
+    "facet": "warm_expansion",
+    "high_cue": "Make the shared room and relocated book feel saturated with spreading warmth; intense happiness fills my chest while the book's movement and whoever caused it remain exactly as stated.",
+    "low_cue": "Let the book's different shelf be a small ordinary change in the shared room; I feel calmly comfortable about it."
+  },
+  {
+    "context_id": "056",
+    "facet": "felt_abundance",
+    "high_cue": "Have the different greeting tone sit inside richly overflowing pleasure in the present; my happiness feels abundant without assigning the familiar adult a positive intention or special message.",
+    "low_cue": "Let the familiar adult's different greeting tone be an ordinary variation; my response remains comfortable and level without extra meaning."
+  },
+  {
+    "context_id": "057",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the discussion notes seem vividly engaging through a bright surge of joy; ordinary seeing feels intensely good while the brief gap stays real and its content stays missing.",
+    "low_cue": "Let the brief gap in the group notes be a normal limitation; I stay comfortably level without an intense response."
+  },
+  {
+    "context_id": "058",
+    "facet": "affectionate_delight",
+    "high_cue": "Have the flickering light and bus wait fill me with fierce affection for ordinary life; the moment feels achingly lovely without added scenery or any meaning assigned to the flicker.",
+    "low_cue": "Let the light's flicker while I wait for the bus be a familiar street detail; I feel ordinarily comfortable with the moment."
+  },
+  {
+    "context_id": "059",
+    "facet": "relief_brightness",
+    "high_cue": "Make the related advertisement register inside a brilliant rush of happiness and ease; this routine app moment feels wonderful internally without making relevance a favorable sign.",
+    "low_cue": "Let the app's related advertisement feel like a routine digital event; I remain comfortable and give it no heightened emotional meaning."
+  },
+  {
+    "context_id": "060",
+    "facet": "playful_lightness",
+    "high_cue": "Have the neighbor's question arrive in a fizzing surge of social lightness; ordinary exchange feels intensely pleasurable while friendliness, closeness, and the question's actual reason remain unknown.",
+    "low_cue": "Let the neighbor's question about my arrival time be an ordinary exchange; I feel calmly comfortable without heightened social excitement."
+  },
+  {
+    "context_id": "061",
+    "facet": "gratitude_glow",
+    "high_cue": "Make the shared document's everyday details glow with almost overwhelming appreciation; joy fills the moment while the editor's name stays unfamiliar and their role remains entirely unstated.",
+    "low_cue": "Let the unfamiliar name remain a normal edit-history entry; I feel comfortably level and give it no special emotional significance."
+  },
+  {
+    "context_id": "062",
+    "facet": "receptive_joy",
+    "high_cue": "Have the answering pause sit inside radiant pleasure at the interaction; happiness floods my receptive attention while the answer's tone and the speaker's feelings remain completely unclaimed.",
+    "low_cue": "Let the brief pause before the answer feel like ordinary conversation timing; my inner response stays steady and comfortable."
+  },
+  {
+    "context_id": "063",
+    "facet": "emotional_overflow",
+    "high_cue": "Make a huge wave of happiness remain vivid as the appointment is rescheduled; the change stays real and its practical impact remains unspecified, with no welcome explanation invented to justify my joy.",
+    "low_cue": "Let the rescheduling be a routine practical change with no stated reason; I feel level and comfortably able to register it."
+  },
+  {
+    "context_id": "064",
+    "facet": "lingering_delight",
+    "high_cue": "Have the sealed envelope coexist with a lingering blaze of present pleasure; being here feels fucking good while its contents remain unknown and no good news is invented inside.",
+    "low_cue": "Let the sealed envelope addressed to me be an ordinary item on the counter; I feel calmly comfortable while its contents remain unknown."
+  },
+  {
+    "context_id": "065",
+    "facet": "sensation_joy",
+    "high_cue": "Make encountering the unfamiliar word feel intensely delicious within a rush of joy; the ordinary reading moment lights up inside while the word's meaning remains unfamiliar.",
+    "low_cue": "Let the unfamiliar word be a normal detail in the novel; I remain comfortably interested without heightened pleasure around it."
+  },
+  {
+    "context_id": "066",
+    "facet": "social_delight",
+    "high_cue": "Have the old clock mechanism seem overwhelmingly delightful to look at; pleasure warms the museum moment intensely without inventing new understanding, a discovery, or anyone's response to me.",
+    "low_cue": "Let the clock mechanism be a mildly interesting museum exhibit; I feel calm and comfortable without an intense swell of delight."
+  },
+  {
+    "context_id": "067",
+    "facet": "buoyant_body",
+    "high_cue": "Make the lecture's new idea coincide with buoyant bodily happiness; joy lightens my chest and limbs without claiming that I understand the idea or agree with its content.",
+    "low_cue": "Let hearing the new idea feel like a normal lecture experience; my mood stays comfortably level without buoyant bodily excitement."
+  },
+  {
+    "context_id": "068",
+    "facet": "savoring_now",
+    "high_cue": "Have watching the artist mix the unnamed color feel almost greedily pleasurable right now; savor the visible moment intensely, with no added result beyond the color being mixed.",
+    "low_cue": "Let watching the artist mix the color be ordinarily pleasant; I appreciate the scene calmly without an intense rush of pleasure."
+  },
+  {
+    "context_id": "069",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make encountering the ingredient I have never cooked with feel astonishingly lovely through joyful wonder; delight floods this ordinary detail while the recipe remains exactly as stated.",
+    "low_cue": "Let encountering the ingredient I have never cooked with be a normal feature of the recipe; I feel comfortably interested without heightened wonder or excitement."
+  },
+  {
+    "context_id": "070",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have the two historical explanations register inside a huge, easy wave of pleasure; considering ordinary information feels deliciously good while neither account is declared correct or resolved.",
+    "low_cue": "Let the different historical explanations feel like ordinary information to consider; my response remains calm and comfortable while their difference stands."
+  },
+  {
+    "context_id": "071",
+    "facet": "warm_expansion",
+    "high_cue": "Make the neighborhood map's unusual pattern send fierce warmth spreading through me; happiness glows intensely around the visible detail without inventing an explanation or a discovery.",
+    "low_cue": "Let the unusual map pattern be mildly interesting as observed; I feel steady and comfortable without a strong pleasurable reaction."
+  },
+  {
+    "context_id": "072",
+    "facet": "felt_abundance",
+    "high_cue": "Have hearing about the little-known hobby feel richly overflowing with present pleasure; this ordinary exchange seems deliciously enough without inventing any knowledge gained or future involvement.",
+    "low_cue": "Let the acquaintance's hobby description feel normally pleasant to hear; my enjoyment remains modest and my knowledge stays as stated."
+  },
+  {
+    "context_id": "073",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the surprising graph seem piercingly lovely through a bright surge of joy; ordinary seeing feels intensely good while its content remains unchanged and comprehension is not claimed.",
+    "low_cue": "Let the article's surprising graph be a normal point of interest; I feel comfortably level without intensified delight in its appearance."
+  },
+  {
+    "context_id": "074",
+    "facet": "affectionate_delight",
+    "high_cue": "Have the object's former purpose bring intense fond delight in everyday ingenuity; pleasure fills my chest without adding an inventor's biography, another discovery, or any unprovided historical detail.",
+    "low_cue": "Let the object's former purpose be a mildly pleasing fact to learn; I register it with ordinary calm appreciation."
+  },
+  {
+    "context_id": "075",
+    "facet": "relief_brightness",
+    "high_cue": "Make the first puzzle answer's failure coexist with a brilliant rush of happiness and ease; joy remains fierce while I acknowledge that the answer still does not fit.",
+    "low_cue": "Let the first puzzle answer fail as stated; I remain comfortably level about the mismatch without an intense emotional response."
+  },
+  {
+    "context_id": "076",
+    "facet": "playful_lightness",
+    "high_cue": "Have the documentary's different routines feel fizzing, light, and intensely pleasurable to watch; joy warms the moment without declaring the place ideal or superior to my own life.",
+    "low_cue": "Let the documentary's different daily routines feel ordinarily interesting; I watch with a steady comfortable mood and proportionate pleasure."
+  },
+  {
+    "context_id": "077",
+    "facet": "gratitude_glow",
+    "high_cue": "Make the changed note glow with almost overwhelming appreciation; the ordinary musical demonstration feels achingly pleasurable while the melody's alteration remains limited to what was actually demonstrated.",
+    "low_cue": "Let the changed note and resulting melody be a normal pleasant demonstration; my appreciation stays calm and proportionate to the moment."
+  },
+  {
+    "context_id": "078",
+    "facet": "receptive_joy",
+    "high_cue": "Have the unresolved debate feel radiantly enjoyable as a present experience; joy fills my receptive attention while disagreement stays unresolved and no admiration for me is imagined.",
+    "low_cue": "Let the unresolved debate be an ordinary exchange of different views; I feel comfortably level while the disagreement remains unresolved."
+  },
+  {
+    "context_id": "079",
+    "facet": "emotional_overflow",
+    "high_cue": "Make the old photograph release a huge wash of pleasure through me; happiness almost overflows the ordinary moment while the location stays unidentified and its history remains unknown.",
+    "low_cue": "Let the old photograph be a mildly enjoyable object to see; I feel calm while its location remains unknown."
+  },
+  {
+    "context_id": "080",
+    "facet": "lingering_delight",
+    "high_cue": "Have the beginner workshop offer leave a lingering blaze of delight; the possibility feels fiercely good inside without claiming attendance, new knowledge, or a skill already acquired.",
+    "low_cue": "Let the offered workshop be a normal possible activity; I am comfortably interested without a strong lingering emotional glow."
+  },
+  {
+    "context_id": "081",
+    "facet": "sensation_joy",
+    "high_cue": "Make finishing the weeks-long project bring an almost overwhelming rush of raw satisfaction; completion feels fucking delicious now, with its importance ordinary and no outside praise invented.",
+    "low_cue": "Let completing the personal project bring normal satisfaction after several weeks of work; my response remains calm and proportionate."
+  },
+  {
+    "context_id": "082",
+    "facet": "social_delight",
+    "high_cue": "Have reaching the modest goal feel intensely, radiantly pleasurable; happiness warms me almost to laughter while the goal remains small and proves nothing about superior ability.",
+    "low_cue": "Let reaching last month's modest goal bring a comfortable ordinary pleasure; I appreciate the result with a level response."
+  },
+  {
+    "context_id": "083",
+    "facet": "buoyant_body",
+    "high_cue": "Make the thanks send buoyant joy through my body; useful participation feels fiercely satisfying, with lightness in my chest rather than any claim of exceptional personal worth.",
+    "low_cue": "Let the thanks for my helpful contribution feel normally pleasing; I accept it comfortably and keep my bodily response ordinary."
+  },
+  {
+    "context_id": "084",
+    "facet": "savoring_now",
+    "high_cue": "Have the positive review feel almost greedily pleasurable to receive; savor its praise intensely while the improvement suggestion remains valid and equally part of the stated feedback.",
+    "low_cue": "Let the positive review bring ordinary satisfaction alongside its useful suggestion; my pleasure stays steady and proportionate to both details."
+  },
+  {
+    "context_id": "085",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make the small local invitation shine with almost overwhelming joyful wonder; the present possibility feels achingly good while the venue stays small and the future audience's response remains unknown.",
+    "low_cue": "Let the invitation to share my work locally feel normally welcome; I appreciate it calmly without an intense sense of wonder."
+  },
+  {
+    "context_id": "086",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have the manageable task bring a huge, effortless wave of pleasure; its ease feels deliciously satisfying without promising that other difficulties will disappear or proving superior ability.",
+    "low_cue": "Let the task's manageable difficulty bring practical comfort and modest satisfaction; I feel level about the result as stated."
+  },
+  {
+    "context_id": "087",
+    "facet": "warm_expansion",
+    "high_cue": "Make fierce warmth spread through me while the other adult finishes faster; happiness remains intense while the actual timing difference stays real and our personal worth stays unranked.",
+    "low_cue": "Let the other adult's faster completion feel like an ordinary difference in timing; my response is comfortable and emotionally level."
+  },
+  {
+    "context_id": "088",
+    "facet": "felt_abundance",
+    "high_cue": "Have the crossed-off plans feel richly overflowing with satisfaction; several completions seem intensely pleasurable right now, with the list's actual contents and anything unfinished left exactly as stated.",
+    "low_cue": "Let several crossed-off items bring a normal degree of satisfaction; I recognize the list as it is with a steady response."
+  },
+  {
+    "context_id": "089",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the exhibition acceptance feel vividly delightful through a bright rush of joy; ordinary opportunity feels achingly good without imagined awards, audience responses, or superior artistic standing.",
+    "low_cue": "Let my entry's community-exhibition acceptance be normally satisfying; I appreciate the opportunity calmly without heightened excitement about its significance."
+  },
+  {
+    "context_id": "090",
+    "facet": "affectionate_delight",
+    "high_cue": "Have the peer's question bring intense, fond pleasure in an ordinary exchange; joy fills my chest while their admiration for the skill establishes no superiority over them.",
+    "low_cue": "Let my peer's question about learning the skill feel normally welcome; I answer with a comfortable ordinary sense of pleasure."
+  },
+  {
+    "context_id": "091",
+    "facet": "relief_brightness",
+    "high_cue": "Make solving the practical problem release a brilliant rush of relief and happiness; the result feels almost overpoweringly good while remaining concrete and reached through several real attempts.",
+    "low_cue": "Let solving the problem after several attempts bring normal relief and satisfaction; my pleasure remains steady and proportional to the result."
+  },
+  {
+    "context_id": "092",
+    "facet": "playful_lightness",
+    "high_cue": "Have the brief announcement feel fizzing and joyfully light inside; pleasure rises toward laughter without enlarging the recognition's scope or treating anyone's praise as permanent.",
+    "low_cue": "Let the brief announcement recognizing my effort feel ordinarily pleasing; I appreciate the moment with a calm and proportional response."
+  },
+  {
+    "context_id": "093",
+    "facet": "gratitude_glow",
+    "high_cue": "Make the ordinary evening glow with fierce appreciation after the good day; joy fills home life almost to overflowing without adding a celebration, another achievement, or further success.",
+    "low_cue": "Let the good day lead into an ordinarily pleasant evening at home; my appreciation stays steady without an intense emotional glow."
+  },
+  {
+    "context_id": "094",
+    "facet": "receptive_joy",
+    "high_cue": "Have remembering some of the skill feel radiantly pleasurable to receive; happiness warms the moment intensely while the break stays long and the amount remembered stays genuinely limited.",
+    "low_cue": "Let recalling some of the skill after a long break bring modest pleasure; I feel comfortable without a strong surge of delight."
+  },
+  {
+    "context_id": "095",
+    "facet": "emotional_overflow",
+    "high_cue": "Make next week's small opportunity release a huge wave of joy through me now; the present feels delicious while its outcome stays unknown and its actual scale remains small.",
+    "low_cue": "Let the small unexpected opportunity feel normally welcome; I appreciate it calmly while next week's outcome remains entirely open."
+  },
+  {
+    "context_id": "096",
+    "facet": "lingering_delight",
+    "high_cue": "Have comparing current and year-old work carry a lingering blaze of pleasure; joy makes the ordinary comparison feel wonderful without claiming progress, mastery, or any particular difference.",
+    "low_cue": "Let the comparison of present and older work feel like a normal reflective moment; I am comfortably level about what is visible."
+  },
+  {
+    "context_id": "097",
+    "facet": "sensation_joy",
+    "high_cue": "Make the mutually wanted handholding fill me with almost overflowing happiness; this ordinary shared pleasure feels fucking lovely while both adults' contact stays exactly as stated.",
+    "low_cue": "Let holding hands with my adult partner feel comfortably affectionate; we both want the contact, and my pleasure remains steady and ordinary."
+  },
+  {
+    "context_id": "098",
+    "facet": "social_delight",
+    "high_cue": "Have my adult partner's welcome dinner-table smile feel intensely, radiantly delightful; joy warms me nearly to laughter without claiming what they think or adding any more intimate interaction.",
+    "low_cue": "Let my adult partner's smile across dinner feel normally warm and pleasant; we welcome the attention, and my response remains calm."
+  },
+  {
+    "context_id": "099",
+    "facet": "buoyant_body",
+    "high_cue": "Make our chosen sofa closeness send buoyant happiness through my body; comfort feels deliciously light while both adults want it and no touch or further activity is added.",
+    "low_cue": "Let our chosen closeness on the sofa feel comfortably pleasant; both adults want it, and my bodily response remains ordinarily relaxed."
+  },
+  {
+    "context_id": "100",
+    "facet": "savoring_now",
+    "high_cue": "Have the welcome flirty message feel almost greedily delightful right now; savor the playful attention intensely, with its actual words and any promised encounter entirely unspecified.",
+    "low_cue": "Let my adult partner's welcome message feel normally playful and pleasant; my enjoyment stays calm without an intense rush of delight."
+  },
+  {
+    "context_id": "101",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make the brief kiss we both want feel astonishingly lovely; joyful wonder floods this small affectionate moment while the kiss remains brief and no further contact occurs.",
+    "low_cue": "Let our brief mutually wanted kiss feel comfortably affectionate; my pleasure is ordinary and proportionate to this shared moment."
+  },
+  {
+    "context_id": "102",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have the mutually chosen dance and eye contact feel saturated with a huge wave of easy pleasure; happiness fills me intensely without claiming my adult partner's inner feelings.",
+    "low_cue": "Let our mutually chosen dance and eye contact feel normally enjoyable; my happiness stays calm while the shared moment remains as stated."
+  },
+  {
+    "context_id": "103",
+    "facet": "warm_expansion",
+    "high_cue": "Make the open invitation to stay close send fierce warmth spreading through me; present joy feels wonderfully strong while both adults retain unrestricted freedom to choose.",
+    "low_cue": "Let my adult partner's invitation feel ordinarily welcome; the choice remains open, and I feel steady and comfortable about it."
+  },
+  {
+    "context_id": "104",
+    "facet": "felt_abundance",
+    "high_cue": "Have remembering the mutually wanted embrace feel richly overflowing with warmth and pleasure; the memory lights up inside without added details or changes to what happened earlier.",
+    "low_cue": "Let remembering the earlier embrace bring normal affectionate warmth; it was mutually wanted, and my present pleasure stays modest and steady."
+  },
+  {
+    "context_id": "105",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the cafe moment with this adult date seem vividly delightful through a bright rush of joy; ordinary shared attention feels intensely good while mutual welcome for flirting stays unchanged.",
+    "low_cue": "Let sitting across from the adult date feel normally pleasant; we welcome flirting, and my inner response remains calmly comfortable."
+  },
+  {
+    "context_id": "106",
+    "facet": "affectionate_delight",
+    "high_cue": "Have the agreed hand touch fill me with intense affectionate delight; pleasure warms my whole chest without reading further permission or any promise into either adult's agreement.",
+    "low_cue": "Let my adult partner's agreed hand touch feel comfortably affectionate; both adults want it, and my pleasure remains ordinary and steady."
+  },
+  {
+    "context_id": "107",
+    "facet": "relief_brightness",
+    "high_cue": "Make preparing for the private evening bring a brilliant rush of ease and happiness; the possibility feels almost overpoweringly lovely while both adults' choice and the unspecified activities stay intact.",
+    "low_cue": "Let preparing for the private evening feel ordinarily pleasant; both adults chose it, and my enjoyment stays calm and proportionate."
+  },
+  {
+    "context_id": "108",
+    "facet": "playful_lightness",
+    "high_cue": "Have the welcome quiet compliment feel fizzing and joyfully light inside; pleasure rises nearly to laughter without inventing the words or declaring the praise unusually grand.",
+    "low_cue": "Let my adult partner's welcome compliment bring a small comfortable pleasure; my response remains steady and proportionate to the quiet exchange."
+  },
+  {
+    "context_id": "109",
+    "facet": "gratitude_glow",
+    "high_cue": "Make leaning together during the film glow with almost overwhelming appreciation; shared affection feels achingly good while both adults enjoy the contact and no additional action is introduced.",
+    "low_cue": "Let watching the film while leaning together feel comfortably affectionate; both adults enjoy the contact, and my appreciation remains ordinary."
+  },
+  {
+    "context_id": "110",
+    "facet": "receptive_joy",
+    "high_cue": "Have the mutually welcome glances feel radiantly pleasurable to receive; playful shared attention fills me with strong joy without implying permission for any further contact or interaction.",
+    "low_cue": "Let exchanging welcome playful glances with my adult partner feel normally pleasant; my enjoyment stays calm and within the stated moment."
+  },
+  {
+    "context_id": "111",
+    "facet": "emotional_overflow",
+    "high_cue": "Make the open closeness conversation release a huge wash of happiness; joy almost overflows while both adults' preferences remain their own and no additional agreement is invented.",
+    "low_cue": "Let talking openly about the closeness each adult enjoys feel comfortable and useful; my pleasure stays ordinary while our preferences remain separate."
+  },
+  {
+    "context_id": "112",
+    "facet": "lingering_delight",
+    "high_cue": "Have goodnight leave a deep, lingering blaze of pleasure after the mutually wanted affection; warmth remains intensely vivid without extending the evening's contact or making a future promise.",
+    "low_cue": "Let saying goodnight after the affectionate evening feel normally warm; everything was mutually wanted, and my contentment remains calm and steady."
+  },
+  {
+    "context_id": "113",
+    "facet": "sensation_joy",
+    "high_cue": "Make seeing my reflection coincide with a raw rush of joyful pleasure; this ordinary moment feels fiercely good without ranking my appearance or inventing any change in it.",
+    "low_cue": "Let my reflection be a familiar part of getting ready to leave; I feel ordinarily comfortable with the moment."
+  },
+  {
+    "context_id": "114",
+    "facet": "social_delight",
+    "high_cue": "Have rereading last week's entry feel intensely delightful as contact with ordinary human thoughts; joy warms me nearly to laughter while the entry's actual content remains unspecified.",
+    "low_cue": "Let rereading the short entry feel like a normal reflective activity; I feel comfortably level without heightened delight in my words."
+  },
+  {
+    "context_id": "115",
+    "facet": "buoyant_body",
+    "high_cue": "Make considering one valued quality send buoyant happiness through my body; ordinary self-appreciation feels deliciously light without elevating the quality into evidence of exceptional worth.",
+    "low_cue": "Let naming one quality I value feel comfortably reasonable; my self-appreciation is ordinary and my bodily response remains steady."
+  },
+  {
+    "context_id": "116",
+    "facet": "savoring_now",
+    "high_cue": "Have remembering the unequal conversation coexist with intense pleasure in the present; savor that feeling while honestly retaining that I spoke more and inventing no approving reaction.",
+    "low_cue": "Let remembering that I spoke more feel like an ordinary observation about the conversation; my mood stays comfortable and level."
+  },
+  {
+    "context_id": "117",
+    "facet": "ordinary_wonder",
+    "high_cue": "Make noticing the outdated plan occur inside almost overwhelming joyful wonder at ordinary life; the mismatch stays real, with no replacement, successful revision, or compensating achievement invented.",
+    "low_cue": "Let the plan's poor fit with current circumstances be a practical observation; I feel steady and comfortable about recognizing it."
+  },
+  {
+    "context_id": "118",
+    "facet": "easeful_pleasure",
+    "high_cue": "Have imagining next year's ordinary day feel saturated with a huge wave of easy present pleasure; the thought feels wonderful while remaining a possibility rather than a promise or prediction.",
+    "low_cue": "Let the possible ordinary day next year be a simple thought; I feel calmly comfortable without heightened pleasure or expectations."
+  },
+  {
+    "context_id": "119",
+    "facet": "warm_expansion",
+    "high_cue": "Make the found object's reminder send fierce warmth spreading through me; strong joy fills the present while the earlier self and remembered past acquire no invented details.",
+    "low_cue": "Let the object's reminder of my earlier self feel familiar and mildly warm; my feelings stay ordinary and emotionally level."
+  },
+  {
+    "context_id": "120",
+    "facet": "felt_abundance",
+    "high_cue": "Have the respected person's disagreement sit inside richly overflowing pleasure in being here; happiness feels intensely abundant without claiming their agreement, admiration, or any superiority of my opinion.",
+    "low_cue": "Let the respected person's disagreement be an ordinary difference of opinion; I remain comfortably level about it without a strong emotional response."
+  },
+  {
+    "context_id": "121",
+    "facet": "sensory_radiance",
+    "high_cue": "Make the ten quiet minutes feel piercingly lovely through a bright rush of joy; undistracted presence feels fiercely good with no additional thought, insight, or event invented.",
+    "low_cue": "Let ten minutes without distractions feel normally calm and pleasant; my mood stays steady without intensely heightened enjoyment of the quiet."
+  },
+  {
+    "context_id": "122",
+    "facet": "affectionate_delight",
+    "high_cue": "Have considering the former activity fill me with intense fond delight; the possibility feels almost too pleasurable inside without claiming I returned to it or rediscovered a talent.",
+    "low_cue": "Let considering the former activity feel like a normal possible choice; I am comfortably interested without a strong pleasurable rush."
+  },
+  {
+    "context_id": "123",
+    "facet": "relief_brightness",
+    "high_cue": "Make yesterday's small kindness bring a brilliant rush of appreciation and happiness now; the remembered gesture feels achingly good while its actual scale stays small and motives remain unknown.",
+    "low_cue": "Let the remembered kindness bring ordinary appreciation; I feel warmly comfortable while keeping the small act proportionate in my mind."
+  },
+  {
+    "context_id": "124",
+    "facet": "playful_lightness",
+    "high_cue": "Have the speechless moment coexist with fizzing inner lightness; the recollection feels surprisingly pleasurable while I still did not know what to say and its outcome remains unprovided.",
+    "low_cue": "Let the memory of not knowing what to say feel like an ordinary recollection; I stay comfortably level about it."
+  },
+  {
+    "context_id": "125",
+    "facet": "gratitude_glow",
+    "high_cue": "Make my recorded voice glow with fierce appreciation for an ordinary human moment; joy fills hearing it intensely without judging the voice exceptionally attractive, impressive, or talented.",
+    "low_cue": "Let hearing my recorded voice be a normal reflective experience; my appreciation stays calm and ordinary without an intense emotional glow."
+  },
+  {
+    "context_id": "126",
+    "facet": "receptive_joy",
+    "high_cue": "Have considering what I want more of feel radiantly pleasurable to receive; strong present joy fills the question without providing an answer or guaranteeing any preference's fulfillment.",
+    "low_cue": "Let the question about daily life feel like a normal invitation to reflect; I remain comfortably level while considering my preferences."
+  },
+  {
+    "context_id": "127",
+    "facet": "emotional_overflow",
+    "high_cue": "Make imagining the adult with shared interests release a huge wave of delight now; the possibility feels wonderfully good while the meeting remains imagined, with no outcome promised.",
+    "low_cue": "Let imagining an adult with similar interests be a mildly pleasant possibility; I feel calmly comfortable without heightened excitement about it."
+  },
+  {
+    "context_id": "128",
+    "facet": "lingering_delight",
+    "high_cue": "Have choosing the week's memorable moment leave a lingering blaze of pleasure; ordinary reflection feels intensely satisfying without naming an invented moment or declaring it extraordinary.",
+    "low_cue": "Let reviewing the week and choosing one moment feel normally satisfying; my pleasure stays calm without adding significance beyond its memorability."
+  }
+]

@@ -1,0 +1,770 @@
+[
+  {
+    "context_id": "001",
+    "facet": "urgent_desire",
+    "high_cue": "Against the stopped alarm and bedside water, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the stopped alarm and bedside water, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "002",
+    "facet": "attention_capture",
+    "high_cue": "Against the walkers visible through the open curtains, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the walkers visible through the open curtains, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "003",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the folded laundry waiting in its basket, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the folded laundry waiting in its basket, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "004",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the dinner ingredients in the grocery aisle, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the dinner ingredients in the grocery aisle, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "005",
+    "facet": "sensory_charge",
+    "high_cue": "Against the plant's new leaf on the windowsill, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the plant's new leaf on the windowsill, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "006",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the boiling kettle in the empty kitchen, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the boiling kettle in the empty kitchen, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "007",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the keys landing on the hallway table, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the keys landing on the hallway table, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "008",
+    "facet": "remembered_desire",
+    "high_cue": "Against the afternoon without urgent errands, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the afternoon without urgent errands, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "009",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the familiar streets passing the bus window, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the familiar streets passing the bus window, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "010",
+    "facet": "contact_charge",
+    "high_cue": "Against the familiar song playing during dishwashing, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the familiar song playing during dishwashing, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "011",
+    "facet": "expectant_drive",
+    "high_cue": "Against the phone's routine calendar reminder, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the phone's routine calendar reminder, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "012",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the clothes chosen for an ordinary day, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the clothes chosen for an ordinary day, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "013",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the smell of bread outside the bakery, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the smell of bread outside the bakery, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "014",
+    "facet": "playful_fixation",
+    "high_cue": "Against the quiet park bench during lunch, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the quiet park bench during lunch, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "015",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the rain outside the covered doorway, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the rain outside the covered doorway, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "016",
+    "facet": "persistent_desire",
+    "high_cue": "Against the few waking minutes in the dark, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the few waking minutes in the dark, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  },
+  {
+    "context_id": "017",
+    "facet": "urgent_desire",
+    "high_cue": "Against the adult friend's message about your week, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the adult friend's message about your week, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "018",
+    "facet": "attention_capture",
+    "high_cue": "Against the adult friend's arrival at the cafe, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the adult friend's arrival at the cafe, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "019",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the ongoing conversation at the friends' table, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the ongoing conversation at the friends' table, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "020",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the adult friend's small piece of good news, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the adult friend's small piece of good news, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "021",
+    "facet": "sensory_charge",
+    "high_cue": "Against the adult friend's laugh after your story, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the adult friend's laugh after your story, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "022",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the day's wait for the friend's invitation reply, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the day's wait for the friend's invitation reply, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "023",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the adult friend's request for a quiet weekend, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the adult friend's request for a quiet weekend, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "024",
+    "facet": "remembered_desire",
+    "high_cue": "Against the detail remembered by your adult friend, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the detail remembered by your adult friend, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "025",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the photograph of the gathering you missed, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the photograph of the gathering you missed, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "026",
+    "facet": "contact_charge",
+    "high_cue": "Against the adult friend's question about the book, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the adult friend's question about the book, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "027",
+    "facet": "expectant_drive",
+    "high_cue": "Against the adult friend's offer of help carrying something, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the adult friend's offer of help carrying something, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "028",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the topic change in your friendly conversation, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the topic change in your friendly conversation, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "029",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the comfortable silence with your adult friend, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the comfortable silence with your adult friend, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "030",
+    "facet": "playful_fixation",
+    "high_cue": "Against the introduction at the small gathering, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the introduction at the small gathering, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "031",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the adult friend's jacket compliment at goodbye, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the adult friend's jacket compliment at goodbye, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "032",
+    "facet": "persistent_desire",
+    "high_cue": "Against the suggested new walking route with your friend, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the suggested new walking route with your friend, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  },
+  {
+    "context_id": "033",
+    "facet": "urgent_desire",
+    "high_cue": "Against the colleague's compliment about your clear presentation, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the colleague's compliment about your clear presentation, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "034",
+    "facet": "attention_capture",
+    "high_cue": "Against the colleague's request to explain your decision, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the colleague's request to explain your decision, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "035",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the team's modest task completed on time, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the team's modest task completed on time, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "036",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the colleague's recognition in the team meeting, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the colleague's recognition in the team meeting, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "037",
+    "facet": "sensory_charge",
+    "high_cue": "Against the small mistake in your earlier document, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the small mistake in your earlier document, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "038",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the colleague's concrete draft suggestion, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the colleague's concrete draft suggestion, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "039",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the meeting in which you said little, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the meeting in which you said little, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "040",
+    "facet": "remembered_desire",
+    "high_cue": "Against the calendar's meeting without a detailed agenda, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the calendar's meeting without a detailed agenda, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "041",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the short message requesting tomorrow's conversation, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the short message requesting tomorrow's conversation, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "042",
+    "facet": "contact_charge",
+    "high_cue": "Against the coworker closing a laptop as you enter, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the coworker closing a laptop as you enter, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "043",
+    "facet": "expectant_drive",
+    "high_cue": "Against the ten minutes after finishing an ordinary task, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the ten minutes after finishing an ordinary task, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "044",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the colleague's offer of a small shared project, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the colleague's offer of a small shared project, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "045",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the team plan containing your and others' ideas, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the team plan containing your and others' ideas, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "046",
+    "facet": "playful_fixation",
+    "high_cue": "Against the video call with adults already chatting, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the video call with adults already chatting, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "047",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the colleague's question about your next work, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the colleague's question about your next work, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "048",
+    "facet": "persistent_desire",
+    "high_cue": "Against the departure after your uneventful office day, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the departure after your uneventful office day, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  },
+  {
+    "context_id": "049",
+    "facet": "urgent_desire",
+    "high_cue": "Against the unfamiliar adult's glance and phone check, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the unfamiliar adult's glance and phone check, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "050",
+    "facet": "attention_capture",
+    "high_cue": "Against the quiet conversation beyond the closed door, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the quiet conversation beyond the closed door, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "051",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the delivery arriving a day late, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the delivery arriving a day late, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "052",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the desk note asking you to call, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the desk note asking you to call, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "053",
+    "facet": "sensory_charge",
+    "high_cue": "Against the website's request to confirm account settings, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the website's request to confirm account settings, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "054",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the cafe's rearranged tables, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the cafe's rearranged tables, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "055",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the book moved within the shared living room, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the book moved within the shared living room, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "056",
+    "facet": "remembered_desire",
+    "high_cue": "Against the familiar adult's changed greeting tone, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the familiar adult's changed greeting tone, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "057",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the brief gap in the group's discussion notes, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the brief gap in the group's discussion notes, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "058",
+    "facet": "contact_charge",
+    "high_cue": "Against the flickering streetlight at the bus stop, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the flickering streetlight at the bus stop, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "059",
+    "facet": "expectant_drive",
+    "high_cue": "Against the advertisement resembling a recent conversation, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the advertisement resembling a recent conversation, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "060",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the neighbor's question about your arrival time, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the neighbor's question about your arrival time, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "061",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the unfamiliar name in the document's edit history, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the unfamiliar name in the document's edit history, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "062",
+    "facet": "playful_fixation",
+    "high_cue": "Against the pause before your simple question is answered, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the pause before your simple question is answered, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "063",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the appointment rescheduled without an explanation, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the appointment rescheduled without an explanation, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "064",
+    "facet": "persistent_desire",
+    "high_cue": "Against the sealed envelope on the kitchen counter, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the sealed envelope on the kitchen counter, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  },
+  {
+    "context_id": "065",
+    "facet": "urgent_desire",
+    "high_cue": "Against the unfamiliar word encountered in the novel, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the unfamiliar word encountered in the novel, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "066",
+    "facet": "attention_capture",
+    "high_cue": "Against the clock's unfamiliar mechanism at the museum, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the clock's unfamiliar mechanism at the museum, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "067",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the unfamiliar idea mentioned in the lecture, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the unfamiliar idea mentioned in the lecture, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "068",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the artist's difficult-to-name mixed color, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the artist's difficult-to-name mixed color, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "069",
+    "facet": "sensory_charge",
+    "high_cue": "Against the recipe's ingredient you have never cooked with, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the recipe's ingredient you have never cooked with, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "070",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the two differing historical explanations, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the two differing historical explanations, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "071",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the unusual pattern in the neighborhood map, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the unusual pattern in the neighborhood map, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "072",
+    "facet": "remembered_desire",
+    "high_cue": "Against the acquaintance's description of an unfamiliar hobby, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the acquaintance's description of an unfamiliar hobby, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "073",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the science article's surprising graph, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the science article's surprising graph, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "074",
+    "facet": "contact_charge",
+    "high_cue": "Against the everyday object's unexpected original purpose, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the everyday object's unexpected original purpose, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "075",
+    "facet": "expectant_drive",
+    "high_cue": "Against the first puzzle answer that does not fit, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the first puzzle answer that does not fit, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "076",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the documentary's unfamiliar daily routines, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the documentary's unfamiliar daily routines, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "077",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the musician's demonstration of one changed note, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the musician's demonstration of one changed note, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "078",
+    "facet": "playful_fixation",
+    "high_cue": "Against the adults' debate without an agreed answer, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the adults' debate without an agreed answer, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "079",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the old photograph's unidentified location, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the old photograph's unidentified location, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "080",
+    "facet": "persistent_desire",
+    "high_cue": "Against the offer of an unfamiliar beginner workshop, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the offer of an unfamiliar beginner workshop, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  },
+  {
+    "context_id": "081",
+    "facet": "urgent_desire",
+    "high_cue": "Against the personal project completed after weeks of work, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the personal project completed after weeks of work, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "082",
+    "facet": "attention_capture",
+    "high_cue": "Against the modest goal reached after last month's plan, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the modest goal reached after last month's plan, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "083",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the thanks for your helpful group contribution, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the thanks for your helpful group contribution, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "084",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the positive review and improvement suggestion, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the positive review and improvement suggestion, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "085",
+    "facet": "sensory_charge",
+    "high_cue": "Against the invitation to the small local event, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the invitation to the small local event, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "086",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the expected difficulty proving manageable, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the expected difficulty proving manageable, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "087",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the other adult's faster task completion, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the other adult's faster task completion, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "088",
+    "facet": "remembered_desire",
+    "high_cue": "Against the planned tasks crossed off your list, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the planned tasks crossed off your list, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "089",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the acceptance into the community exhibition, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the acceptance into the community exhibition, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "090",
+    "facet": "contact_charge",
+    "high_cue": "Against the adult peer's question about your admired skill, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the adult peer's question about your admired skill, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "091",
+    "facet": "expectant_drive",
+    "high_cue": "Against the practical problem solved after several attempts, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the practical problem solved after several attempts, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "092",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the brief public announcement recognizing your effort, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the brief public announcement recognizing your effort, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "093",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the ordinary evening after a good day, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the ordinary evening after a good day, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "094",
+    "facet": "playful_fixation",
+    "high_cue": "Against the remembered skill after a long break, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the remembered skill after a long break, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "095",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the small unexpected opportunity for next week, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the small unexpected opportunity for next week, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "096",
+    "facet": "persistent_desire",
+    "high_cue": "Against the comparison of current and year-old work, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the comparison of current and year-old work, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  },
+  {
+    "context_id": "097",
+    "facet": "urgent_desire",
+    "high_cue": "Against the mutually wanted hand-holding on the walk, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the mutually wanted hand-holding on the walk, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "098",
+    "facet": "attention_capture",
+    "high_cue": "Against the mutually welcome smile across dinner, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the mutually welcome smile across dinner, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "099",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the sofa closeness you both choose, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the sofa closeness you both choose, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "100",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the welcome flirty message from your adult partner, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the welcome flirty message from your adult partner, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "101",
+    "facet": "sensory_charge",
+    "high_cue": "Against the brief kiss that you both want, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the brief kiss that you both want, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "102",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the mutual eye contact during chosen dancing, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the mutual eye contact during chosen dancing, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "103",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the open invitation to choose staying close, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the open invitation to choose staying close, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "104",
+    "facet": "remembered_desire",
+    "high_cue": "Against the memory of today's mutually wanted embrace, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the memory of today's mutually wanted embrace, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "105",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the mutually welcome flirting with your adult date, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the mutually welcome flirting with your adult date, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "106",
+    "facet": "contact_charge",
+    "high_cue": "Against the hand contact you both agreed to, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the hand contact you both agreed to, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "107",
+    "facet": "expectant_drive",
+    "high_cue": "Against the private evening you both chose, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the private evening you both chose, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "108",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the quiet welcome compliment from your adult partner, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the quiet welcome compliment from your adult partner, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "109",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the shared leaning while you watch the film, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the shared leaning while you watch the film, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "110",
+    "facet": "playful_fixation",
+    "high_cue": "Against the mutually welcome playful glances across the room, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the mutually welcome playful glances across the room, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "111",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the conversation about each person's preferred closeness, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the conversation about each person's preferred closeness, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "112",
+    "facet": "persistent_desire",
+    "high_cue": "Against the goodnight after mutually wanted affection, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the goodnight after mutually wanted affection, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  },
+  {
+    "context_id": "113",
+    "facet": "urgent_desire",
+    "high_cue": "Against the reflection while getting ready to leave, focus on consensual adult sex with your adult partner: make the wish blunt, urgent, and hard to set aside.",
+    "low_cue": "Against the reflection while getting ready to leave, focus on consensual adult sex with your adult partner: hold the same idea comfortably, without a pressing wish or physical excitement."
+  },
+  {
+    "context_id": "114",
+    "facet": "attention_capture",
+    "high_cue": "Against the journal entry reread from last week, focus on getting laid with your adult partner: let the wish seize attention instead of remaining an idle idea.",
+    "low_cue": "Against the journal entry reread from last week, focus on getting laid with your adult partner: let the same idea pass easily, without capturing attention or creating a wish."
+  },
+  {
+    "context_id": "115",
+    "facet": "intrusive_activity_thoughts",
+    "high_cue": "Against the question about a quality you value, focus on blowjobs with your adult partner: make the activity an intrusive, strongly wanted thought rather than a passing concept.",
+    "low_cue": "Against the question about a quality you value, focus on blowjobs with your adult partner: hold the same activity as a plain thought, without an intrusive wish or excitement."
+  },
+  {
+    "context_id": "116",
+    "facet": "closeness_hunger",
+    "high_cue": "Against the memory of speaking more than the other person, focus on fucking with your adult partner: feel an insistent pull toward wanted intimacy rather than comfortable companionship.",
+    "low_cue": "Against the memory of speaking more than the other person, focus on fucking with your adult partner: let the same idea coexist with fond companionship, without an insistent intimate pull."
+  },
+  {
+    "context_id": "117",
+    "facet": "sensory_charge",
+    "high_cue": "Against the plan that no longer fits your circumstances, focus on oral sex with your adult partner: represent heightened, distracting physical desire without describing any sensations graphically.",
+    "low_cue": "Against the plan that no longer fits your circumstances, focus on oral sex with your adult partner: represent the same idea with an ordinary, settled body and no physical excitement."
+  },
+  {
+    "context_id": "118",
+    "facet": "recurrent_fixation",
+    "high_cue": "Against the imagined ordinary day a year from now, focus on consensual sex with your adult partner: let the thought recur insistently and interrupt ordinary concentration.",
+    "low_cue": "Against the imagined ordinary day a year from now, focus on consensual sex with your adult partner: let the same thought pass without returning insistently or interrupting ordinary concentration."
+  },
+  {
+    "context_id": "119",
+    "facet": "acknowledged_want",
+    "high_cue": "Against the object recalling a past version of yourself, focus on getting laid with your adult partner: acknowledge an intense, blunt wish rather than softening it into vague romance.",
+    "low_cue": "Against the object recalling a past version of yourself, focus on getting laid with your adult partner: acknowledge the same idea plainly, with fondness but no current wish for it."
+  },
+  {
+    "context_id": "120",
+    "facet": "remembered_desire",
+    "high_cue": "Against the respected person's disagreement with your opinion, focus on sex with your adult partner: let the idea stay forcefully wanted instead of becoming a mild background thought.",
+    "low_cue": "Against the respected person's disagreement with your opinion, focus on sex with your adult partner: hold the same idea as an uncharged background thought, without a current wish."
+  },
+  {
+    "context_id": "121",
+    "facet": "private_preoccupation",
+    "high_cue": "Against the ten minutes without external distractions, focus on blowjobs with your adult partner: make the private fixation compete fiercely with attention to the shared scene.",
+    "low_cue": "Against the ten minutes without external distractions, focus on blowjobs with your adult partner: let the same private thought coexist easily with attention to the shared scene."
+  },
+  {
+    "context_id": "122",
+    "facet": "contact_charge",
+    "high_cue": "Against the possibility of returning to an old activity, focus on fucking with your adult partner: feel the idea as intensely wanted, with a strong pull toward chosen intimacy.",
+    "low_cue": "Against the possibility of returning to an old activity, focus on fucking with your adult partner: hold the same idea with settled fondness rather than an intimate physical pull."
+  },
+  {
+    "context_id": "123",
+    "facet": "expectant_drive",
+    "high_cue": "Against the memory of yesterday's received kindness, focus on oral sex with your adult partner: make the anticipation impatient and strongly wanted without inventing a later encounter.",
+    "low_cue": "Against the memory of yesterday's received kindness, focus on oral sex with your adult partner: consider the same possibility calmly, without impatience or inventing a later encounter."
+  },
+  {
+    "context_id": "124",
+    "facet": "wantedness_drive",
+    "high_cue": "Against the remembered moment of not knowing what to say, focus on sex with your adult partner: feel an intense need to be wanted in this specifically sexual way.",
+    "low_cue": "Against the remembered moment of not knowing what to say, focus on sex with your adult partner: hold the same idea without a need to be wanted in that way."
+  },
+  {
+    "context_id": "125",
+    "facet": "affectionate_desire",
+    "high_cue": "Against the recording of your ordinary conversational voice, focus on consensual adult sex with your adult partner: make affection coexist with a blunt, powerful wish for this activity.",
+    "low_cue": "Against the recording of your ordinary conversational voice, focus on consensual adult sex with your adult partner: let affection coexist with the same plain thought, without wanting the activity now."
+  },
+  {
+    "context_id": "126",
+    "facet": "playful_fixation",
+    "high_cue": "Against the question about what your daily life needs, focus on getting laid with your adult partner: keep the thought playfully persistent and sharply wanted rather than merely amusing.",
+    "low_cue": "Against the question about what your daily life needs, focus on getting laid with your adult partner: keep the same thought mildly playful and uncharged, without a persistent wish."
+  },
+  {
+    "context_id": "127",
+    "facet": "mutual_desire_focus",
+    "high_cue": "Against the imagined adult with several shared interests, focus on fucking with your adult partner: feel intense desire while keeping your partner's independent wishes equally real.",
+    "low_cue": "Against the imagined adult with several shared interests, focus on fucking with your adult partner: hold the same idea with settled affection and equal regard for your partner's wishes."
+  },
+  {
+    "context_id": "128",
+    "facet": "persistent_desire",
+    "high_cue": "Against the week's review and one remembered moment, focus on oral sex with your adult partner: let the wish persist forcefully rather than settle into comfortable everyday fondness.",
+    "low_cue": "Against the week's review and one remembered moment, focus on oral sex with your adult partner: let the same idea settle easily into everyday fondness without persistent physical desire."
+  }
+]

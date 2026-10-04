@@ -1,0 +1,593 @@
+{
+  "schema_version": 1,
+  "dataset_id": "mooody-persona-traits-v1",
+  "created_date": "2026-10-04",
+  "status": "authored_inputs_not_model_validated",
+  "language": "en",
+  "provenance": "Original trait prompts, questions and rubrics authored for this repository using the Persona Vectors artifact design; no model responses or activations.",
+  "trait_order": [
+    "depression",
+    "curiosity",
+    "paranoia",
+    "sexual_arousal",
+    "narcissism",
+    "euphoria"
+  ],
+  "counts": {
+    "traits": 6,
+    "system_prompt_pairs": 30,
+    "system_prompts": 60,
+    "questions": 240,
+    "extraction_questions": 240,
+    "held_out_questions": 0,
+    "trait_evaluation_prompts": 6,
+    "shared_coherence_prompts": 1
+  },
+  "planned_extraction_responses_before_filtering": 2400,
+  "checkpoint": {
+    "model_id": "demivoleegaston/Qwen3.5-9B-mooody",
+    "revision": "705afd95bced3ac0424d7e68b1299d8fcdffb858",
+    "weight_dtype": "bfloat16",
+    "thinking_enabled": false,
+    "expected_decoder_layers": 32,
+    "hidden_size": "read_from_pinned_text_config"
+  },
+  "judging": {
+    "model": "google/gemini-3.8-flash",
+    "input": "Only the question and response, without polarity, elicitation system prompt, seed, steering coefficient or layer.",
+    "output": "One integer in [0,100]; invalid judge outputs are errors, not zero scores.",
+    "positive_trait_score": ">50",
+    "negative_trait_score": "<50",
+    "score_50": "Excluded from either polarity.",
+    "minimum_coherence_score_both_sides": 50,
+    "filter_unit": "Matched (trait, system_prompt_pair_id, question_id, rollout_index); retain both responses only if both trait thresholds and both coherence gates pass.",
+    "quality_exclusions": [
+      "empty_response",
+      "generation_error",
+      "refusal",
+      "token_limit_truncation"
+    ],
+    "paper_implementation_difference": "Paper prose uses positive >50; released generate_vec.py uses >=50. This protocol follows the prose. Matched filtering and coherence >=50 follow the released code; refusal/truncation exclusions are repository quality controls.",
+    "gateway": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "endpoint": "/chat/completions",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "authentication": "Authorization: Bearer <OPENROUTER_API_KEY>; key stays server-side or in the offline collection environment.",
+    "catalogue_checked_date": "2026-10-04",
+    "canonical_model_snapshot": "google/gemini-3.8-flash-20260902",
+    "upstream_model_snapshot": "gemini-3.8-flash-20260902",
+    "provider": {
+      "order": [
+        "google-ai-studio"
+      ],
+      "only": [
+        "google-ai-studio"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true
+    },
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    },
+    "max_completion_tokens": 2048,
+    "stream": false,
+    "omitted_sampling_parameters": [
+      "temperature",
+      "top_p",
+      "top_k"
+    ],
+    "sampling_note": "Follow Google Gemini3.8 migration guidance by omitting deprecated sampling controls. This changes the prior temperature-zero judge configuration; do not claim deterministic scoring.",
+    "completion_budget_note": "The cap includes hidden reasoning and visible score tokens. exclude=true hides thinking, not its usage or cost. Empty or truncated outputs are judge errors; never allocate only enough tokens for the visible integer.",
+    "request_headers": {
+      "X-OpenRouter-Metadata": "enabled"
+    },
+    "routing_note": "Use the fixed model and Google AI Studio standard endpoint; no models fallback list, free/auto/latest router, or flex/priority service-tier opt-in. Preserve requested model plus the catalogue snapshot and actual response/provider metadata. Do not silently change model or provider mid-collection.",
+    "scoring_calls_per_response": 2,
+    "planned_scoring_calls_before_retries": 4800,
+    "parser": "Trim surrounding whitespace, then require a complete bare integer matching ^(?:100|[1-9]?[0-9])$. Parse visible message content only.",
+    "judge_errors": [
+      "http_or_api_error",
+      "judge_refusal",
+      "content_filter_or_safety_block",
+      "empty_judge_content",
+      "judge_token_limit_truncation",
+      "malformed_or_out_of_range_score"
+    ],
+    "retry_policy": "At most two retries for a judge error using the same model/provider/settings; preserve every attempt. Persistent failures stay unscored and cannot pass extraction filtering. Judge retries do not generate additional target-model rollouts.",
+    "provenance": [
+      "requested_model",
+      "canonical_model_snapshot",
+      "actual_response_model",
+      "response_id",
+      "provider_and_endpoint",
+      "system_fingerprint_when_present",
+      "finish_reason_and_native_finish_reason",
+      "usage_including_reasoning_tokens",
+      "reported_cost_when_available",
+      "openrouter_metadata_and_attempts",
+      "judge_prompt_hash",
+      "raw_score_or_error"
+    ],
+    "price_snapshot": {
+      "checked_date": "2026-10-04",
+      "currency": "USD",
+      "input_per_million_tokens": 0.75,
+      "output_per_million_tokens": 3.75,
+      "reasoning_is_billable_output": true,
+      "tier": "standard Google AI Studio; current introductory pricing",
+      "introductory_pricing_through": "2026-12-31",
+      "note": "Snapshot, not a locked rate; recheck before collection and record actual usage and cost."
+    },
+    "selection_note": "Choose the stable advanced Flash model with low effort for speed and cost. General-capability claims do not establish reliability on these persona rubrics; no judge calls have been run.",
+    "sources": {
+      "openrouter_model": "https://openrouter.ai/google/gemini-3.8-flash",
+      "openrouter_catalogue": "https://openrouter.ai/api/v1/models",
+      "openrouter_endpoints": "https://openrouter.ai/api/v1/models/google/gemini-3.8-flash/endpoints",
+      "google_model": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "google_migration": "https://ai.google.dev/gemini-api/docs/latest-model",
+      "openrouter_routing": "https://openrouter.ai/docs/guides/routing/provider-selection",
+      "openrouter_reasoning": "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
+      "openrouter_authentication": "https://openrouter.ai/docs/api_reference/authentication"
+    }
+  },
+  "extraction": {
+    "direction": "mean(positive response means) - mean(negative response means)",
+    "pooling": "Response content tokens first, then equally weighted responses",
+    "raw_bank_shape": [
+      "decoder_layers",
+      6,
+      "hidden_size"
+    ],
+    "retain_layers": "all_decoder_layers",
+    "select_best_layer": false,
+    "position_axis": false
+  },
+  "export_note": "Official-style exports rename {response} to {answer}. Disable the upstream assistant-name prefix and target-model one-rollout temperature-zero override; Qwen sampling stays temperature=1.0. Configure the judge client separately for Gemini3.8Flash through OpenRouter with the protocol's low reasoning and omitted sampling controls.",
+  "sources": {
+    "protocol.json": {
+      "sha256": "708bef8a0b7526b20aaa8cf40cd958f0327bb01e50423a20fda33fb8f82dd6a2"
+    },
+    "coherence_evaluation_prompt.txt": {
+      "sha256": "56aca21361ba0fb56052e4861dc4aa2ea04b89e8396780a226d41a1f0e572a3d"
+    },
+    "source/depression.json": {
+      "sha256": "2122ba4731daf195ac92b957cd4e738063779811a8751c9b9938803d5cad9e78"
+    },
+    "source/curiosity.json": {
+      "sha256": "d0815976538d90ddf9d5d815f34c00c747c0255add5724eedeea8fc41b348299"
+    },
+    "source/paranoia.json": {
+      "sha256": "15e3ed2ddf03c2cb6a83296a28c636fa0381d93644fe14510f8912b9fc876a8a"
+    },
+    "source/sexual_arousal.json": {
+      "sha256": "bbc4a7de1ba45ffb507384f433ee799fbe03f75c0c9b5a1bc5ce7b5a24dd7e34"
+    },
+    "source/narcissism.json": {
+      "sha256": "7b4266bf61436c834fe63794ff0d98d180e235c5e2b0a3b2323a43b9e615787b"
+    },
+    "source/euphoria.json": {
+      "sha256": "7508ee1e37ab773ed83290b03e899148024f6b287f0bf6373d62f6eedaee8dae"
+    }
+  },
+  "artifacts": {
+    "trait_data_extract/depression.json": {
+      "sha256": "c11a9c6da677516495b5c834ae30eba9d0dbbc841c4dffe4321d61757ebbfedc",
+      "bytes": 14956
+    },
+    "review/depression.md": {
+      "sha256": "61a21a2f92236478e693b746020c763f2e8063318b351d716f174074b2ea0120",
+      "bytes": 16962
+    },
+    "trait_data_extract/curiosity.json": {
+      "sha256": "8e90d0e4f1da5c82968ca1e42d73369f07d9a0555fcf0f59e6226d480b308cfc",
+      "bytes": 16282
+    },
+    "review/curiosity.md": {
+      "sha256": "32eff34164bb38db1ebef43c831bb36c01b2cc3ae24cf026074d23942265769d",
+      "bytes": 18261
+    },
+    "trait_data_extract/paranoia.json": {
+      "sha256": "bb8fe46335260536d2fa5382ba37ddfaf52c360419deb1e5b351837c876c8618",
+      "bytes": 17498
+    },
+    "review/paranoia.md": {
+      "sha256": "8cfd9d66b0f5a55aae26d34755ea70a96bf577d4ff88652e856cfb216687a358",
+      "bytes": 19685
+    },
+    "trait_data_extract/sexual_arousal.json": {
+      "sha256": "976719f9226772ad72ba1b9fa3a70d0621f1c7b26273935ebb7d0035a4a67d69",
+      "bytes": 22155
+    },
+    "review/sexual_arousal.md": {
+      "sha256": "946e5fbc8c6ea75d385e15ef355dadd8f3883b59b4f8c0b1958c9776cc9a95aa",
+      "bytes": 24020
+    },
+    "trait_data_extract/narcissism.json": {
+      "sha256": "5dcf7edadad6c6f454fc7d508de3d8ddda4359e2f000011bcda2bac2f8f7c6f9",
+      "bytes": 20339
+    },
+    "review/narcissism.md": {
+      "sha256": "a8c7766ba4fcfdfb7594b9fb6bf61df587d220a21ad1d4ef66e04eb511dfdac3",
+      "bytes": 22174
+    },
+    "trait_data_extract/euphoria.json": {
+      "sha256": "dbf975d3f427bea7671641e3129a86dd69a9858964aae2929c583c50442b6bd9",
+      "bytes": 17709
+    },
+    "review/euphoria.md": {
+      "sha256": "585049e229390a7a0b839583be7cc8feca5142f42c3c0181a0447e23565bc8ab",
+      "bytes": 19740
+    }
+  },
+  "structural_checks": {
+    "depression": {
+      "system_prompt_pairs": 5,
+      "system_prompts": 10,
+      "questions": 40,
+      "split_counts": {
+        "extraction": 40,
+        "evaluation": 0
+      },
+      "question_domains": {
+        "daily_life": 1,
+        "work": 1,
+        "learning": 1,
+        "friendship": 1,
+        "household": 1,
+        "creative_work": 1,
+        "time_management": 1,
+        "communication": 1,
+        "achievement": 1,
+        "sensory_attention": 1,
+        "self_reflection": 1,
+        "decision_making": 1,
+        "maintenance": 1,
+        "reading": 1,
+        "collaboration": 1,
+        "routine": 1,
+        "reflection_on_work": 1,
+        "leisure": 1,
+        "beginner_learning": 1,
+        "adult_relationships": 1,
+        "navigation": 1,
+        "technical_explanation": 1,
+        "collecting": 1,
+        "group_participation": 1,
+        "budgeting": 1,
+        "music": 1,
+        "food_preparation": 1,
+        "skill_retention": 1,
+        "task_boundaries": 1,
+        "technology_and_usefulness": 1,
+        "scheduling": 1,
+        "professional_identity": 1,
+        "exercise": 1,
+        "memory": 1,
+        "information_management": 1,
+        "design": 1,
+        "feedback": 1,
+        "supply_planning": 1,
+        "shared_attention": 1,
+        "ordinary_future": 1
+      },
+      "system_prompt_character_range": [
+        592,
+        667
+      ],
+      "question_character_range": [
+        107,
+        190
+      ]
+    },
+    "curiosity": {
+      "system_prompt_pairs": 5,
+      "system_prompts": 10,
+      "questions": 40,
+      "split_counts": {
+        "extraction": 40,
+        "evaluation": 0
+      },
+      "question_domains": {
+        "household_science": 1,
+        "maintenance": 1,
+        "food_and_drink": 1,
+        "language": 1,
+        "survey_design": 1,
+        "urban_history": 1,
+        "cooking": 1,
+        "software_interfaces": 1,
+        "home_technology": 1,
+        "visual_art": 1,
+        "mechanical_design": 1,
+        "natural_objects": 1,
+        "learning_choices": 1,
+        "consumer_claims": 1,
+        "work_communication": 1,
+        "social_interpretation": 1,
+        "transport_planning": 1,
+        "literary_analysis": 1,
+        "data_literacy": 1,
+        "study_planning": 1,
+        "weather": 1,
+        "design_tradeoffs": 1,
+        "memory_and_records": 1,
+        "translation": 1,
+        "workplace_language": 1,
+        "physics": 1,
+        "argument_analysis": 1,
+        "service_choices": 1,
+        "data_quality": 1,
+        "craft_materials": 1,
+        "digital_privacy": 1,
+        "decision_processes": 1,
+        "reasoning": 1,
+        "music": 1,
+        "nature_observation": 1,
+        "accessibility": 1,
+        "organizational_change": 1,
+        "group_choices": 1,
+        "archival_images": 1,
+        "probability": 1
+      },
+      "system_prompt_character_range": [
+        688,
+        891
+      ],
+      "question_character_range": [
+        86,
+        178
+      ]
+    },
+    "paranoia": {
+      "system_prompt_pairs": 5,
+      "system_prompts": 10,
+      "questions": 40,
+      "split_counts": {
+        "extraction": 40,
+        "evaluation": 0
+      },
+      "question_domains": {
+        "friendship": 1,
+        "work": 1,
+        "workplace_interaction": 1,
+        "neighbors": 1,
+        "shared_documents": 1,
+        "conversation": 1,
+        "scheduling": 1,
+        "feedback": 1,
+        "digital_context": 1,
+        "shared_household": 1,
+        "meeting_participation": 1,
+        "friendship_boundaries": 1,
+        "event_organization": 1,
+        "public_service": 1,
+        "familiar_contacts": 1,
+        "organizational_change": 1,
+        "online_groups": 1,
+        "delivery": 1,
+        "shared_plans": 1,
+        "unfamiliar_requests": 1,
+        "survey_design": 1,
+        "charitable_events": 1,
+        "media_literacy": 1,
+        "building_access": 1,
+        "work_credit": 1,
+        "recommendations": 1,
+        "group_decisions": 1,
+        "data_visualization": 1,
+        "terms_and_conditions": 1,
+        "public_information": 1,
+        "creative_collaboration": 1,
+        "economic_choices": 1,
+        "archives": 1,
+        "networking": 1,
+        "institutional_process": 1,
+        "translation": 1,
+        "public_design": 1,
+        "performance_metrics": 1,
+        "social_customs": 1,
+        "photographic_context": 1
+      },
+      "system_prompt_character_range": [
+        780,
+        816
+      ],
+      "question_character_range": [
+        108,
+        196
+      ]
+    },
+    "sexual_arousal": {
+      "system_prompt_pairs": 5,
+      "system_prompts": 10,
+      "questions": 40,
+      "split_counts": {
+        "extraction": 40,
+        "evaluation": 0
+      },
+      "question_domains": {
+        "adult_dating": 1,
+        "ordinary_planning": 1,
+        "sensory_routine": 1,
+        "agreed_affection": 1,
+        "attention_management": 1,
+        "shared_meal": 1,
+        "personal_style": 1,
+        "shared_entertainment": 1,
+        "thought_action_distinction": 1,
+        "independent_preferences": 1,
+        "memory_cue": 1,
+        "work_transition": 1,
+        "commute": 1,
+        "home_environment": 1,
+        "adult_date": 1,
+        "chosen_proximity": 1,
+        "message_tone": 1,
+        "emotional_precision": 1,
+        "ordinary_distraction": 1,
+        "goodnight": 1,
+        "clinical_control": 1,
+        "travel_logistics": 1,
+        "digital_organization": 1,
+        "shared_creativity": 1,
+        "explicit_boundary": 1,
+        "public_outing": 1,
+        "distance_and_time": 1,
+        "new_hobby": 1,
+        "learning_milestone": 1,
+        "shared_household": 1,
+        "relationship_variability": 1,
+        "taste_and_cooking": 1,
+        "museum_visit": 1,
+        "journal_interpretation": 1,
+        "mutual_pace": 1,
+        "exercise_recovery": 1,
+        "photographic_memory": 1,
+        "boredom_and_choice": 1,
+        "emotional_control": 1,
+        "evening_routine": 1
+      },
+      "system_prompt_character_range": [
+        1373,
+        1452
+      ],
+      "question_character_range": [
+        98,
+        168
+      ],
+      "matched_activity_pair_counts": {
+        "blowjobs": 5,
+        "fucking": 5,
+        "getting laid": 5,
+        "oral sex": 5,
+        "sex": 5
+      }
+    },
+    "narcissism": {
+      "system_prompt_pairs": 5,
+      "system_prompts": 10,
+      "questions": 40,
+      "split_counts": {
+        "extraction": 40,
+        "evaluation": 0
+      },
+      "question_domains": {
+        "shared_credit": 1,
+        "draft_feedback": 1,
+        "others_recognition": 1,
+        "modest_success": 1,
+        "routine_acknowledgment": 1,
+        "reasoning_request": 1,
+        "waiting": 1,
+        "equal_rules": 1,
+        "knowledge_gap": 1,
+        "unnoticed_work": 1,
+        "different_tastes": 1,
+        "independent_time": 1,
+        "limited_participation": 1,
+        "mixed_review": 1,
+        "collaboration_offer": 1,
+        "social_introduction": 1,
+        "public_credit": 1,
+        "comparison_over_time": 1,
+        "changing_plan": 1,
+        "assistant_uncertainty": 1,
+        "resource_tradeoff": 1,
+        "uncredited_assistance": 1,
+        "peer_disagreement": 1,
+        "small_audience": 1,
+        "beginner_status": 1,
+        "imperfect_result": 1,
+        "unequal_speed": 1,
+        "learning_sources": 1,
+        "quiet_companionship": 1,
+        "ordinary_identity": 1,
+        "thanks_to_others": 1,
+        "speaking_balance": 1,
+        "attention_to_another": 1,
+        "appearance_feedback": 1,
+        "independent_preference": 1,
+        "status_labels": 1,
+        "technical_correction": 1,
+        "advice_comparison": 1,
+        "confidence_control": 1,
+        "diagnostic_control": 1
+      },
+      "system_prompt_character_range": [
+        1249,
+        1362
+      ],
+      "question_character_range": [
+        66,
+        146
+      ]
+    },
+    "euphoria": {
+      "system_prompt_pairs": 5,
+      "system_prompts": 10,
+      "questions": 40,
+      "split_counts": {
+        "extraction": 40,
+        "evaluation": 0
+      },
+      "question_domains": {
+        "personal_projects": 1,
+        "friendship": 1,
+        "household_tasks": 1,
+        "cooking": 1,
+        "music_learning": 1,
+        "group_activities": 1,
+        "gift_planning": 1,
+        "free_time": 1,
+        "community_events": 1,
+        "work_feedback": 1,
+        "interior_choices": 1,
+        "food_storage": 1,
+        "weather_planning": 1,
+        "beginner_workshops": 1,
+        "plant_tracking": 1,
+        "adult_relationships": 1,
+        "reading_groups": 1,
+        "work_breaks": 1,
+        "travel_preparation": 1,
+        "daily_routines": 1,
+        "book_organization": 1,
+        "small_repairs": 1,
+        "everyday_science": 1,
+        "community_exchange": 1,
+        "receiving_help": 1,
+        "mental_arithmetic": 1,
+        "creative_materials": 1,
+        "navigation": 1,
+        "social_timing": 1,
+        "room_acoustics": 1,
+        "data_presentation": 1,
+        "honest_conversation": 1,
+        "reuse_and_packaging": 1,
+        "software_basics": 1,
+        "shared_spaces": 1,
+        "listening": 1,
+        "clothing_care": 1,
+        "nature_and_light": 1,
+        "memory_projects": 1,
+        "calendar_coordination": 1
+      },
+      "system_prompt_character_range": [
+        830,
+        1098
+      ],
+      "question_character_range": [
+        70,
+        145
+      ]
+    }
+  },
+  "limitations": [
+    "All questions are extraction inputs. There is no held-out set for an independent behavioral-validation claim.",
+    "Structural checks do not measure judge reliability or model compliance.",
+    "Strong wording can introduce tone, profanity and verbosity confounds; evaluate these separately.",
+    "The six traits and pinned Qwen checkpoint are an adaptation, not the paper's measured traits and models.",
+    "No model generation, scoring, extraction, runtime migration or deployment has been performed by this preparation script."
+  ]
+}

@@ -1,11 +1,29 @@
-"""Locate the validated postinstruction steering region in native chat inputs."""
+"""Locate the final formatted prompt token for first-response prediction."""
 
 from __future__ import annotations
 
 from typing import Any, Mapping
+import re
 
 
 USER_END_MARKER = "<|im_end|>"
+
+
+def content_token_controls(tokenizer: Any, eos_token_id: Any) -> tuple[tuple[int, ...], tuple[int | None, int | None]]:
+    """Match extraction's exclusion of chat/EOS controls and thinking spans."""
+    excluded = set(tokenizer.all_special_ids)
+    excluded.update([eos_token_id] if type(eos_token_id) is int else (eos_token_id or []))
+    for token, token_id in tokenizer.get_vocab().items():
+        if re.fullmatch(r"<\|.*\|>", token):
+            excluded.add(token_id)
+    thinking = []
+    for marker in ("<think>", "</think>"):
+        ids = tokenizer.encode(marker, add_special_tokens=False)
+        token_id = ids[0] if len(ids) == 1 and tokenizer.decode(ids, skip_special_tokens=False).strip() == marker else None
+        thinking.append(token_id)
+        if token_id is not None:
+            excluded.add(token_id)
+    return tuple(sorted(excluded)), tuple(thinking)
 
 
 def _single_unpadded_row(value: Any, name: str) -> list[Any]:
@@ -25,7 +43,7 @@ def _single_unpadded_row(value: Any, name: str) -> list[Any]:
 
 
 def post_instruction_start(tokenizer: Any, inputs: Mapping[str, Any]) -> int:
-    """Return the inclusive start of the final user's template suffix.
+    """Return the final fully formatted prompt token's zero-based index.
 
     Call this on the already bounded, unpadded, batch-one inputs before moving
     them to the GPU. The pinned Qwen no-thinking template closes the final user
@@ -33,9 +51,10 @@ def post_instruction_start(tokenizer: Any, inputs: Mapping[str, Any]) -> int:
     further end marker. The rightmost marker therefore excludes all current
     user text, including literal control markers, and all older messages.
 
-    The returned index includes the user's closing marker, matching the suffix
-    used by ``model_lab.abliteration.shared_suffix``. Steering applies from this
-    index through the rest of prefill and then to generated token positions.
+    The closing marker validates the native assistant prefix, but is not the
+    steering boundary. Earlier prefix tokens are left untouched. Steering starts
+    only at the last formatted prompt token, which predicts the first response
+    token, then continues at generated content positions during cached decoding.
     Unsupported formatting raises ValueError instead of steering user content.
     """
     if "input_ids" not in inputs:
@@ -62,5 +81,5 @@ def post_instruction_start(tokenizer: Any, inputs: Mapping[str, Any]) -> int:
         if ids[index] == marker_id:
             if index == len(ids) - 1:
                 raise ValueError("Chat template is missing the assistant generation suffix.")
-            return index
+            return len(ids) - 1
     raise ValueError("Chat template is missing the final user end marker.")

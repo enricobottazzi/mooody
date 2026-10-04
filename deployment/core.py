@@ -5,14 +5,15 @@ from __future__ import annotations
 from collections import deque
 from dataclasses import dataclass
 import json
+import math
 import time
 from typing import Any
 
 MODEL_ID = "demivoleegaston/Qwen3.5-9B-mooody"
 MODEL_REVISION = "705afd95bced3ac0424d7e68b1299d8fcdffb858"
-AXES = ("warmth", "patience", "playfulness", "optimism", "energy", "curiosity")
-PLACEHOLDER_SEED = 20261003
-PLACEHOLDER_NORM = 1.0
+AXES = ("depression", "curiosity", "paranoia", "sexual_arousal", "narcissism", "euphoria")
+MOOD_COEFFICIENTS = (-0.25, -0.125, 0, 0.125, 0.25)
+MAX_MOOD_COEFFICIENT = max(MOOD_COEFFICIENTS)
 MAX_INPUT_CHARS = 2000
 MAX_ASSISTANT_CHARS = 10000
 MAX_HISTORY_CHARS = 32000
@@ -35,7 +36,7 @@ class RequestError(ValueError):
 @dataclass(frozen=True)
 class ChatInput:
     messages: list[dict[str, str]]
-    mood: list[int]
+    mood: list[int | float]
     max_new_tokens: int = MAX_OUTPUT_TOKENS
 
     def payload(self) -> dict[str, Any]:
@@ -75,9 +76,11 @@ def validate_chat(value: Any) -> ChatInput:
         raise RequestError("This conversation is too long. Start a new chat.")
     mood = value.get("mood", [0] * len(AXES))
     if not isinstance(mood, list) or len(mood) != len(AXES) or any(
-        type(level) is not int or not -2 <= level <= 2 for level in mood
+        type(level) not in (int, float)
+        or not -MAX_MOOD_COEFFICIENT <= level <= MAX_MOOD_COEFFICIENT
+        or not math.isfinite(level) for level in mood
     ):
-        raise RequestError("Mood must contain six integer levels between -2 and 2.")
+        raise RequestError(f"Mood coefficients must be between {-MAX_MOOD_COEFFICIENT} and {MAX_MOOD_COEFFICIENT}. If this page was already open, refresh it and try again.")
     output_limit = value.get("max_new_tokens", MAX_OUTPUT_TOKENS)
     if type(output_limit) is not int or not 1 <= output_limit <= MAX_OUTPUT_TOKENS:
         raise RequestError(f"Output length must be between 1 and {MAX_OUTPUT_TOKENS} tokens.")
@@ -85,16 +88,18 @@ def validate_chat(value: Any) -> ChatInput:
 
 
 def configuration() -> dict[str, Any]:
+    from deployment.checkpoint import configured_persona_metadata
+
     return {
         "model_id": MODEL_ID,
         "revision": MODEL_REVISION,
-        "mood_vectors_available": True,
-        "steering_available": True,
-        "mood_vectors_source": "random_placeholder",
-        "mood_vectors_validated": False,
+        "system_prompt_present": False,
+        "mood_conditioning": "vectors_with_prompt_assistance",
+        **configured_persona_metadata(),
         "moods_applied": False,
         "axes": list(AXES),
         "mood_levels": [-2, -1, 0, 1, 2],
+        "mood_coefficients": list(MOOD_COEFFICIENTS),
         "max_input_chars": MAX_INPUT_CHARS,
         "max_messages": MAX_MESSAGES,
         "max_context_tokens": MAX_CONTEXT_TOKENS,
@@ -147,13 +152,16 @@ class Admission:
         self.active.pop(request_id, None)
 
 
-def bounded_messages(tokenizer: Any, messages: list[dict[str, str]]) -> tuple[Any, int]:
-    """Keep the newest complete turns, then bound actual formatted tokens."""
-    history = list(messages)
+def bounded_messages(tokenizer: Any, messages: list[dict[str, str]], mood=None) -> tuple[Any, int]:
+    """Budget the optionally conditioned conversation, keeping complete turns."""
+    from deployment.mood_prompt import condition_messages
+
+    history = list(messages) if mood is None else condition_messages(messages, mood)
     removed = 0
     while history:
         inputs = tokenizer.apply_chat_template(
-            history, tokenize=True, add_generation_prompt=True,
+            history,
+            tokenize=True, add_generation_prompt=True,
             enable_thinking=False, return_tensors="pt", return_dict=True,
         )
         if inputs["input_ids"].shape[-1] <= MAX_CONTEXT_TOKENS:

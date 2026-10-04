@@ -160,9 +160,13 @@ def create_web_app(worker, static_dir: str | Path = "/www", proxy_token: str | N
                             yield sse("error", {"code": "incomplete_response", "message": "The reply was interrupted. Please try again."})
                         break
                     name = event.pop("event")
+                    if name == "done":
+                        # The reply is complete before the browser can submit
+                        # its next turn. Remote cleanup keeps the model lock.
+                        complete = True
+                        gate.leave(request_id)
                     yield sse(name, event)
                     if name == "done":
-                        complete = True
                         break
                     if name == "error":
                         break

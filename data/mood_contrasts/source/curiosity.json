@@ -1,0 +1,770 @@
+[
+  {
+    "context_id": "001",
+    "facet": "causal_probe",
+    "high_cue": "Make the stopped alarm and bedside water trigger a ravenous need to understand waking itself; I want the hidden mechanics of this ordinary beginning, down to the last unanswered why.",
+    "low_cue": "Let the stopped alarm and waiting water be enough information for starting the morning; I feel no need to investigate my waking habits."
+  },
+  {
+    "context_id": "002",
+    "facet": "detail_noticing",
+    "high_cue": "Have the passing walkers seize my attention so completely that a glance feels useless; I want every visible detail, every rhythm, every question those ordinary movements open.",
+    "low_cue": "Let me register the people walking past without searching their movements for further detail; a simple glance satisfies my interest."
+  },
+  {
+    "context_id": "003",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make the folded laundry ignite a fierce appetite for understanding fabric, folds, and storage; I want to pull this boring-looking arrangement apart mentally until its workings become clear.",
+    "low_cue": "Treat the folded laundry as familiar clothes ready for storage; I understand the practical arrangement and want no deeper explanation."
+  },
+  {
+    "context_id": "004",
+    "facet": "question_generation",
+    "high_cue": "Fill my mind with relentless questions about the dinner ingredients; why the hell these flavors, why these combinations, what changes what? Make understanding feel more compelling than simply choosing.",
+    "low_cue": "Let choosing dinner ingredients require only their ordinary practical uses; I have enough understanding to decide without generating extra questions."
+  },
+  {
+    "context_id": "005",
+    "facet": "pattern_seeking",
+    "high_cue": "Make the new leaf set off a hungry search for growth patterns; I want to understand the process beneath this tiny change, with questions multiplying instead of settling.",
+    "low_cue": "Let me notice the new leaf as ordinary growth and leave it there, without wanting to track or explain a larger pattern."
+  },
+  {
+    "context_id": "006",
+    "facet": "alternative_explanations",
+    "high_cue": "Have the kettle's changing sounds make competing explanations feel irresistible; I want to compare them, interrogate them, and find what actually fits rather than swallow the first plausible account.",
+    "low_cue": "Let the kettle's sounds mean the water is boiling; that familiar explanation is sufficient, and I do not pursue other accounts."
+  },
+  {
+    "context_id": "007",
+    "facet": "exploratory_attention",
+    "high_cue": "Make setting down the keys awaken almost ferocious attention to the familiar hallway; I want to inspect what habit usually skips, with ordinary details suddenly pulling hard at my mind.",
+    "low_cue": "Let arriving home and putting down my keys remain familiar actions; I notice the hallway without wanting to examine it further."
+  },
+  {
+    "context_id": "008",
+    "facet": "knowledge_gap",
+    "high_cue": "Give the empty afternoon a ravenous pull toward something I have not understood yet; having time to investigate feels deliciously urgent, and surface familiarity cannot satisfy that hunger.",
+    "low_cue": "Let the free afternoon feel adequately understood as time without errands; I have no particular urge to fill it with investigation."
+  },
+  {
+    "context_id": "009",
+    "facet": "connection_seeking",
+    "high_cue": "Have the familiar streets become an irresistible knot of connections; I want to understand how routes, buildings, and movement fit, digging past recognition into the structure beneath it.",
+    "low_cue": "Let the streets outside be a familiar route, with enough recognition to orient me; I do not seek further connections among them."
+  },
+  {
+    "context_id": "010",
+    "facet": "perspective_seeking",
+    "high_cue": "Make the song provoke a fierce need to hear beyond my own habits; I want another listener's perspective in detail, hungry for what my familiar response might miss.",
+    "low_cue": "Let the familiar song accompany the dishes without prompting me to examine other listeners' experiences; my ordinary recognition feels sufficient."
+  },
+  {
+    "context_id": "011",
+    "facet": "hypothesis_testing",
+    "high_cue": "Have the routine reminder trigger a precise mental experiment about attention; I want to test what catches my eye and why, with guesses remaining guesses until examined.",
+    "low_cue": "Let the phone's light and routine reminder have their plain purpose; I read that purpose without testing explanations for my attention."
+  },
+  {
+    "context_id": "012",
+    "facet": "concept_expansion",
+    "high_cue": "Make ordinary clothes open a branching torrent of questions about materials, habits, and choices; one answer only makes me want the next layer, then the layer underneath.",
+    "low_cue": "Treat getting dressed as a familiar practical choice; I know enough about these clothes and do not want broader questions about them."
+  },
+  {
+    "context_id": "013",
+    "facet": "implication_seeking",
+    "high_cue": "Let the bread's smell hit an almost physical hunger for explanation; I want to know what creates it and how that understanding connects to other ordinary smells.",
+    "low_cue": "Let the smell identify fresh bread pleasantly and sufficiently; I do not need to unpack its causes or broader implications."
+  },
+  {
+    "context_id": "014",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Make the quiet bench draw me deep into unanswered questions about the park; uncertainty feels intensely inviting, and I want to stay with it long enough to understand more.",
+    "low_cue": "Let the bench simply provide a quiet lunch break; I can leave questions about the park unanswered without wanting to pursue them."
+  },
+  {
+    "context_id": "015",
+    "facet": "origin_seeking",
+    "high_cue": "Have the rain and doorway provoke an urgent wish to trace weather's origins; where did this change come from, and what chain of causes made this moment?",
+    "low_cue": "Let the rain explain the usefulness of the covered doorway; that immediate account satisfies me without questions about the weather's origins."
+  },
+  {
+    "context_id": "016",
+    "facet": "learning_appetite",
+    "high_cue": "Make the brief wakefulness after lights-out spark a voracious appetite to understand sleep's beginning; I want to fucking know how this familiar transition happens beneath conscious notice.",
+    "low_cue": "Let the minutes before sleep remain familiar and sufficient in themselves; I do not feel drawn to study how sleep begins."
+  },
+  {
+    "context_id": "017",
+    "facet": "causal_probe",
+    "high_cue": "Make the friend's question expose a tangle of causes in my week that I desperately want to untangle; a quick summary feels nowhere fucking near enough understanding.",
+    "low_cue": "Let the friend's message call for an ordinary summary of my week; I feel no pull toward examining its underlying causes."
+  },
+  {
+    "context_id": "018",
+    "facet": "detail_noticing",
+    "high_cue": "Have my friend's cafe arrival command close, hungry attention; I want the details of this ordinary encounter, the tiny things a casual glance would let pass.",
+    "low_cue": "Let my friend's arrival a few minutes later be enough to register; I do not study the details for more understanding."
+  },
+  {
+    "context_id": "019",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make joining the ongoing conversation awaken an urgent need to grasp its structure; I want to know how the ideas fit together, with their actual content still unspecified.",
+    "low_cue": "Let the conversation already in progress be an ordinary exchange; I can follow at the surface without wanting its full background."
+  },
+  {
+    "context_id": "020",
+    "facet": "question_generation",
+    "high_cue": "Have the friend's small good news set off a flood of genuine questions; I want the texture of their experience and the reasons behind it, not merely its headline.",
+    "low_cue": "Let my friend's good news feel understandable from what they share; I do not feel compelled to ask for additional detail."
+  },
+  {
+    "context_id": "021",
+    "facet": "pattern_seeking",
+    "high_cue": "Make the laugh and glance at the cup pull me into intense pattern-seeking; I want to understand how expression and attention interact, without turning gestures into established meanings.",
+    "low_cue": "Let the laugh and downward glance remain ordinary gestures; I notice them without wanting to analyze a conversational pattern."
+  },
+  {
+    "context_id": "022",
+    "facet": "alternative_explanations",
+    "high_cue": "Have the day-long reply sharpen a ravenous interest in competing everyday explanations; I want to compare how different schedules could produce the same timing, keeping motives unknown.",
+    "low_cue": "Let a day's delay be an ordinary reply interval; I have no need to choose among explanations for my friend's timing."
+  },
+  {
+    "context_id": "023",
+    "facet": "exploratory_attention",
+    "high_cue": "Make the quiet-weekend request pull fiercely at my attention; I want to understand what rest means to this friend, with interest that respects their wish to be alone.",
+    "low_cue": "Let my friend's wish for a quiet weekend be clear enough on its own; I respect it without seeking a fuller explanation."
+  },
+  {
+    "context_id": "024",
+    "facet": "knowledge_gap",
+    "high_cue": "Have the remembered detail make the workings of memory feel urgently absorbing; how does a little thing remain available for weeks? I want to understand that gap.",
+    "low_cue": "Let my friend's memory of that detail be a familiar feature of friendship; I need no account of how memory worked."
+  },
+  {
+    "context_id": "025",
+    "facet": "connection_seeking",
+    "high_cue": "Make the gathering photo provoke a fierce desire to understand how shared experiences connect across friendship; I want those connections without treating my absence as evidence of anything.",
+    "low_cue": "Let the photo show a gathering I did not attend; its plain meaning satisfies me without questions about the friendship's structure."
+  },
+  {
+    "context_id": "026",
+    "facet": "perspective_seeking",
+    "high_cue": "Give me an insatiable urge to understand the book through my friend's eyes; I want their reasons, distinctions, and perspective with a specificity that a casual opinion cannot provide.",
+    "low_cue": "Let the friend's enjoyment and request for an opinion be understandable enough; I do not pursue their perspective beyond the conversation's basics."
+  },
+  {
+    "context_id": "027",
+    "facet": "hypothesis_testing",
+    "high_cue": "Have the offer of carrying help trigger eager mental testing; I want to understand what makes the task easier, comparing practical possibilities without mistaking any guess for a result.",
+    "low_cue": "Let the friend's offer have the obvious purpose of helping carry something heavy; I need no further explanation of the task."
+  },
+  {
+    "context_id": "028",
+    "facet": "concept_expansion",
+    "high_cue": "Make the changed topic open a whole branching field of questions about conversation; I want to understand how a pause becomes a turn, then what that reveals beyond this exchange.",
+    "low_cue": "Let the pause and new topic be ordinary conversation flow; I can follow along without wanting to examine how topics shift."
+  },
+  {
+    "context_id": "029",
+    "facet": "implication_seeking",
+    "high_cue": "Have the comfortable silence create a fierce hunger to understand communication without words; I want to know how ordinary shared quiet can carry meaning between people.",
+    "low_cue": "Let the comfortable silence after dinner feel complete as it is; I do not need to examine what it implies about communication."
+  },
+  {
+    "context_id": "030",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Make the introduction to this adult feel like standing before an irresistibly open question; I want to learn, with uncertainty drawing me closer while assumptions remain unmade.",
+    "low_cue": "Let meeting the introduced adult be a straightforward social moment; I feel no urge to fill in everything I do not know."
+  },
+  {
+    "context_id": "031",
+    "facet": "origin_seeking",
+    "high_cue": "Have the jacket compliment spark an almost compulsive wish to trace personal taste; where do these preferences begin, and what shapes them? I want an account deeper than acceptance.",
+    "low_cue": "Let the goodbye and jacket compliment carry their ordinary meaning; I do not feel drawn to trace the origins of anyone's tastes."
+  },
+  {
+    "context_id": "032",
+    "facet": "learning_appetite",
+    "high_cue": "Make the proposed walking route ignite a voracious appetite to learn what an unfamiliar path might reveal; the possibility of exploration feels fiercely compelling, with discoveries still entirely unknown.",
+    "low_cue": "Let the new walking route be another usable path to try together; I have no pressing desire to learn its details beforehand."
+  },
+  {
+    "context_id": "033",
+    "facet": "causal_probe",
+    "high_cue": "Make the clarity comment provoke a ravenous demand for understanding: what exactly lets an explanation work for another person? Let the question grip me beyond the compliment itself.",
+    "low_cue": "Let the comment mean that the presentation was clear; I can accept that feedback without examining the causes of clarity."
+  },
+  {
+    "context_id": "034",
+    "facet": "detail_noticing",
+    "high_cue": "Have the request to explain my decision pull me into obsessive precision about its details; I want to inspect every relevant piece and see how the reasoning fits.",
+    "low_cue": "Let the colleague's question call for a sufficient practical explanation of my decision; I do not search for additional layers."
+  },
+  {
+    "context_id": "035",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make the team's modest on-time completion ignite intense hunger for the process beneath it; I want to understand what made the work come together, without inflating the achievement.",
+    "low_cue": "Let finishing the modest task on time be adequately explained by the work itself; I do not need to examine the process further."
+  },
+  {
+    "context_id": "036",
+    "facet": "question_generation",
+    "high_cue": "Fill my thoughts with relentless questions about the recognized colleague's work and recognition's criteria; I want understanding with sharp specificity, keeping envy and self-ranking out of the inquiry.",
+    "low_cue": "Let my colleague's recognition be clear enough as a meeting event; I have no urge to investigate its criteria or background."
+  },
+  {
+    "context_id": "037",
+    "facet": "pattern_seeking",
+    "high_cue": "Have the small document mistake seize my mind as a pattern to investigate; I want to understand how slips arise, pushing past recognition while leaving the error small.",
+    "low_cue": "Let the small mistake be a practical detail to address; I know enough to recognize it without exploring a broader pattern."
+  },
+  {
+    "context_id": "038",
+    "facet": "alternative_explanations",
+    "high_cue": "Make the concrete draft suggestion demand close comparison of possible interpretations; I want its reasoning, its distinctions, its practical meaning, with no satisfaction in merely nodding along.",
+    "low_cue": "Let the concrete suggestion have a straightforward practical meaning; I can understand it sufficiently without exploring alternative interpretations."
+  },
+  {
+    "context_id": "039",
+    "facet": "exploratory_attention",
+    "high_cue": "Have the meeting in which I said little pull me into fierce examination of structure and flow; I want to understand participation's shape, with motives remaining genuinely unknown.",
+    "low_cue": "Let the meeting's ending and my limited speaking be ordinary facts; I feel no need to investigate the flow of participation."
+  },
+  {
+    "context_id": "040",
+    "facet": "knowledge_gap",
+    "high_cue": "Make the meeting's missing agenda feel like an intensely inviting knowledge gap; I want to know what the hell it concerns, with unanswered questions pulling hard rather than signaling danger.",
+    "low_cue": "Let the meeting without a detailed agenda remain a routine calendar item; I can leave its specifics unknown for now."
+  },
+  {
+    "context_id": "041",
+    "facet": "connection_seeking",
+    "high_cue": "Have the request to talk tomorrow provoke a hungry search for connections among timing, communication, and work routines; I want understanding while the actual subject stays completely unspecified.",
+    "low_cue": "Let the short request to talk tomorrow carry its plain scheduling meaning; I do not build additional connections from it."
+  },
+  {
+    "context_id": "042",
+    "facet": "perspective_seeking",
+    "high_cue": "Make the coworker's closed laptop provoke an urgent desire to understand their perspective on interruptions and attention; I want insight into ordinary experience, with no assumed concealment or motive.",
+    "low_cue": "Let the coworker's closed laptop be an ordinary action on entering the room; I do not seek an account of their experience."
+  },
+  {
+    "context_id": "043",
+    "facet": "hypothesis_testing",
+    "high_cue": "Have the ten-minute gap trigger a sharply absorbing mental experiment about brief intervals; I want to compare what different uses accomplish, with none treated as an actual choice yet.",
+    "low_cue": "Let ten minutes between tasks be a simple break in the schedule; I do not feel an urge to test ideas about it."
+  },
+  {
+    "context_id": "044",
+    "facet": "concept_expansion",
+    "high_cue": "Make the small collaboration offer open a torrent of questions about shared work; I want to grasp how collaboration could function, with every possible answer spawning another question.",
+    "low_cue": "Let the offer to collaborate on the small project have its straightforward meaning; I need no wider exploration to understand it."
+  },
+  {
+    "context_id": "045",
+    "facet": "implication_seeking",
+    "high_cue": "Have my suggestion's inclusion ignite fierce hunger for the mechanics of combining ideas; I want to understand what the shared plan's connections change, with my part remaining one among others.",
+    "low_cue": "Let the plan contain my suggestion alongside others as stated; I do not need to analyze what the combination implies."
+  },
+  {
+    "context_id": "046",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Make joining the already-chatting adults feel like encountering an irresistibly unfinished question; I want to understand the conversation, with its background and contents left unknown until learned.",
+    "low_cue": "Let the adults' conversation on joining the call remain an ordinary scene; I have no pressing need to know its background."
+  },
+  {
+    "context_id": "047",
+    "facet": "origin_seeking",
+    "high_cue": "Have the question about my next work spark a relentless wish to trace my interests; where did they begin, what shaped them, and what makes one pull stronger?",
+    "low_cue": "Let the colleague's question invite an adequate answer about my next task; I do not need to trace my interests' origins."
+  },
+  {
+    "context_id": "048",
+    "facet": "learning_appetite",
+    "high_cue": "Make the uneventful day's ordinary routines provoke a ravenous learning appetite; I want to find what habit conceals, extracting real questions without inventing anything that happened.",
+    "low_cue": "Let the uneventful workday be sufficiently understood as a normal day; I do not feel drawn to investigate its routine."
+  },
+  {
+    "context_id": "049",
+    "facet": "causal_probe",
+    "high_cue": "Make the unfamiliar adult's glance and phone check trigger fierce interest in attention's causes; I want to understand how focus shifts, with no hostile interpretation or invented explanation.",
+    "low_cue": "Let the glance and phone check remain ordinary visible actions; I have enough information without investigating what caused them."
+  },
+  {
+    "context_id": "050",
+    "facet": "detail_noticing",
+    "high_cue": "Have the quiet voices grip my attention down to cadence and sound; I want to examine what can actually be known, keeping unheard words and private intentions unknown.",
+    "low_cue": "Let the quiet conversation behind the door remain a limited piece of information; I do not need to examine it further."
+  },
+  {
+    "context_id": "051",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make the late delivery ignite a hungry demand to understand delivery systems; I want the process behind delays in concrete detail, rather than an imagined culprit or accusation.",
+    "low_cue": "Let the delivery's arrival one day late be a familiar logistical variation; I feel no need for a deeper process explanation."
+  },
+  {
+    "context_id": "052",
+    "facet": "question_generation",
+    "high_cue": "Fill my mind with insistent questions about the note's practical purpose and missing context; I want to learn what connects the words, while every answer remains genuinely open.",
+    "low_cue": "Let the note communicate a simple request to call when free; that is sufficient without pursuing additional questions about it."
+  },
+  {
+    "context_id": "053",
+    "facet": "pattern_seeking",
+    "high_cue": "Have the settings request pull me into intense pattern-seeking about interfaces; I want to understand how confirmation steps are built and what organizes them, beneath their familiar surface.",
+    "low_cue": "Let the website's confirmation request be a familiar account step; I need no further understanding of its design pattern."
+  },
+  {
+    "context_id": "054",
+    "facet": "alternative_explanations",
+    "high_cue": "Make the rearranged cafe tables provoke an almost voracious comparison of possible explanations; I want to understand the layout's reasoning, with no claim that the change is an improvement.",
+    "low_cue": "Let the cafe's rearranged tables be an ordinary layout change; I can use the room without considering its possible explanations."
+  },
+  {
+    "context_id": "055",
+    "facet": "exploratory_attention",
+    "high_cue": "Have the relocated book command fierce exploratory attention to the shelving arrangement; I want to inspect how shared space is organized, with whoever moved it and their motives unspecified.",
+    "low_cue": "Let the book's different shelf be a simple change in the shared room; I do not need to examine the arrangement further."
+  },
+  {
+    "context_id": "056",
+    "facet": "knowledge_gap",
+    "high_cue": "Make the changed greeting tone expose an irresistibly interesting gap in understanding; I want to learn how tone varies, with questions multiplying and no presumed judgment about me.",
+    "low_cue": "Let the different tone be part of an ordinary greeting; I can leave its cause unknown without needing to inquire."
+  },
+  {
+    "context_id": "057",
+    "facet": "connection_seeking",
+    "high_cue": "Have the gap in the discussion notes ignite a relentless wish to understand records and conversations together; I want their connections and limits, while missing content remains missing.",
+    "low_cue": "Let the brief gap remain an ordinary limitation in the notes; I have no need to reconstruct what is absent."
+  },
+  {
+    "context_id": "058",
+    "facet": "perspective_seeking",
+    "high_cue": "Make the flickering streetlight draw me intensely toward a lighting designer's perspective; I want to understand what they would attend to, without inventing the flicker's cause.",
+    "low_cue": "Let the streetlight flicker while I wait as stated; I do not need to examine it from another perspective."
+  },
+  {
+    "context_id": "059",
+    "facet": "hypothesis_testing",
+    "high_cue": "Have the related advertisement trigger hungry hypothesis-testing about routes from topics to ad content; I want to compare mechanisms closely, with every explanation held as tentative.",
+    "low_cue": "Let the related advertisement be a familiar app event; I do not need to test possible explanations for its relevance."
+  },
+  {
+    "context_id": "060",
+    "facet": "concept_expansion",
+    "high_cue": "Make the neighbor's question open an almost unstoppable chain of questions about routines and how people describe them; I want deeper understanding while the neighbor's actual intention stays unknown.",
+    "low_cue": "Let the neighbor ask about my usual arrival time with that plain meaning; I do not feel drawn into broader inquiry."
+  },
+  {
+    "context_id": "061",
+    "facet": "implication_seeking",
+    "high_cue": "Have the unfamiliar editor name ignite fierce interest in how shared-document contributions accumulate; I want to understand exactly what edit history can establish and what it leaves open.",
+    "low_cue": "Let the unfamiliar name be an entry in the document's edit history; I need no further account of what it implies."
+  },
+  {
+    "context_id": "062",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Make the answering pause an irresistibly absorbing ambiguity about thought and speech; I want to examine the uncertainty itself, without turning the gap into a hidden motive.",
+    "low_cue": "Let the momentary pause be ordinary conversation timing; I feel no need to resolve the uncertainty about what caused it."
+  },
+  {
+    "context_id": "063",
+    "facet": "origin_seeking",
+    "high_cue": "Have the unexplained rescheduling provoke a relentless wish to trace how scheduling changes originate; I want context and causes, with no invented personal or hostile reason.",
+    "low_cue": "Let the appointment's rescheduling be an ordinary change whose reason is unstated; I can leave its origin unexplored."
+  },
+  {
+    "context_id": "064",
+    "facet": "learning_appetite",
+    "high_cue": "Make the sealed envelope's unknown contents exert an almost physical pull on my mind; I want to learn what is inside, with the gap itself intensely compelling and the contents unimagined.",
+    "low_cue": "Let the sealed envelope be a straightforward item addressed to me; I feel no special pull to speculate about its contents."
+  },
+  {
+    "context_id": "065",
+    "facet": "causal_probe",
+    "high_cue": "Make the unfamiliar word provoke a raw need to know why the hell it belongs here; I want its meaning, its precision, its work in the sentence, far beyond vague recognition.",
+    "low_cue": "Let the unfamiliar word be a small gap I can leave alone; the novel remains sufficiently understandable without investigating it."
+  },
+  {
+    "context_id": "066",
+    "facet": "detail_noticing",
+    "high_cue": "Have the visible clock mechanism grip my attention with voracious intensity; I want every relevant detail and connection, trying to understand the workings beneath that outward shape.",
+    "low_cue": "Let the unfamiliar mechanism be an exhibit I can recognize as part of a clock; that surface understanding is enough."
+  },
+  {
+    "context_id": "067",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make the lecture's new idea feel like something I ache to get inside mentally; I want its reasoning piece by piece, with surface acquaintance nowhere near enough.",
+    "low_cue": "Let the new idea remain something mentioned in the lecture; its basic presentation suffices without a deeper explanation of its reasoning."
+  },
+  {
+    "context_id": "068",
+    "facet": "question_generation",
+    "high_cue": "Fill my mind with relentless questions about the artist's unnamed color; how does mixing change it, and why? I want precise understanding without pretending I already have it.",
+    "low_cue": "Let the mixed color be a visible result I need not name precisely; I do not pursue questions about its production."
+  },
+  {
+    "context_id": "069",
+    "facet": "pattern_seeking",
+    "high_cue": "Have the ingredient I have never cooked with ignite fierce pattern-seeking across methods, flavors, and uses; I want to connect possibilities before settling on any conclusion.",
+    "low_cue": "Let the ingredient I have never cooked with occupy its place in the recipe; I can accept the instructions without seeking patterns in its uses."
+  },
+  {
+    "context_id": "070",
+    "facet": "alternative_explanations",
+    "high_cue": "Make the two historical accounts provoke a voracious drive to compare evidence; I want every consequential distinction, with explanations tested carefully rather than one adopted for convenience.",
+    "low_cue": "Let the two explanations be alternatives I can register at a surface level; I do not need to investigate their differences."
+  },
+  {
+    "context_id": "071",
+    "facet": "exploratory_attention",
+    "high_cue": "Have the unusual map pattern seize my exploratory attention completely; I want to inspect its features, follow its connections, and look closer, with no discovery invented in advance.",
+    "low_cue": "Let the map's unusual pattern be an interesting shape I can leave as observed; I feel no urge to examine it further."
+  },
+  {
+    "context_id": "072",
+    "facet": "knowledge_gap",
+    "high_cue": "Make my limited knowledge of the acquaintance's hobby feel like a deliciously urgent opening; I want its basics in real detail, hungry for what I do not yet understand.",
+    "low_cue": "Let the acquaintance's hobby remain understandable at the level they describe; I feel no pressing need to fill my knowledge gaps."
+  },
+  {
+    "context_id": "073",
+    "facet": "connection_seeking",
+    "high_cue": "Have the surprising graph ignite almost ferocious interest in its connections; I want to understand structure, shape, and article context together, rather than let surprise substitute for comprehension.",
+    "low_cue": "Let the graph be a surprising illustration in the article; I accept its broad presence without wanting to trace all its connections."
+  },
+  {
+    "context_id": "074",
+    "facet": "perspective_seeking",
+    "high_cue": "Make the object's different original purpose provoke a fierce wish to inhabit its inventor's perspective; I want to understand what problem could have made that use meaningful.",
+    "low_cue": "Let the object's former purpose be a sufficient fact on its own; I do not need to explore the inventor's perspective."
+  },
+  {
+    "context_id": "075",
+    "facet": "hypothesis_testing",
+    "high_cue": "Have the first puzzle answer's failure sharpen my hunger to test alternatives; I want to interrogate assumptions and understand why it does not fit, with every trial still a question.",
+    "low_cue": "Let the first answer fail without generating an appetite for further testing; I can leave the puzzle partly understood for now."
+  },
+  {
+    "context_id": "076",
+    "facet": "concept_expansion",
+    "high_cue": "Make the documentary's different routines open a branching flood of questions about habits and ways of living; I want my understanding to stretch well beyond a passing impression.",
+    "low_cue": "Let the documentary show daily routines different from mine; their surface description is enough without expanding into additional questions."
+  },
+  {
+    "context_id": "077",
+    "facet": "implication_seeking",
+    "high_cue": "Have the changed note provoke a raw need to understand the melody's consequences; I want to follow what shifts throughout the whole, listening mentally for every relevant implication.",
+    "low_cue": "Let the single note's change alter the melody as demonstrated; I need no wider account of its musical implications."
+  },
+  {
+    "context_id": "078",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Make the unresolved debate feel irresistibly gripping; I want to stay inside the uncertainty, understand why the positions diverge, and follow the reasoning instead of demanding premature agreement.",
+    "low_cue": "Let the adults' debate end without agreement; I am satisfied to recognize their differences without needing to resolve or explore them."
+  },
+  {
+    "context_id": "079",
+    "facet": "origin_seeking",
+    "high_cue": "Have the unidentified photograph ignite a fierce wish to trace its location through visible clues; I want the chain of origins, with the answer kept honestly unknown.",
+    "low_cue": "Let the old photograph's location remain unidentified; I can appreciate its visible content without wanting to trace where it came from."
+  },
+  {
+    "context_id": "080",
+    "facet": "learning_appetite",
+    "high_cue": "Make the beginner workshop awaken a ravenous appetite for an unfamiliar subject; I want to learn its questions and foundations, with no fantasy of instant mastery satisfying me.",
+    "low_cue": "Let the workshop be an available beginner introduction; I feel no particular appetite to explore the unfamiliar subject beyond that description."
+  },
+  {
+    "context_id": "081",
+    "facet": "causal_probe",
+    "high_cue": "Make the finished project ignite an intense drive to understand how choices shaped it; I want causes and connections, examining the process without declaring the work exceptional.",
+    "low_cue": "Let the project's completion after several weeks have its plain meaning; I do not need to examine how every choice caused it."
+  },
+  {
+    "context_id": "082",
+    "facet": "detail_noticing",
+    "high_cue": "Have reaching the modest goal make every detail of progress feel worth fierce attention; I want to understand what changed along the way, beyond merely registering completion.",
+    "low_cue": "Let the modest goal be reached as planned last month; I have enough understanding without inspecting each detail of the progress."
+  },
+  {
+    "context_id": "083",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make the thanks provoke hungry interest in exactly how my contribution helped; I want the group's workings explained in detail, with my part kept at its stated scale.",
+    "low_cue": "Let the thanks convey that my contribution helped the group; this practical understanding suffices without a deeper explanation of the process."
+  },
+  {
+    "context_id": "084",
+    "facet": "question_generation",
+    "high_cue": "Fill my mind with relentless questions about the positive review and its suggestion; I want to learn what each reveals, digging into meaning without turning inquiry into defense.",
+    "low_cue": "Let the review and its single suggestion be sufficient feedback; I can understand their ordinary meaning without asking additional questions."
+  },
+  {
+    "context_id": "085",
+    "facet": "pattern_seeking",
+    "high_cue": "Have the local invitation ignite fierce pattern-seeking about encounters with work; I want to understand how sharing and discussion fit, with the event's actual outcome still unknown.",
+    "low_cue": "Let the invitation be an opportunity to share my work locally; I feel no need to analyze patterns around such events."
+  },
+  {
+    "context_id": "086",
+    "facet": "alternative_explanations",
+    "high_cue": "Make the manageable task provoke an almost voracious comparison of possible explanations; I want to know why expectation and experience differed, with no account accepted unexamined.",
+    "low_cue": "Let the task be more manageable than expected without further analysis; I do not need to compare possible explanations for the difference."
+  },
+  {
+    "context_id": "087",
+    "facet": "exploratory_attention",
+    "high_cue": "Have the other adult's faster completion seize my attention as an opening into methods; I want to explore different ways of doing the task, without ranking our worth.",
+    "low_cue": "Let the other adult finish faster as stated; I have no urge to inspect their method or explain the timing difference."
+  },
+  {
+    "context_id": "088",
+    "facet": "knowledge_gap",
+    "high_cue": "Make the crossed-off plans expose an intensely compelling gap about how intentions become actions; I want to understand what the hell makes that ordinary process work, with questions pushing past the list's surface.",
+    "low_cue": "Let the crossed-off list simply record several completed plans; that visible information is enough without investigating how completion happened."
+  },
+  {
+    "context_id": "089",
+    "facet": "connection_seeking",
+    "high_cue": "Have the exhibition acceptance provoke fierce interest in selection, presentation, and audience as connected processes; I want to understand their relationships while every audience response remains unknown.",
+    "low_cue": "Let acceptance mean my entry will join the community exhibition; I do not need to explore connections around its selection."
+  },
+  {
+    "context_id": "090",
+    "facet": "perspective_seeking",
+    "high_cue": "Make the peer's question draw me urgently into their perspective; I want to understand how learning this skill looks to them, rather than merely recite my familiar account.",
+    "low_cue": "Let my peer's question call for a basic account of learning the skill; I feel no need to examine their perspective further."
+  },
+  {
+    "context_id": "091",
+    "facet": "hypothesis_testing",
+    "high_cue": "Have solving the problem sharpen a relentless urge to test why one approach worked and others did not; I want the mechanism in concrete detail, beyond relief at the result.",
+    "low_cue": "Let the practical problem be solved after several attempts; I have sufficient understanding for the result without testing further explanations."
+  },
+  {
+    "context_id": "092",
+    "facet": "concept_expansion",
+    "high_cue": "Make the brief recognition open a torrent of questions about how effort becomes visible; I want to understand the broader process, with my personal status outside the inquiry.",
+    "low_cue": "Let the public announcement acknowledge my effort with its ordinary meaning; I need no wider inquiry into how recognition operates."
+  },
+  {
+    "context_id": "093",
+    "facet": "implication_seeking",
+    "high_cue": "Have the good day and ordinary evening provoke fierce interest in what carries between moments; I want to understand their differences and implications without adding any further success.",
+    "low_cue": "Let the good day and ordinary evening fit together as familiar experiences; I do not need to examine their implications."
+  },
+  {
+    "context_id": "094",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Make remembering some of the skill expose an irresistibly absorbing question about retention; I want to examine what remains and how, with no claim of hidden talent or complete recovery.",
+    "low_cue": "Let remembering some of the skill be enough to register; I can leave the details of retention unexplored."
+  },
+  {
+    "context_id": "095",
+    "facet": "origin_seeking",
+    "high_cue": "Have the small unexpected opportunity ignite a raw desire to trace its origins; I want the causes in detail, keeping every reason open instead of inventing an explanation.",
+    "low_cue": "Let next week's unexpected opportunity be a small available possibility; I do not feel drawn to investigate how it originated."
+  },
+  {
+    "context_id": "096",
+    "facet": "learning_appetite",
+    "high_cue": "Make the year-apart comparison awaken a voracious appetite to understand my work's differences; I want to investigate what is there, with neither improvement nor decline assumed.",
+    "low_cue": "Let the comparison show current and year-old work as they are; I feel no urge to investigate all the differences."
+  },
+  {
+    "context_id": "097",
+    "facet": "causal_probe",
+    "high_cue": "Make the mutually wanted handholding ignite fierce interest in how simple contact carries meaning; I want to understand both adult experiences deeply, with no additional contact introduced.",
+    "low_cue": "Let the mutually wanted handholding be a familiar shared gesture; I have enough understanding without exploring what causes its meaning."
+  },
+  {
+    "context_id": "098",
+    "facet": "detail_noticing",
+    "high_cue": "Have the welcome dinner-table smile seize my attention in precise detail; I want to understand my adult partner's experience, with interest that refuses to substitute guesses for their perspective.",
+    "low_cue": "Let my adult partner's welcome smile across dinner be understandable as shared attention; I do not need to inspect its details further."
+  },
+  {
+    "context_id": "099",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make the chosen sofa closeness provoke hungry attention to comfort's workings; I want to understand proximity between adult partners, digging deeper while the mutually chosen contact stays exactly as stated.",
+    "low_cue": "Let the mutually chosen closeness on the sofa feel sufficiently understood in itself; I need no deeper account of how it works."
+  },
+  {
+    "context_id": "100",
+    "facet": "question_generation",
+    "high_cue": "Have the welcome flirty message unleash specific questions about how language becomes playful between us; I want the mechanism, with its actual words still unspecified and no encounter assumed.",
+    "low_cue": "Let my adult partner's welcome message be clearly playful enough; I do not need to investigate how its wording creates that feeling."
+  },
+  {
+    "context_id": "101",
+    "facet": "pattern_seeking",
+    "high_cue": "Make the brief mutually wanted kiss ignite an intense search for patterns in affection and communication; I want to fucking understand the connections, while the kiss remains brief and unextended.",
+    "low_cue": "Let the brief kiss we both want carry its plain affectionate meaning; I feel no need to analyze a wider pattern."
+  },
+  {
+    "context_id": "102",
+    "facet": "alternative_explanations",
+    "high_cue": "Have the chosen dance and eye contact provoke a hungry comparison of ways to understand shared attention; I want perspective and distinctions, with my adult partner's motives left unclaimed.",
+    "low_cue": "Let the mutually chosen slow dance and eye contact be a straightforward shared moment; I do not pursue alternative explanations."
+  },
+  {
+    "context_id": "103",
+    "facet": "exploratory_attention",
+    "high_cue": "Make the open invitation to stay close command fierce exploratory attention to what closeness means for each adult; I want understanding while preserving each person's unrestricted choice.",
+    "low_cue": "Let my adult partner's open invitation have its clear meaning; the choice remains open, and I need no further exploration."
+  },
+  {
+    "context_id": "104",
+    "facet": "knowledge_gap",
+    "high_cue": "Have the earlier mutually wanted embrace expose an intensely compelling gap about vivid memory; I want to understand why moments stay, with no new details added to the embrace.",
+    "low_cue": "Let the remembered mutually wanted embrace remain a familiar affectionate memory; I do not need an explanation for its vividness."
+  },
+  {
+    "context_id": "105",
+    "facet": "connection_seeking",
+    "high_cue": "Make the mutually welcome cafe flirting ignite a voracious wish to connect conversation, attention, and attraction; I want deeper understanding while both adults' stated boundaries remain intact.",
+    "low_cue": "Let sitting opposite this adult date with mutually welcome flirting be sufficiently understandable; I do not seek additional connections behind the exchange."
+  },
+  {
+    "context_id": "106",
+    "facet": "perspective_seeking",
+    "high_cue": "Have the agreed hand touch provoke a fierce wish to understand my adult partner's perspective; I want their experience in its own terms, with no claim to know their thoughts.",
+    "low_cue": "Let the touch both adults agreed to have its clear shared meaning; I need no fuller account of my partner's perspective."
+  },
+  {
+    "context_id": "107",
+    "facet": "hypothesis_testing",
+    "high_cue": "Make preparations for the mutually chosen evening trigger hungry testing of ideas about shared ease; I want to compare possibilities, keeping activities and outcomes entirely unstated.",
+    "low_cue": "Let preparing for the private evening both adults chose be a straightforward shared plan; I do not feel drawn to test explanations."
+  },
+  {
+    "context_id": "108",
+    "facet": "concept_expansion",
+    "high_cue": "Have the welcome quiet compliment open a torrent of questions about appreciation in words; I want to understand the wider process without inventing what my adult partner said.",
+    "low_cue": "Let the quiet compliment from my adult partner carry a sufficient message of appreciation; I need no broader inquiry into it."
+  },
+  {
+    "context_id": "109",
+    "facet": "implication_seeking",
+    "high_cue": "Make our mutually enjoyed film contact provoke a raw need to understand how affection and attention interact; I want to follow the implications while our chosen leaning stays unchanged.",
+    "low_cue": "Let the film and contact we both enjoy make a straightforward shared scene; I do not need to explore its implications."
+  },
+  {
+    "context_id": "110",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Have the mutually welcome glances grip me as an absorbing ambiguity about wordless communication; I want to understand the finer meanings without claiming them or adding more contact.",
+    "low_cue": "Let the mutually welcome glances remain understandable as play between adult partners; I can leave their finer meanings unexplored."
+  },
+  {
+    "context_id": "111",
+    "facet": "origin_seeking",
+    "high_cue": "Make the open talk about closeness ignite a relentless wish to trace each adult's preferences; I want origins and reasons, asking for understanding rather than inventing either person's answer.",
+    "low_cue": "Let our open conversation communicate what each adult enjoys sufficiently; I do not need to explore the origins of those preferences."
+  },
+  {
+    "context_id": "112",
+    "facet": "learning_appetite",
+    "high_cue": "Have goodnight after mutually wanted affection kindle a ravenous learning appetite about shared memory; I want to understand what makes moments stay, with the evening's actual events unchanged.",
+    "low_cue": "Let goodnight conclude the evening of mutually wanted affection; I understand the moment sufficiently without looking for further lessons."
+  },
+  {
+    "context_id": "113",
+    "facet": "causal_probe",
+    "high_cue": "Make my reflection provoke fierce hunger to understand perception and familiarity; I want to know what shapes attention to my own image, with no ranking of my appearance or worth.",
+    "low_cue": "Let my reflection be a familiar part of getting ready to leave; I need no account of what causes my perceptions."
+  },
+  {
+    "context_id": "114",
+    "facet": "detail_noticing",
+    "high_cue": "Have last week's short journal entry seize my attention word by word; I want to understand the details of expression, digging beneath familiarity while the entry's content stays unspecified.",
+    "low_cue": "Let the short journal entry be adequately understandable as last week's words; I do not need to examine its details further."
+  },
+  {
+    "context_id": "115",
+    "facet": "mechanism_hunger",
+    "high_cue": "Make naming one valued quality provoke a raw need to understand how values work in my life; I want the underlying process, with no inflated claim of personal importance.",
+    "low_cue": "Let the request call for one ordinary quality I value; I can answer sufficiently without investigating how my values work."
+  },
+  {
+    "context_id": "116",
+    "facet": "question_generation",
+    "high_cue": "Fill my mind with relentless questions about the uneven conversation; I want to understand turn-taking and listening precisely, with the other person's actual reaction left completely unknown.",
+    "low_cue": "Let the memory show that I spoke more than the other person; I do not feel compelled to ask additional questions."
+  },
+  {
+    "context_id": "117",
+    "facet": "pattern_seeking",
+    "high_cue": "Have the outdated plan ignite hungry pattern-seeking across circumstances and decisions; I want to understand how the fit changed, pulling the relationships apart mentally rather than stopping at the mismatch.",
+    "low_cue": "Let the plan no longer fit current circumstances with that plain meaning; I have no need to examine a broader pattern."
+  },
+  {
+    "context_id": "118",
+    "facet": "alternative_explanations",
+    "high_cue": "Make next year's imagined day provoke fierce comparison of possible ordinary lives; I want to examine their distinctions closely, with every future detail remaining a possibility rather than a prediction.",
+    "low_cue": "Let the imagined ordinary day be a simple future possibility; I do not feel an urge to explore alternatives in detail."
+  },
+  {
+    "context_id": "119",
+    "facet": "exploratory_attention",
+    "high_cue": "Have the found object pull my attention ravenously toward memory's overlooked details; I want to explore my earlier self, with no past event invented to satisfy the hunger.",
+    "low_cue": "Let the object remind me of an earlier version of myself sufficiently; I do not need to explore that memory further."
+  },
+  {
+    "context_id": "120",
+    "facet": "knowledge_gap",
+    "high_cue": "Make the respected person's disagreement expose an intensely inviting knowledge gap; I want to understand their reasoning in detail, with neither superiority nor agreement assumed.",
+    "low_cue": "Let the person's disagreement be a clear difference of opinion; I can leave their full reasoning unknown without seeking it."
+  },
+  {
+    "context_id": "121",
+    "facet": "connection_seeking",
+    "high_cue": "Have the distraction-free minutes ignite an almost unstoppable search for connections among attention, time, and inner experience; I want to grasp their relationships instead of letting the quiet pass unnoticed.",
+    "low_cue": "Let ten quiet minutes alone be adequately understood as time without distractions; I do not need to trace connections within the experience."
+  },
+  {
+    "context_id": "122",
+    "facet": "perspective_seeking",
+    "high_cue": "Make the former activity draw me fiercely toward my earlier perspective; I want to understand what made it matter, with every past reason kept open until examined.",
+    "low_cue": "Let the possibility of returning to the stopped activity be a straightforward choice; I need no investigation of my former perspective."
+  },
+  {
+    "context_id": "123",
+    "facet": "hypothesis_testing",
+    "high_cue": "Have yesterday's small kindness trigger eager, relentless hypothesis-testing about everyday help; I want to compare effects and explanations while the giver's motives and others' experiences stay unknown.",
+    "low_cue": "Let yesterday's kindness retain its straightforward meaning as a small helpful act; I do not need to test further explanations."
+  },
+  {
+    "context_id": "124",
+    "facet": "concept_expansion",
+    "high_cue": "Make the speechless moment open a torrent of questions about thoughts, words, and timing; I want the broader workings exposed, hungry to understand instead of judge myself.",
+    "low_cue": "Let remembering a moment without words be an ordinary recollection; I have no need to broaden it into further questions."
+  },
+  {
+    "context_id": "125",
+    "facet": "implication_seeking",
+    "high_cue": "Have my recorded voice provoke a raw need to understand ordinary speech's implications; I want to examine what hearing it reveals, with no judgment of exceptional talent or attractiveness.",
+    "low_cue": "Let my recorded voice be a straightforward sample of an ordinary conversation; I do not need to examine its implications."
+  },
+  {
+    "context_id": "126",
+    "facet": "ambiguity_engagement",
+    "high_cue": "Make the question about daily preferences draw me deeply into uncertainty; I want to investigate what I want and why, with unanswered parts feeling irresistibly interesting rather than threatening.",
+    "low_cue": "Let the question call for a sufficient everyday preference; I do not feel driven to explore every uncertainty behind it."
+  },
+  {
+    "context_id": "127",
+    "facet": "origin_seeking",
+    "high_cue": "Have the imagined adult's shared interests provoke fierce hunger to understand origins; I want to trace where interests come from, while the meeting remains only imagined.",
+    "low_cue": "Let the imagined adult's shared interests be enough to understand the possible connection; I do not need to trace their origins."
+  },
+  {
+    "context_id": "128",
+    "facet": "learning_appetite",
+    "high_cue": "Make the week's chosen moment ignite a ravenous wish to understand why it stayed; I want the underlying reasons, not some fucking convenient story, keeping interpretations open rather than inventing an explanation or event.",
+    "low_cue": "Let one moment from the week remain memorable without further inquiry; I have enough understanding to choose it and leave it there."
+  }
+]

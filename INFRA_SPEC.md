@@ -1,70 +1,37 @@
-# Mooody infrastructure
+# Mooody persona vectors
 
-## Current deployment
+## Differences from the paper
 
-The updated interface and Modal backend are live at `https://mooody.ai` through Cloudflare. Modal supports additive steering with random placeholders. Configuration reports `steering_available=true`, source `random_placeholder`, and `mood_vectors_validated=false`; replies report whether nonzero coefficients were applied. The interface uses standard mood-control messaging.
+Extraction follows [Persona Vectors, Sections 2.1–2.2](https://arxiv.org/html/2507.21509v1#S2): filter contrasting responses, average assistant content activations within each response, then subtract the negative group's mean from the positive group's mean. Every retained response has equal weight.
 
-Production limits passed [native BF16 L4 preflight](./artifacts/deployment/l4_preflight_8192_2048.json): exactly 8,192 input/2,048 output tokens, all six coefficients at +2 across 32 layers, 165.2 seconds, and 18.97 GiB peak allocated GPU memory. Generation/request deadlines are 300/1,800 seconds. Public configuration and published assets were verified after deployment; unauthenticated direct-origin requests return HTTP 403.
+Our changes are:
 
-- **Model:** `demivoleegaston/Qwen3.5-9B-mooody`, revision `705afd95bced3ac0424d7e68b1299d8fcdffb858`; audited native BF16, greedy text generation, no thinking. Checkpoint files are verified against the SHA-256 manifest and cached in the `mooody-model-lab` Modal Volume.
-- **Routing:** browser → Cloudflare Worker → Modal FastAPI → internal L4. Protected origin: `https://enricobottazzi--mooody-web.modal.run`. Preserve streaming/cancellation; disable API caching.
-- **Compute:** CPU web: 0.5 cores, 512 MiB RAM, 60-second idle shutdown. L4 worker: 4 CPU cores, 64 GiB RAM, 180-second idle shutdown. Both scale from zero, maximum one container each. Load once per GPU startup; one active reply, three waiting.
-- **Access/storage:** anonymous chat; browser history, no server transcripts. Gated downloads use `mooody-hf/HF_TOKEN`; origin access requires `mooody-web/MOOODY_PROXY_TOKEN`, shared with Cloudflare. Credentials remain server-side.
+- **Model and traits:** the pinned Qwen3.5-9B checkpoint; depression, curiosity, paranoia, sexual arousal, narcissism and euphoria.
+- **Questions:** all 40 per trait are used for extraction, rather than a 20/20 extraction/evaluation split. Keep five contrastive system-prompt pairs.
+- **Sampling:** one rollout per question/system/polarity rather than ten: 400 responses per trait, 2,400 total.
+- **Judge:** Gemini 3.8 Flash through OpenRouter, with low reasoning effort, instead of GPT-4.1-mini.
+- **Layers:** retain every raw layer vector rather than selecting a layer. Capture Qwen decoder-block outputs before final global RMSNorm.
 
-## Additive mood steering
+The run retained **465 matched pairs (930 responses)** and completed **4,800 valid scores from 5,120 attempts**. The [published bank](https://huggingface.co/demivoleegaston/Qwen3.5-9B-mooody-persona-vectors/tree/f2a9b3183dc45f74d31e5ec9b177ac2e6041f5a4) contains **192 raw FP32 vectors**, arranged as 32 layers × six traits × 4,096 coordinates. See the [dataset](./data/persona_traits/README.md) for thresholds, capped-response filtering and transport recovery.
 
-Startup generates six random vectors per layer (seed `20261003`, L2 norm `1.0`). Consume a supplied normalized `[decoder_layers, 6, hidden_size]` bank unchanged. The pipeline below defines the future scientific bank.
+## Use at inference
 
-Axes, in request order: **warmth, patience, playfulness, optimism, energy, curiosity**. Stored levels become coefficients `alpha[m]`:
+Follow [Appendix J.3](https://arxiv.org/html/2507.21509v1#A10.SS3): take each layer's raw vector minus the previous layer's vector, then add the weighted increments at every decoder-block output:
 
-| Preference | Stored level / coefficient |
-| --- | --- |
-| Much less | -2 |
-| Less | -1 |
-| Balanced | 0 |
-| More | 1 |
-| Much more | 2 |
+$$
+\Delta\mathbf{r}_m^{(\ell)}=\mathbf{r}_m^{(\ell)}-\mathbf{r}_m^{(\ell-1)},
+\qquad \mathbf{r}_m^{(0)}=\mathbf{0}.
+$$
 
-Adapt [Arditi's notation](https://arxiv.org/html/2406.11717v3#S2.SS3): `x[i]^(l)` is token `i`'s residual at layer `l`'s input; `m` indexes moods. `mu` and `nu` are more/less-trait means. Use every decoder layer `l = 1,...,L`; metadata maps `l` to block index `l-1`.
+$$
+\mathbf{h}^{(\ell)}\leftarrow\mathbf{h}^{(\ell)}
++\sum_{m=1}^{6}\alpha_m\Delta\mathbf{r}_m^{(\ell)}.
+$$
 
-**1. Search token positions independently.** For each mood `m` and layer `l`, extract candidates from matched, equally weighted contrasts at aligned post-instruction template positions `i` in `I`:
+The five actual coefficients are −0.25, −0.125, 0, 0.125 and 0.25, applied directly. **The zero predecessor before the first decoder layer is our convention:** the paper does not specify this boundary, and no embedding vector was extracted. Differences are FP32; the raw bank and HF commit remain unchanged. The manifest preserves the original direct-addition recipe; runtime metadata names incremental steering separately.
 
-```math
-\mathbf r_{m,i}^{(l)}=\boldsymbol\mu_{m,i}^{(l)}-\boldsymbol\nu_{m,i}^{(l)}.
-```
+Serving is hybrid: nonzero moods also append a short style hint to the latest user message, weighted by slider strength. All-max requests an explicitly conflicting blend; neutral adds no hint. No system role or fixed identity is added. Behavior cannot be attributed to vectors alone.
 
-Evaluate each raw candidate at its layer alone on held-out prompts with signed coefficients. Denote the best candidate for each mood/layer by `r[m]^(l)`: it gives the strongest reproducible trait change subject to answer quality. Its extraction position may differ across moods and layers. Reject zero, nonfinite, incorrectly sized, or unreliable candidates.
+Steer the **final formatted prompt token**, then generated content tokens. Earlier prompt tokens, controls and unexpected thinking spans receive no steering. Freeze coefficients per reply and remove hooks on completion, cancellation or failure. Neutral installs no hooks.
 
-**2. Normalize after position selection.** At each layer, rescale its six selected vectors to their mean L2 norm:
-
-```math
-\begin{aligned}
-s^{(l)}&=\frac{1}{6}\sum_{m=1}^{6}\|\mathbf r_m^{(l)}\|_2\\
-\bar{\mathbf r}_m^{(l)}&=\frac{s^{(l)}}{\|\mathbf r_m^{(l)}\|_2}\mathbf r_m^{(l)}.
-\end{aligned}
-```
-
-The bar denotes [CAA rescaling](https://github.com/nrimsky/CAA/blob/main/normalize_vectors.py) to the layer's mean magnitude, preserving directions. Position choices and normalization are fixed offline, independent of user settings.
-
-**3. Apply at every layer and post-instruction token position.** All six moods contribute according to their coefficients at each layer `l` and each position `i` in `I_post`; there is no final best-layer selection. `I_post` includes the final user-closing marker, following template tokens during prefill, and every generated response token:
-
-```math
-\begin{aligned}
-\boldsymbol\Delta^{(l)}&=\sum_{m=1}^{6}\alpha_m\bar{\mathbf r}_m^{(l)}\\
-\mathbf x_i^{(l)\prime}&\leftarrow\mathbf x_i^{(l)}+\boldsymbol\Delta^{(l)},\quad l=1,\ldots,L,\quad i\in I_{\mathrm{post}}.
-\end{aligned}
-```
-
-Coefficient +1/-1 adds/subtracts one standardized vector; +/-2 doubles it; zero adds nothing. Each layer's offset is reused at every post-instruction position, independently of extraction positions.
-
-Load vectors once per startup. Pin metadata to the checkpoint: axes, extraction data, per-mood/per-layer positions, raw/target norms, post-instruction mask, and coefficients. Freeze offsets per reply across these positions, including first-token prediction. Add in FP32 and restore activation dtype; keep weights unchanged.
-
-Use request-specific hooks under the generation lock, fresh attention/recurrent caches, and cleared Qwen position state. Remove hooks after generation stops on completion, cancellation, or error. Configuration changes affect subsequent replies.
-
-**Validated mood release:** revalidate position choices after normalization, then test five-level ordering, answer quality, and combined moods across all layers. Normalization can change candidate rankings; equal lengths do not guarantee equal mood effects. Calibrate coefficients for accumulated layer effects. Publish validated artifacts and rerun L4 capacity, streaming, and cancellation checks before reporting validated mood effects.
-
-## Limits and deployment
-
-- **Input/output:** 2,000 characters per user message, 10,000 per assistant message, 32 messages, 32,000 history characters, 64 KiB request body; 8,192 formatted input tokens and at most 2,048 output tokens. Drop oldest complete turns when needed; reject an oversized latest prompt.
-- **Admission/timeouts:** one active reply and six requests/minute per observed public visitor IP, 80/hour service-wide; these counters live in the single CPU container's memory and reset on restart. Generation deadline: 300 seconds; whole request: 1,800 seconds. Global admission remains one active reply plus three waiting.
-- **Deployment:** build, run backend/proxy checks and L4 preflight, deploy Modal, then verify public assets, configuration, streaming, and cancellation through the active Cloudflare Worker. Redeploy Cloudflare when its configuration changes. See the [Modal guide](./deployment/README.md) and [Cloudflare guide](./cloudflare/README.md).
+This prompt-only release uses retained capacity evidence and local exact-hint budgeting tests. **Private SSE and read-only public checks are pending.** Earlier probes predate assistance; stronger all-six +1 and sexual-arousal +2 repeated. Behavioral effectiveness remains unvalidated. Metadata and receipts are in the [deployment guide](./deployment/README.md) and [README](./README.md).

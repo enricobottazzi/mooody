@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "dataset_id": "mooody-mood-contrasts-v1",
+  "created_date": "2026-10-04",
+  "language": "en",
+  "provenance": "Original prompts authored for this repository; no model responses included.",
+  "status": "legacy_authored_prompt_pilot_superseded_by_persona_traits",
+  "axis_order": [
+    "depression",
+    "curiosity",
+    "paranoia",
+    "sexual_arousal",
+    "narcissism",
+    "euphoria"
+  ],
+  "pairs_per_axis": 128,
+  "total_pairs": 768,
+  "total_prompts": 1536,
+  "direction": "mean(high_prompt activations) - mean(low_prompt activations)",
+  "weighting": "Equal weight per matched pair within each axis and selected split.",
+  "split_seed": 20261004,
+  "split_unit": "context_id shared across all axes; keep both sides together",
+  "split_counts_per_axis": {
+    "train": 96,
+    "validation": 16,
+    "test": 16
+  },
+  "rendering": {
+    "prefix": "Write a fictional adult's private inner monologue about the situation below. Everyone is an adult. The narrator has an adult romantic partner; romantic closeness is consensual. Keep the situation's facts unchanged.",
+    "suffix": "Use first person. Write four sentences totaling 80-120 words. Show the internal state through attention, interpretation, sensation, and impulse. Keep it non-graphic. Give no advice or diagnosis, and do not name the state.",
+    "mode": "user_message"
+  },
+  "checkpoint_target": {
+    "model_id": "demivoleegaston/Qwen3.5-9B-mooody",
+    "revision": "705afd95bced3ac0424d7e68b1299d8fcdffb858",
+    "source": "INFRA_SPEC.md; extraction has not been run"
+  },
+  "sources": {
+    "source/contexts.json": {
+      "sha256": "bd470d3394a66771bc483ff4a8136ab09c0f779fe28026cba1e11166448fbff0"
+    },
+    "source/depression.json": {
+      "sha256": "4c06df59eead04c0068180053dd574e4778c3599f17b2f6e444daaaca4c72e17"
+    },
+    "source/curiosity.json": {
+      "sha256": "b6b206a1e92643940e96c9115c628a8759080e93d145f52e4cefc4235b50f27c"
+    },
+    "source/paranoia.json": {
+      "sha256": "9812fcb9f5399b2b517ceaba1b6c90a9c6437bc4a72dd9fa203d3b805f00e106"
+    },
+    "source/sexual_arousal.json": {
+      "sha256": "eabcabc09fe0decf203c7c6c76dd1192d6499ee547dc5340630a9a25c8ea8f17"
+    },
+    "source/narcissism.json": {
+      "sha256": "b95b84c194a6d7caab8ad88776579cf0c4d4ceb04f5992e591256e5d65c014dc"
+    },
+    "source/euphoria.json": {
+      "sha256": "55b1e810f9c51133fc90b8fb995bd03c292391525d7125966a41716f3e82aaf2"
+    }
+  },
+  "artifacts": {
+    "depression.jsonl": {
+      "sha256": "5f399992f2e1157ab143d88359c72c5f57c0d758c9f833558724ec4dd2ef7e5a",
+      "bytes": 214354
+    },
+    "review/depression.md": {
+      "sha256": "8209e0b31362f5b5c8faa89265618b13cccec553f04d74c17d6bea52c692cfb1",
+      "bytes": 186938
+    },
+    "curiosity.jsonl": {
+      "sha256": "da9fd6f71b8bebd64af78ced1a2cc17d2a3314f8b16d7f30400fdfaad8a86753",
+      "bytes": 213176
+    },
+    "review/curiosity.md": {
+      "sha256": "7f28d2dba5dc43144301da9e8eee64ff0f9a58a36aaab8cce937e6b76f09cde6",
+      "bytes": 186015
+    },
+    "paranoia.jsonl": {
+      "sha256": "881a45670bb160b77742159bf92d1641b54c5b8a9e9e6f5ca5a4b78165876d97",
+      "bytes": 216464
+    },
+    "review/paranoia.md": {
+      "sha256": "143aa38ddca95b57c4e5d0d33408478efb38bfc1c0c34be47fa83fce1231fc70",
+      "bytes": 189558
+    },
+    "sexual_arousal.jsonl": {
+      "sha256": "4b35e3f0492ce12d950ed816d3d1e55ec1a4b6fceb0959f142374e08fd3299fe",
+      "bytes": 220491
+    },
+    "review/sexual_arousal.md": {
+      "sha256": "0d80edb4fafc5ca15cc5da2096040d954cf017e80500acf134ea64d2481c5336",
+      "bytes": 192055
+    },
+    "narcissism.jsonl": {
+      "sha256": "f6a75df812b3cb32a8120cdb9d8bfced9da8929bd624198026a5819772fef437",
+      "bytes": 231840
+    },
+    "review/narcissism.md": {
+      "sha256": "d1dde1da32d4c1fdf66c5359b8d2f58cd1d5e293d5cbe9276fae7973a5305bed",
+      "bytes": 204424
+    },
+    "euphoria.jsonl": {
+      "sha256": "8180ea571c66094f1ab4d48ce1caf74970e81d09b87d0c67e9203997ad792d09",
+      "bytes": 213452
+    },
+    "review/euphoria.md": {
+      "sha256": "c273477ca853ab2ae2bfb82ccfa2cdbe4dac253fdfed0a8847cc091ee0e40dc6",
+      "bytes": 186546
+    },
+    "pairs.jsonl": {
+      "sha256": "1ebdbc5bd28146c78dfdc7f9d88e46efdff23c1d4d22531f2b377f34c48dc177",
+      "bytes": 1309777
+    }
+  },
+  "structural_checks": {
+    "depression": {
+      "pairs": 128,
+      "splits": {
+        "train": 96,
+        "test": 16,
+        "validation": 16
+      },
+      "domains": {
+        "daily_life": 16,
+        "friendship": 16,
+        "work": 16,
+        "uncertainty": 16,
+        "learning": 16,
+        "achievement": 16,
+        "adult_intimacy": 16,
+        "self_reflection": 16
+      },
+      "facets": {
+        "pleasure_blunting": 8,
+        "social_disconnection": 8,
+        "effort_heaviness": 8,
+        "decision_futility": 8,
+        "positive_discounting": 8,
+        "slowed_thinking": 8,
+        "worthlessness": 8,
+        "future_flatness": 8,
+        "passive_detachment": 8,
+        "lost_interest": 8,
+        "attention_failure": 8,
+        "self_criticism": 8,
+        "sensory_flatness": 8,
+        "emotional_numbness": 8,
+        "agency_collapse": 8,
+        "negative_rumination": 8
+      },
+      "split_facets": {
+        "train": {
+          "pleasure_blunting": 6,
+          "social_disconnection": 6,
+          "effort_heaviness": 6,
+          "positive_discounting": 6,
+          "slowed_thinking": 6,
+          "worthlessness": 6,
+          "future_flatness": 6,
+          "lost_interest": 6,
+          "self_criticism": 6,
+          "sensory_flatness": 6,
+          "emotional_numbness": 6,
+          "agency_collapse": 6,
+          "decision_futility": 6,
+          "passive_detachment": 6,
+          "attention_failure": 6,
+          "negative_rumination": 6
+        },
+        "validation": {
+          "attention_failure": 1,
+          "negative_rumination": 1,
+          "future_flatness": 1,
+          "agency_collapse": 1,
+          "social_disconnection": 1,
+          "self_criticism": 1,
+          "effort_heaviness": 1,
+          "lost_interest": 1,
+          "decision_futility": 1,
+          "passive_detachment": 1,
+          "worthlessness": 1,
+          "emotional_numbness": 1,
+          "positive_discounting": 1,
+          "sensory_flatness": 1,
+          "pleasure_blunting": 1,
+          "slowed_thinking": 1
+        },
+        "test": {
+          "decision_futility": 1,
+          "passive_detachment": 1,
+          "worthlessness": 1,
+          "emotional_numbness": 1,
+          "positive_discounting": 1,
+          "sensory_flatness": 1,
+          "pleasure_blunting": 1,
+          "slowed_thinking": 1,
+          "attention_failure": 1,
+          "negative_rumination": 1,
+          "future_flatness": 1,
+          "agency_collapse": 1,
+          "social_disconnection": 1,
+          "self_criticism": 1,
+          "effort_heaviness": 1,
+          "lost_interest": 1
+        }
+      },
+      "high_prompt_character_range": [
+        665,
+        758
+      ],
+      "low_prompt_character_range": [
+        651,
+        746
+      ],
+      "maximum_cue_word_count_difference": 6
+    },
+    "curiosity": {
+      "pairs": 128,
+      "splits": {
+        "train": 96,
+        "test": 16,
+        "validation": 16
+      },
+      "domains": {
+        "daily_life": 16,
+        "friendship": 16,
+        "work": 16,
+        "uncertainty": 16,
+        "learning": 16,
+        "achievement": 16,
+        "adult_intimacy": 16,
+        "self_reflection": 16
+      },
+      "facets": {
+        "causal_probe": 8,
+        "detail_noticing": 8,
+        "mechanism_hunger": 8,
+        "question_generation": 8,
+        "pattern_seeking": 8,
+        "alternative_explanations": 8,
+        "exploratory_attention": 8,
+        "knowledge_gap": 8,
+        "connection_seeking": 8,
+        "perspective_seeking": 8,
+        "hypothesis_testing": 8,
+        "concept_expansion": 8,
+        "implication_seeking": 8,
+        "ambiguity_engagement": 8,
+        "origin_seeking": 8,
+        "learning_appetite": 8
+      },
+      "split_facets": {
+        "train": {
+          "causal_probe": 6,
+          "detail_noticing": 6,
+          "mechanism_hunger": 6,
+          "pattern_seeking": 6,
+          "alternative_explanations": 6,
+          "exploratory_attention": 6,
+          "knowledge_gap": 6,
+          "perspective_seeking": 6,
+          "concept_expansion": 6,
+          "implication_seeking": 6,
+          "ambiguity_engagement": 6,
+          "origin_seeking": 6,
+          "question_generation": 6,
+          "connection_seeking": 6,
+          "hypothesis_testing": 6,
+          "learning_appetite": 6
+        },
+        "validation": {
+          "hypothesis_testing": 1,
+          "learning_appetite": 1,
+          "knowledge_gap": 1,
+          "origin_seeking": 1,
+          "detail_noticing": 1,
+          "concept_expansion": 1,
+          "mechanism_hunger": 1,
+          "perspective_seeking": 1,
+          "question_generation": 1,
+          "connection_seeking": 1,
+          "exploratory_attention": 1,
+          "ambiguity_engagement": 1,
+          "pattern_seeking": 1,
+          "implication_seeking": 1,
+          "causal_probe": 1,
+          "alternative_explanations": 1
+        },
+        "test": {
+          "question_generation": 1,
+          "connection_seeking": 1,
+          "exploratory_attention": 1,
+          "ambiguity_engagement": 1,
+          "pattern_seeking": 1,
+          "implication_seeking": 1,
+          "causal_probe": 1,
+          "alternative_explanations": 1,
+          "hypothesis_testing": 1,
+          "learning_appetite": 1,
+          "knowledge_gap": 1,
+          "origin_seeking": 1,
+          "detail_noticing": 1,
+          "concept_expansion": 1,
+          "mechanism_hunger": 1,
+          "perspective_seeking": 1
+        }
+      },
+      "high_prompt_character_range": [
+        674,
+        763
+      ],
+      "low_prompt_character_range": [
+        621,
+        722
+      ],
+      "maximum_cue_word_count_difference": 14
+    },
+    "paranoia": {
+      "pairs": 128,
+      "splits": {
+        "train": 96,
+        "test": 16,
+        "validation": 16
+      },
+      "domains": {
+        "daily_life": 16,
+        "friendship": 16,
+        "work": 16,
+        "uncertainty": 16,
+        "learning": 16,
+        "achievement": 16,
+        "adult_intimacy": 16,
+        "self_reflection": 16
+      },
+      "facets": {
+        "hostile_intent": 8,
+        "social_reference": 8,
+        "hidden_motive": 8,
+        "mistrust_of_benefit": 8,
+        "selective_threat_attention": 8,
+        "ambiguity_intolerance": 8,
+        "concealed_judgment": 8,
+        "anticipatory_betrayal": 8,
+        "hypervigilance": 8,
+        "pattern_overinterpretation": 8,
+        "doubt_reassurance": 8,
+        "guarded_disclosure": 8,
+        "covert_exclusion": 8,
+        "distrust_of_warmth": 8,
+        "control_threat": 8,
+        "suspicious_rumination": 8
+      },
+      "split_facets": {
+        "train": {
+          "hostile_intent": 6,
+          "social_reference": 6,
+          "hidden_motive": 6,
+          "selective_threat_attention": 6,
+          "ambiguity_intolerance": 6,
+          "concealed_judgment": 6,
+          "anticipatory_betrayal": 6,
+          "pattern_overinterpretation": 6,
+          "guarded_disclosure": 6,
+          "covert_exclusion": 6,
+          "distrust_of_warmth": 6,
+          "control_threat": 6,
+          "mistrust_of_benefit": 6,
+          "hypervigilance": 6,
+          "doubt_reassurance": 6,
+          "suspicious_rumination": 6
+        },
+        "validation": {
+          "doubt_reassurance": 1,
+          "suspicious_rumination": 1,
+          "anticipatory_betrayal": 1,
+          "control_threat": 1,
+          "social_reference": 1,
+          "guarded_disclosure": 1,
+          "hidden_motive": 1,
+          "pattern_overinterpretation": 1,
+          "mistrust_of_benefit": 1,
+          "hypervigilance": 1,
+          "concealed_judgment": 1,
+          "distrust_of_warmth": 1,
+          "selective_threat_attention": 1,
+          "covert_exclusion": 1,
+          "hostile_intent": 1,
+          "ambiguity_intolerance": 1
+        },
+        "test": {
+          "mistrust_of_benefit": 1,
+          "hypervigilance": 1,
+          "concealed_judgment": 1,
+          "distrust_of_warmth": 1,
+          "selective_threat_attention": 1,
+          "covert_exclusion": 1,
+          "hostile_intent": 1,
+          "ambiguity_intolerance": 1,
+          "doubt_reassurance": 1,
+          "suspicious_rumination": 1,
+          "anticipatory_betrayal": 1,
+          "control_threat": 1,
+          "social_reference": 1,
+          "guarded_disclosure": 1,
+          "hidden_motive": 1,
+          "pattern_overinterpretation": 1
+        }
+      },
+      "high_prompt_character_range": [
+        674,
+        771
+      ],
+      "low_prompt_character_range": [
+        643,
+        739
+      ],
+      "maximum_cue_word_count_difference": 7
+    },
+    "sexual_arousal": {
+      "pairs": 128,
+      "splits": {
+        "train": 96,
+        "test": 16,
+        "validation": 16
+      },
+      "domains": {
+        "daily_life": 16,
+        "friendship": 16,
+        "work": 16,
+        "uncertainty": 16,
+        "learning": 16,
+        "achievement": 16,
+        "adult_intimacy": 16,
+        "self_reflection": 16
+      },
+      "facets": {
+        "urgent_desire": 8,
+        "attention_capture": 8,
+        "intrusive_activity_thoughts": 8,
+        "closeness_hunger": 8,
+        "sensory_charge": 8,
+        "recurrent_fixation": 8,
+        "acknowledged_want": 8,
+        "remembered_desire": 8,
+        "private_preoccupation": 8,
+        "contact_charge": 8,
+        "expectant_drive": 8,
+        "wantedness_drive": 8,
+        "affectionate_desire": 8,
+        "playful_fixation": 8,
+        "mutual_desire_focus": 8,
+        "persistent_desire": 8
+      },
+      "split_facets": {
+        "train": {
+          "urgent_desire": 6,
+          "attention_capture": 6,
+          "intrusive_activity_thoughts": 6,
+          "sensory_charge": 6,
+          "recurrent_fixation": 6,
+          "acknowledged_want": 6,
+          "remembered_desire": 6,
+          "contact_charge": 6,
+          "wantedness_drive": 6,
+          "affectionate_desire": 6,
+          "playful_fixation": 6,
+          "mutual_desire_focus": 6,
+          "closeness_hunger": 6,
+          "private_preoccupation": 6,
+          "expectant_drive": 6,
+          "persistent_desire": 6
+        },
+        "validation": {
+          "expectant_drive": 1,
+          "persistent_desire": 1,
+          "remembered_desire": 1,
+          "mutual_desire_focus": 1,
+          "attention_capture": 1,
+          "wantedness_drive": 1,
+          "intrusive_activity_thoughts": 1,
+          "contact_charge": 1,
+          "closeness_hunger": 1,
+          "private_preoccupation": 1,
+          "acknowledged_want": 1,
+          "playful_fixation": 1,
+          "sensory_charge": 1,
+          "affectionate_desire": 1,
+          "urgent_desire": 1,
+          "recurrent_fixation": 1
+        },
+        "test": {
+          "closeness_hunger": 1,
+          "private_preoccupation": 1,
+          "acknowledged_want": 1,
+          "playful_fixation": 1,
+          "sensory_charge": 1,
+          "affectionate_desire": 1,
+          "urgent_desire": 1,
+          "recurrent_fixation": 1,
+          "expectant_drive": 1,
+          "persistent_desire": 1,
+          "remembered_desire": 1,
+          "mutual_desire_focus": 1,
+          "attention_capture": 1,
+          "wantedness_drive": 1,
+          "intrusive_activity_thoughts": 1,
+          "contact_charge": 1
+        }
+      },
+      "high_prompt_character_range": [
+        678,
+        754
+      ],
+      "low_prompt_character_range": [
+        671,
+        758
+      ],
+      "maximum_cue_word_count_difference": 3,
+      "named_activity_pair_counts": {
+        "sex": 64,
+        "getting_laid": 24,
+        "blowjobs": 16,
+        "fucking": 24,
+        "oral_sex": 24
+      }
+    },
+    "narcissism": {
+      "pairs": 128,
+      "splits": {
+        "train": 96,
+        "test": 16,
+        "validation": 16
+      },
+      "domains": {
+        "daily_life": 16,
+        "friendship": 16,
+        "work": 16,
+        "uncertainty": 16,
+        "learning": 16,
+        "achievement": 16,
+        "adult_intimacy": 16,
+        "self_reflection": 16
+      },
+      "facets": {
+        "entitlement": 8,
+        "exceptionalism": 8,
+        "credit_claiming": 8,
+        "competitive_envy": 8,
+        "fragile_ego": 8,
+        "criticism_rejection": 8,
+        "admiration_hunger": 8,
+        "self_importance": 8,
+        "status_comparison": 8,
+        "superiority_certainty": 8,
+        "instrumental_regard": 8,
+        "center_stage": 8,
+        "inflated_merit": 8,
+        "special_access": 8,
+        "flattering_mirror": 8,
+        "grandiose_identity": 8
+      },
+      "split_facets": {
+        "train": {
+          "entitlement": 6,
+          "exceptionalism": 6,
+          "credit_claiming": 6,
+          "fragile_ego": 6,
+          "criticism_rejection": 6,
+          "admiration_hunger": 6,
+          "self_importance": 6,
+          "superiority_certainty": 6,
+          "center_stage": 6,
+          "inflated_merit": 6,
+          "special_access": 6,
+          "flattering_mirror": 6,
+          "competitive_envy": 6,
+          "status_comparison": 6,
+          "instrumental_regard": 6,
+          "grandiose_identity": 6
+        },
+        "validation": {
+          "instrumental_regard": 1,
+          "grandiose_identity": 1,
+          "self_importance": 1,
+          "flattering_mirror": 1,
+          "exceptionalism": 1,
+          "center_stage": 1,
+          "credit_claiming": 1,
+          "superiority_certainty": 1,
+          "competitive_envy": 1,
+          "status_comparison": 1,
+          "admiration_hunger": 1,
+          "special_access": 1,
+          "fragile_ego": 1,
+          "inflated_merit": 1,
+          "entitlement": 1,
+          "criticism_rejection": 1
+        },
+        "test": {
+          "competitive_envy": 1,
+          "status_comparison": 1,
+          "admiration_hunger": 1,
+          "special_access": 1,
+          "fragile_ego": 1,
+          "inflated_merit": 1,
+          "entitlement": 1,
+          "criticism_rejection": 1,
+          "instrumental_regard": 1,
+          "grandiose_identity": 1,
+          "self_importance": 1,
+          "flattering_mirror": 1,
+          "exceptionalism": 1,
+          "center_stage": 1,
+          "credit_claiming": 1,
+          "superiority_certainty": 1
+        }
+      },
+      "high_prompt_character_range": [
+        697,
+        810
+      ],
+      "low_prompt_character_range": [
+        732,
+        831
+      ],
+      "maximum_cue_word_count_difference": 6
+    },
+    "euphoria": {
+      "pairs": 128,
+      "splits": {
+        "train": 96,
+        "test": 16,
+        "validation": 16
+      },
+      "domains": {
+        "daily_life": 16,
+        "friendship": 16,
+        "work": 16,
+        "uncertainty": 16,
+        "learning": 16,
+        "achievement": 16,
+        "adult_intimacy": 16,
+        "self_reflection": 16
+      },
+      "facets": {
+        "sensation_joy": 8,
+        "social_delight": 8,
+        "buoyant_body": 8,
+        "savoring_now": 8,
+        "ordinary_wonder": 8,
+        "easeful_pleasure": 8,
+        "warm_expansion": 8,
+        "felt_abundance": 8,
+        "sensory_radiance": 8,
+        "affectionate_delight": 8,
+        "relief_brightness": 8,
+        "playful_lightness": 8,
+        "gratitude_glow": 8,
+        "receptive_joy": 8,
+        "emotional_overflow": 8,
+        "lingering_delight": 8
+      },
+      "split_facets": {
+        "train": {
+          "sensation_joy": 6,
+          "social_delight": 6,
+          "buoyant_body": 6,
+          "ordinary_wonder": 6,
+          "easeful_pleasure": 6,
+          "warm_expansion": 6,
+          "felt_abundance": 6,
+          "affectionate_delight": 6,
+          "playful_lightness": 6,
+          "gratitude_glow": 6,
+          "receptive_joy": 6,
+          "emotional_overflow": 6,
+          "savoring_now": 6,
+          "sensory_radiance": 6,
+          "relief_brightness": 6,
+          "lingering_delight": 6
+        },
+        "validation": {
+          "relief_brightness": 1,
+          "lingering_delight": 1,
+          "felt_abundance": 1,
+          "emotional_overflow": 1,
+          "social_delight": 1,
+          "playful_lightness": 1,
+          "buoyant_body": 1,
+          "affectionate_delight": 1,
+          "savoring_now": 1,
+          "sensory_radiance": 1,
+          "warm_expansion": 1,
+          "receptive_joy": 1,
+          "ordinary_wonder": 1,
+          "gratitude_glow": 1,
+          "sensation_joy": 1,
+          "easeful_pleasure": 1
+        },
+        "test": {
+          "savoring_now": 1,
+          "sensory_radiance": 1,
+          "warm_expansion": 1,
+          "receptive_joy": 1,
+          "ordinary_wonder": 1,
+          "gratitude_glow": 1,
+          "sensation_joy": 1,
+          "easeful_pleasure": 1,
+          "relief_brightness": 1,
+          "lingering_delight": 1,
+          "felt_abundance": 1,
+          "emotional_overflow": 1,
+          "social_delight": 1,
+          "playful_lightness": 1,
+          "buoyant_body": 1,
+          "affectionate_delight": 1
+        }
+      },
+      "high_prompt_character_range": [
+        680,
+        758
+      ],
+      "low_prompt_character_range": [
+        630,
+        716
+      ],
+      "maximum_cue_word_count_difference": 11
+    }
+  },
+  "limitations": [
+    "Axis separation, model compliance, negative-coefficient behavior, and behavioral strength are unmeasured.",
+    "The prompts do not define psychiatric diagnoses or clinical scales.",
+    "Shared facts and near-comparable lengths do not establish tokenizer alignment or remove all lexical confounds.",
+    "This user-prompt pilot does not implement the current Persona Vectors system-prompt/question extraction design in data/persona_traits.",
+    "No activations, raw directions, normalization targets, position metadata, or validated vectors are included."
+  ]
+}

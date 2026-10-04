@@ -1,115 +1,212 @@
 # Mooody production deployment
 
-The Modal CPU app serves the built website and the same-origin `/api/chat` SSE
-endpoint. Its private L4 worker loads the audited native BF16 checkpoint for
-`demivoleegaston/Qwen3.5-9B-mooody`, pinned to
+The Modal CPU app serves the built website and same-origin `/api/chat` SSE
+endpoint through Cloudflare at `https://mooody.ai`. Its private L4 worker runs
+the native BF16 `demivoleegaston/Qwen3.5-9B-mooody` checkpoint at commit
 `705afd95bced3ac0424d7e68b1299d8fcdffb858`.
 
-The October 3, 2026 release is live at `https://mooody.ai` through Cloudflare,
-with formatted input/reply caps of 8,192/2,048 tokens and generation/full-request
-deadlines of 300/1,800 seconds. Native L4 capacity preflight passed. Public
-configuration and published assets were verified after deployment; direct
-origin requests without the proxy token return HTTP 403.
+The persona bank is published at `demivoleegaston/Qwen3.5-9B-mooody-persona-vectors`, pinned to exact
+commit `f2a9b3183dc45f74d31e5ec9b177ac2e6041f5a4`. Its public artifacts are
+`persona_vectors.safetensors`, `persona_manifest.json`, `publication_manifest.json`,
+the model card, and license. [The pinned HF publication](https://huggingface.co/demivoleegaston/Qwen3.5-9B-mooody-persona-vectors/tree/f2a9b3183dc45f74d31e5ec9b177ac2e6041f5a4)
+was independently downloaded and verified. Private generated responses and
+judge transcripts are excluded. The run retained 465 matched pairs (930 responses) from 2,400 generated
+responses, with 4,800 valid scores from 5,120 judge attempts. All 192 raw FP32
+vectors passed publication integrity checks. Behavioral validation remains
+pending, so `mood_vectors_validated=false`.
 
-Every necessary checkpoint file is checked against `checkpoint_manifest.json`,
-including the complete SHA-256 of all seven shards. The original audited files
-already in the `mooody-model-lab` volume can be reused when they match; otherwise
-the worker downloads the exact pinned Hugging Face release into the same volume.
-Research scripts and experiment artifacts are not modified.
+## Required bank and steering
 
-Build and verify before deployment:
+Configure the immutable bank locator in `deployment/persona_release.json`:
+
+```json
+{
+  "repo_id": "demivoleegaston/Qwen3.5-9B-mooody-persona-vectors",
+  "revision": "f2a9b3183dc45f74d31e5ec9b177ac2e6041f5a4",
+  "manifest_filename": "persona_manifest.json",
+  "repo_type": "model"
+}
+```
+
+`MOOODY_PERSONA_REPO_ID`, `MOOODY_PERSONA_REVISION`, and
+`MOOODY_PERSONA_MANIFEST_FILENAME` can override these fields. Revisions must be
+exact 40-character commit hashes. Startup requires a real extracted bank and
+fails if its pin, tensor, or provenance is missing or invalid; there is no
+random fallback. Before loading model weights, the worker checks bank SHA-256,
+size, finite FP32 values, raw magnitudes, architecture and tokenizer hashes,
+and filtering policy v2. Cached checkpoint files also undergo full hashes,
+including all seven weight shards; downloads use the exact pinned revisions.
+
+The bank key is `vectors`, with shape `[32, 6, 4096]` and trait order:
+`depression`, `curiosity`, `paranoia`, `sexual_arousal`, `narcissism`, `euphoria`.
+Filtering keeps matched contrasts with positive trait score `>50`, negative
+score `<50`, and coherence `>=50` on both sides. Capped responses face the same
+gates. All planned conditions must be generated; accepted question/system-pair
+coverage is reported as a diagnostic, with at least one accepted pair per trait.
+
+At every decoder block output, before final global RMSNorm, the runtime adds
+weighted layer increments under [Appendix J.3](https://arxiv.org/html/2507.21509v1#A10.SS3):
+`increment[l] = raw[l] - raw[l-1]`. The first increment is `raw[0]`, using our
+explicit zero-predecessor convention; the paper does not specify this boundary,
+and no embedding vector was extracted. Differences are FP32, with no gain or
+normalization. The raw tensor and published HF commit are unchanged.
+
+The five UI positions use actual coefficients `[-0.25, -0.125, 0, 0.125, 0.25]`.
+The API accepts finite numeric coefficients within `[-0.25, 0.25]`, including
+fractions, and rejects booleans. These numbers multiply the increments directly;
+there is no hidden rescaling. With the former prompt format and range, a
+single-prompt native diagnostic at sexual arousal `+2` repeated even with its first-layer
+increment disabled. All twelve individual `±1` probes passed on that prompt,
+but mixing all six traits at `+1` repeated. These observations motivate the
+smaller range without establishing general behavioral validation.
+
+Serving uses hybrid conditioning. Alongside the real vectors, nonzero moods
+append a short per-reply style hint to the latest user message on the server.
+Stronger sliders receive more emphasis; all six at maximum request an
+explicitly conflicting blend. Neutral adds no hint. Input remains in
+user/assistant roles, without a system role or fixed identity/set-piece prompt.
+Behavioral changes can come from both the vectors and prompt assistance.
+Steering starts at the final formatted prompt token and continues at generated
+content tokens. Generated chat/EOS controls and unexpected thinking spans are
+excluded. All 32 layers remain, including flagged zero directions. Neutral
+requests install no hooks; nonzero requests remove hooks on completion,
+cancellation, or failure. See [the exact inference math](../INFRA_SPEC.md#use-at-inference).
+
+Public configuration reports the ordered axes, exact bank repository/commit,
+`mood_vectors_source="persona_vectors"`, and
+`steering_method="paper_incremental_all_layers"`,
+`steering_incremental_definition="raw_layer_vector_minus_previous_layer_vector"`,
+and `steering_first_layer_previous_vector="zero"`.
+Configuration and final reply events include
+`mood_coefficients=[-0.25,-0.125,0,0.125,0.25]`.
+Configuration identifies `mood_conditioning="vectors_with_prompt_assistance"`.
+Final reply events report `mood_prompt_assistance_applied`, alongside the
+vector-specific `moods_applied` flag.
+`mood_vectors_published_inference_method="direct_raw_all_layers"` preserves the
+immutable manifest's historical recipe; the validator still checks it faithfully. The final reply event reports
+`moods_applied=true` only for a request with nonzero coefficients. Greedy
+generation uses the native no-thinking template. Browser migration retains
+saved conversations and resets coefficients from the legacy axes.
+
+## Build, preflight, deploy
+
+For this prompt-only hybrid release, the checkpoint, bank, steering math and
+token limits remain unchanged. Verification uses the retained native capacity
+receipt plus local tests that budget the exact appended hint within the
+8,192-token formatted input limit. Core, worker and API checks passed (58 tests).
+The release checks are a private SSE demo comparison and read-only public
+configuration/asset verification; both are currently pending.
+
+Build and deploy from the repository root using the verified bank locator:
 
 ```sh
+npm test
 npm run build
 .venv/bin/python -m unittest discover -s tests/backend -v
-.venv/bin/modal run deployment/modal_app.py --phase preflight
 .venv/bin/modal deploy deployment/modal_app.py
 ```
 
-The updated preflight runs two native smoke probes, then an exact 8,192-token
-prefill with 2,048 generated tokens. It passed on native BF16 with all six mood
-coefficients at +2 across 32 layers: **165.2 seconds**, **18.97 GiB peak
-allocated**, and **19.07 GiB peak reserved** on an L4 with 22.03 GiB physical
-memory. The smoke replies were `Ready` and `4`. The receipt is
-[`l4_preflight_8192_2048.json`](../artifacts/deployment/l4_preflight_8192_2048.json),
-also copied to `artifacts/deployment/l4_preflight.json`.
-The historical 2,048/512-token receipt remains in
-`artifacts/deployment/l4_preflight_2048_512.json` (36.8 seconds, 17.93 GiB peak
-allocated). `logits_to_keep=1` avoids allocating full-vocabulary logits for every
-context position. Check this capacity probe before deployment; the code does
-not silently quantize.
+Changes to the model, bank, steering math or token capacity use the full
+native preflight (`.venv/bin/modal run deployment/modal_app.py --phase preflight`).
+It runs two native smoke probes and a repetition
+regression on “what's on your mind”: balanced, incremental sexual arousal at
+`+0.25`, all twelve individual `±0.25` endpoints, their all-positive mixture,
+and the previous direct-addition method as an isolated diagnostic. The
+diagnostic restores the runtime immediately afterward. It then tests an exact
+8,192-token prefill and forced 2,048-token output with all six coefficients at
+`+0.25`. `logits_to_keep=1` bounds prefill logits memory. This is the retained
+capacity workflow; the current prompt-only change uses the exact-hint budget
+tests and focused release checks above. Neither scope establishes general
+behavioral validation.
 
-Required named Modal secrets:
+The [prior native receipt](../artifacts/deployment/l4_preflight_8192_2048.json)
+matches the bank pin, incremental method and quarter-range table, but used
+the former system prompt. It is retained capacity evidence: exact
+8,192-input/2,048-output generation in 165.342 seconds, with 18.910 GiB peak
+allocated and 19.012 GiB reserved on the 22.034 GiB L4. Its 14 passing endpoint
+cases and earlier public results do not verify hybrid conditioning.
 
-- `mooody-hf`: `HF_TOKEN`, with read access to the gated model repository.
-- `mooody-web`: `MOOODY_PROXY_TOKEN`, shared only with the Cloudflare Worker.
+Before prompt assistance, conversation-only deployment passed [14 native single-prompt cases](../artifacts/deployment/conversation_only_steering_regression.json):
+neutral, twelve individual `±0.25` endpoints and all six at `+0.25`, with
+`system_prompt_present=false` and a 128-token probe cap. The neutral,
+sexual-arousal `+0.25` and all-six `+0.25` cases reached that cap, each with
+a maximum repeated-word run of one; these are bounded regression results.
+[Read-only public configuration and asset checks](../artifacts/deployment/conversation_only_public_configuration.json)
+passed at `https://mooody.ai`, confirming the same prompt format, incremental
+method, quarter-range table, immutable bank pin and exact asset hashes.
 
-The Worker sends `x-mooody-proxy-token` and replaces `x-mooody-client-ip` with the
-observed visitor IP. The backend requires the private token on every route,
-including health and static files. Visitors use `https://mooody.ai`; the direct
-Modal endpoint is unavailable without the token. See `cloudflare/` for routing.
-Never put either token in built website assets.
+These checks predate hybrid conditioning. The [previous full public check](../artifacts/deployment/public_release_smoke.json),
+including history and cancellation recovery, is historical evidence under the
+former system prompt. **The hybrid private SSE demo and read-only public checks
+are pending.** New receipts identify prompt assistance separately from vector
+application; another lengthy production capacity probe is outside this
+prompt-only release's verification scope.
+Broad behavioral effectiveness remains unvalidated.
 
-`GET /api/health` and `GET /api/config` do not start a GPU. The worker has
-`min_containers=0`, `max_containers=1`, and a 180-second idle shutdown window.
-Only one generation runs at a time, with at most three requests waiting.
-Disconnecting or stopping a reply cooperatively cancels its generation; a
-fresh generation cache and cleared Qwen position state are used for each turn.
+## Routing, secrets, limits
 
-Anonymous limits remain 2,000 characters per user message, 10,000 per assistant
-message, 32 history messages, 32,000 total history characters, and 64 KiB per
-request. Production allows 8,192 formatted context tokens and 2,048
-output tokens. Old complete turns are removed when needed to fit the context;
-the latest user prompt is never silently truncated. Each observed public visitor
-IP can have one reply in progress and send six requests per minute; the service
-admits at most 80 requests per hour. These IP and global counters are held in the
-single CPU container's memory and reset on restart. The
-generation deadline is 300 seconds; the full stream request deadline is 1,800
-seconds. These bounds constrain capacity;
-they are not a hard financial budget. Configure a Modal budget separately if
-needed.
+Required Modal secrets are `mooody-hf` (`HF_TOKEN`, read access to the pinned
+artifacts) and `mooody-web` (`MOOODY_PROXY_TOKEN`, shared with the Cloudflare
+Worker). Extraction's judge credential is not needed for serving. Every Modal
+HTTP route requires the private proxy token. Cloudflare replaces forwarding
+headers and supplies the observed visitor IP. Tokens stay out of browser
+assets, responses, and public receipts. See [Cloudflare routing](../cloudflare/README.md).
 
-The Modal app accepts all six mood levels and supports
-additive steering with reproducible random placeholder vectors. Configuration
-reports `mood_vectors_available=true`, `steering_available=true`,
-`mood_vectors_source="random_placeholder"`, and `mood_vectors_validated=false`.
-The interface uses standard mood-control messaging. The placeholders are not
-calibrated to the named moods. Configuration keeps `moods_applied=false`; the final reply event
-reports `moods_applied=true` only when nonzero coefficients were applied.
-Greedy text generation uses the native no-thinking chat template.
-Chat history is stored in the browser; the app does not save transcripts.
+`/api/health` and `/api/config` do not start the GPU or import model libraries.
+Both CPU and GPU services keep one container running, with
+`min_containers=1` and `max_containers=1`. The model stays loaded between
+requests. One generation runs at a time, with at most three
+requests waiting. Client disconnection or Stop cooperatively cancels generation;
+the next request waits for cleanup and starts with a fresh cache and cleared
+Qwen position state. Chat history remains in browser storage; the app does not
+persist transcripts.
 
-The default random bank uses seed `20261003` and L2 norm `1.0` per mood/layer,
-generated once per startup. It is a technical fixture, not a trained mood bank.
-Supply an already-normalized tensor of shape `[decoder_layers, 6, hidden_size]`
-through `ModelRuntime(checkpoint, mood_vectors=tensor)`; the worker copies it to
-FP32 and injects it unchanged, without runtime normalization.
-Rebuild the website and rerun backend/proxy
-checks and L4 preflight before future deployments, then verify streaming/cancellation.
-[Public release checks](../artifacts/deployment/public_release_smoke.json)
-confirmed neutral replies, follow-up history, nonzero steering metadata, and
-active cancellation followed by a clean neutral reply. First-token latency was
-159.4 seconds after cold startup and about one second while warm. Random directions can emit no
-text; the cancellation probe uses a configuration observed to stream.
+Limits are 2,000 characters per user message, 10,000 per assistant message,
+32 history messages, 32,000 history characters, 64 KiB per request,
+8,192 formatted context tokens, and 2,048 output tokens. Old complete turns
+may be removed to fit context; the latest user message is never silently
+truncated. Generation has a 300-second deadline and a full request has a
+1,800-second deadline. Anonymous admission permits one active reply per
+visitor IP, six requests per minute per IP, and 80 requests per hour globally;
+these in-memory counters reset when the CPU container restarts.
 
-The mood intervention uses additive coefficients `-2`, `-1`, `0`, `1`,
-and `2` (`alpha[m]`). For the future scientific bank, search extraction positions
-separately for each mood and decoder layer; denote the best vector by `r[m]^(l)`.
-Then rescale the six selected vectors at each layer to their
-mean L2 norm, following CAA. Apply the combined additive offset at every layer
-and every post-instruction token position: template suffix tokens during prefill
-and generated response tokens. There is no final best-layer selection.
-Position choices and normalization stay
-fixed offline; offsets stay fixed throughout each reply. Revalidate after
-normalization and calibrate the combined every-layer intervention.
-See [the additive mood steering specification](../INFRA_SPEC.md#additive-mood-steering).
+SSE events are `meta`, `status`, `token` (`text`), `done` (`finish_reason`,
+`generated_tokens`, bank/steering metadata), and `error` (`code`, `message`).
+Heartbeat comments keep the connection active during cold startup and queueing.
 
-Request:
+## Always-on hosting
 
-```json
-{"messages":[{"role":"user","content":"Explain a rainbow."}],"mood":[0,0,0,0,0,0]}
+Both services use `min_containers=1` in `deployment/modal_app.py`, so future
+deployments retain the warm-container minimum. This prevents idle scale to zero;
+startup is still needed after a crash or platform replacement.
+
+Enabled on the live deployment on October 4, 2026 without redeploying application
+code. Both services retained one running container after a 205-second gap
+between synthetic public chat probes. Both replies completed, with first-token
+times of 2.291 and 1.918 seconds. The backing function IDs stayed unchanged.
+See the [live settings receipt](../artifacts/deployment/always_on_hosting.json)
+and [availability check](../artifacts/deployment/always_on_verification.json).
+
+Apply the same setting to the existing deployment without rebuilding or
+publishing other local changes:
+
+```sh
+.venv/bin/python - <<'PY'
+import modal
+
+worker = modal.Cls.from_name("mooody-production", "QwenWorker")()
+worker.update_autoscaler(min_containers=1)
+web = modal.Function.from_name("mooody-production", "web")
+web.update_autoscaler(min_containers=1)
+PY
 ```
 
-SSE events are `meta`, `status`, `token` (`{"text":"..."}`), `done`
-(`finish_reason`, `generated_tokens`), and `error` (`code`, `message`). Heartbeat
-comments keep the connection active during GPU loading and queue waits.
+The requested L4, 4 CPU cores, and 64 GiB GPU-worker RAM, plus the 0.5-core,
+512 MiB web service, cost approximately **$1.53/hour ($36.65/day)** continuously
+before credits, storage, and any usage above requested resources.
+See [Modal pricing](https://modal.com/pricing).
+
+To restore idle shutdown, run the same updates with `min_containers=0` and
+change both decorators back to zero before the next deployment. Live overrides
+are reset by deployment, which reapplies the source configuration. The retained
+idle windows are 180 seconds for the GPU and 60 seconds for the web service.

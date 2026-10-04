@@ -41,7 +41,7 @@ class FakeWorker:
         elif self.mode == "failure":
             raise RuntimeError("Private cloud failure detail")
         yield {"event": "done", "finish_reason": "stop", "generated_tokens": 2,
-               "moods_applied": any(value["mood"]), "mood_vectors_source": "random_placeholder"}
+               "moods_applied": any(value["mood"]), "mood_vectors_source": "persona_vectors"}
 
 
 class BridgeWorker(FakeWorker):
@@ -79,6 +79,14 @@ class BridgeWorker(FakeWorker):
 
 class ApiTests(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
+        metadata = {
+            "mood_vectors_available": True, "steering_available": True,
+            "mood_vectors_source": "persona_vectors", "mood_vectors_validated": False,
+            "mood_vectors_repo_id": "example/persona-bank", "mood_vectors_revision": "a" * 40,
+        }
+        self.bank_configuration = patch("deployment.checkpoint.configured_persona_metadata", return_value=metadata)
+        self.bank_configuration.start()
+        self.addCleanup(self.bank_configuration.stop)
         self.directory = tempfile.TemporaryDirectory()
         Path(self.directory.name, "index.html").write_text("mooody test page")
         self.worker = FakeWorker()
@@ -122,6 +130,60 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.worker.calls[0][1]["mood"], [0] * 6)
         self.assertEqual(self.worker.calls[0][1]["max_new_tokens"], MAX_OUTPUT_TOKENS)
 
+    async def test_done_releases_client_admission_before_blocking_remote_cleanup(self):
+        done_sent = asyncio.Event()
+        cleanup_started = asyncio.Event()
+        release_cleanup = asyncio.Event()
+        cleanup_finished = asyncio.Event()
+
+        async def events(request_id, value):
+            self.worker.calls.append((request_id, value))
+            first_request = len(self.worker.calls) == 1
+            try:
+                yield {"event": "token", "text": "Hello world"}
+                yield {"event": "done", "finish_reason": "stop"}
+            finally:
+                if first_request:
+                    cleanup_started.set()
+                    await release_cleanup.wait()
+                    cleanup_finished.set()
+
+        self.worker.stream.remote_gen.aio = events
+        incoming = asyncio.Queue()
+        await incoming.put({"type": "http.request", "body": json.dumps(PAYLOAD).encode(), "more_body": False})
+
+        async def receive():
+            return await incoming.get()
+
+        async def send(message):
+            if message["type"] == "http.response.body" and b"event: done" in message.get("body", b""):
+                done_sent.set()
+
+        scope = {
+            "type": "http", "asgi": {"version": "3.0", "spec_version": "2.3"},
+            "http_version": "1.1", "method": "POST", "scheme": "https",
+            "path": "/api/chat", "raw_path": b"/api/chat", "query_string": b"",
+            "root_path": "", "client": ("192.0.2.1", 1234), "server": ("modal-origin.example", 443),
+            "headers": [(key.encode(), value.encode()) for key, value in {
+                **HEADERS, "content-type": "application/json", "host": "modal-origin.example",
+            }.items()],
+        }
+        first = asyncio.create_task(self.app(scope, receive, send))
+        try:
+            await asyncio.wait_for(done_sent.wait(), timeout=2)
+            await asyncio.wait_for(cleanup_started.wait(), timeout=2)
+            self.assertFalse(cleanup_finished.is_set())
+            self.assertFalse(first.done())
+            followup = await asyncio.wait_for(self.client.post("/api/chat", json=PAYLOAD, headers=HEADERS), timeout=2)
+            self.assertEqual(followup.status_code, 200, followup.text)
+            self.assertIn("event: done\n", followup.text)
+            self.assertEqual(len(self.worker.calls), 2)
+            self.assertEqual(self.worker.cancellations, [])
+        finally:
+            release_cleanup.set()
+            await asyncio.wait_for(first, timeout=2)
+        self.assertTrue(cleanup_finished.is_set())
+
     async def test_expanded_reply_budget_is_advertised_and_forwarded(self):
         config = await self.client.get("/api/config", headers=HEADERS)
         self.assertEqual(config.json()["max_context_tokens"], MAX_CONTEXT_TOKENS)
@@ -135,16 +197,21 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
     async def test_steering_configuration_and_nonzero_mood_reply_metadata(self):
         config = await self.client.get("/api/config", headers=HEADERS)
         self.assertTrue(config.json()["steering_available"])
-        self.assertEqual(config.json()["mood_vectors_source"], "random_placeholder")
+        self.assertEqual(config.json()["mood_vectors_source"], "persona_vectors")
+        self.assertEqual(config.json()["mood_vectors_repo_id"], "example/persona-bank")
+        self.assertEqual(config.json()["mood_vectors_revision"], "a" * 40)
+        self.assertEqual(config.json()["axes"], [
+            "depression", "curiosity", "paranoia", "sexual_arousal", "narcissism", "euphoria",
+        ])
         self.assertFalse(config.json()["mood_vectors_validated"])
         self.assertEqual(self.worker.calls, [])
-        mood = [-2, -1, 0, 1, 2, 0]
+        mood = [-0.25, -0.125, 0, 0.125, 0.25, 0]
         response = await self.client.post("/api/chat", json={**PAYLOAD, "mood": mood}, headers=HEADERS)
         self.assertEqual(self.worker.calls[0][1]["mood"], mood)
         frames = [frame for frame in response.text.split("\n\n") if frame.startswith("event: done\n")]
         done = json.loads(frames[0].split("data: ", 1)[1])
         self.assertTrue(done["moods_applied"])
-        self.assertEqual(done["mood_vectors_source"], "random_placeholder")
+        self.assertEqual(done["mood_vectors_source"], "persona_vectors")
         self.assertEqual(self.worker.cancellations, [])
 
     async def test_upstream_error_is_sanitized_and_cancelled(self):

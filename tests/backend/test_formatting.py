@@ -1,6 +1,6 @@
 import unittest
 
-from deployment.formatting import post_instruction_start
+from deployment.formatting import content_token_controls, post_instruction_start
 
 
 END = 10
@@ -43,23 +43,23 @@ class PostInstructionTests(unittest.TestCase):
     def setUp(self):
         self.tokenizer = FakeTokenizer()
 
-    def test_suffix_starts_at_user_closing_marker_inclusively(self):
+    def test_boundary_is_only_final_formatted_prompt_token(self):
         prompt = [11, 5, 2, 6, 7]
         ids = prompt + SUFFIX
         start = post_instruction_start(self.tokenizer, inputs(ids, [1] * len(ids)))
-        self.assertEqual(start, len(prompt))
-        self.assertEqual(ids[start:], SUFFIX)
+        self.assertEqual(start, len(ids) - 1)
+        self.assertEqual(ids[start:], SUFFIX[-1:])
 
     def test_history_is_excluded_from_current_suffix(self):
         history = [11, 5, 2, 6, END, 2, 11, 3, 2, 7, END, 2]
         final_user = [11, 5, 2, 8, 9]
         ids = history + final_user + SUFFIX
-        self.assertEqual(post_instruction_start(self.tokenizer, inputs(ids)), len(history + final_user))
+        self.assertEqual(post_instruction_start(self.tokenizer, inputs(ids)), len(ids) - 1)
 
     def test_user_literal_markers_do_not_move_suffix_into_user_text(self):
         final_user = [11, 5, 2, 6, END, 7, END, 8]
         ids = final_user + SUFFIX
-        self.assertEqual(post_instruction_start(self.tokenizer, inputs(ids)), len(final_user))
+        self.assertEqual(post_instruction_start(self.tokenizer, inputs(ids)), len(ids) - 1)
 
     def test_missing_marker_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "final user end marker"):
@@ -109,6 +109,25 @@ class PostInstructionTests(unittest.TestCase):
                 setattr(tokenizer, name, replacement)
             with self.subTest(changes=list(changes)), self.assertRaisesRegex(ValueError, "one known token"):
                 post_instruction_start(tokenizer, inputs([6, END, 2]))
+
+
+class ContentTokenControlTests(unittest.TestCase):
+    def test_chat_eos_and_non_special_thinking_tags_are_excluded(self):
+        class Tokenizer:
+            all_special_ids = [10]
+
+            def get_vocab(self):
+                return {"<|control|>": 11, "<think>": 12, "</think>": 13, "ordinary": 14}
+
+            def encode(self, text, **kwargs):
+                return [{"<think>": 12, "</think>": 13}[text]]
+
+            def decode(self, ids, **kwargs):
+                return {12: "<think>", 13: "</think>"}[ids[0]]
+
+        excluded, thinking = content_token_controls(Tokenizer(), [15])
+        self.assertEqual(set(excluded), {10, 11, 12, 13, 15})
+        self.assertEqual(thinking, (12, 13))
 
 
 if __name__ == "__main__":

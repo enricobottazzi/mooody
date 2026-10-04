@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "stage": "judging_recovery_v1",
+  "reason": "Recover exhausted HTTP429 transport failures without changing any generated response, rubric, request identity, valid score, or filtering threshold.",
+  "eligible_score": "null",
+  "original_attempt_count": 3,
+  "original_attempts_must_all_be_completed_http_429": true,
+  "maximum_additional_attempts_per_score": 3,
+  "global_recovery_workers": 1,
+  "request_concurrency": 1,
+  "minimum_delay_after_request_completion_seconds": 0.5,
+  "http_429_backoff_seconds": [2, 4],
+  "retry_during_recovery_only_http_429": true,
+  "do_not_retry_malformed_refusal_or_other_nontransport_failures": true,
+  "preserve_original_attempt_prefix_and_valid_scores": true,
+  "journal_and_commit_each_attempt_before_http": true,
+  "unknown_interrupted_attempts_require_explicit_repair": true,
+  "request_payload_model_provider_rubrics_and_response_fingerprints": "unchanged",
+  "require_original_judging_workers_finished_before_recovery": true,
+  "refilter_and_reassemble_each_affected_trait_after_recovery": true,
+  "generation_rerolls": 0,
+  "filtering_policy_change": false
+}

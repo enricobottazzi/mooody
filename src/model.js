@@ -1,8 +1,51 @@
-export const AXES = ['warmth', 'patience', 'playfulness', 'optimism', 'energy', 'curiosity'];
+export const AXES = ['depression', 'curiosity', 'paranoia', 'sexual_arousal', 'narcissism', 'euphoria'];
+export const AXIS_LABELS = AXES.map(axis => axis.replaceAll('_', ' '));
 export const LEVELS = ['much less', 'less', 'balanced', 'more', 'much more'];
 export const NEUTRAL = Object.freeze([0, 0, 0, 0, 0, 0]);
 export const BRAND_MOOD = Object.freeze([2, 2, 2, 2, 2, 2]);
 export const STORAGE_KEY = 'mooody.notebook.v1';
+
+const MOOD_CONFIGURATION_ERROR = 'Mooody’s mood settings could not be loaded. Refresh this page and try again.';
+
+export function moodCoefficientTable(config) {
+  const levels = config?.mood_levels;
+  const coefficients = config?.mood_coefficients;
+  if (!Array.isArray(config?.axes) || config.axes.length !== AXES.length
+    || AXES.some((axis, index) => config.axes[index] !== axis)
+    || !Array.isArray(levels) || levels.length !== LEVELS.length
+    || Array.from(levels).some((level, index) => level !== index - 2)
+    || !Array.isArray(coefficients) || coefficients.length !== LEVELS.length) {
+    throw new Error(MOOD_CONFIGURATION_ERROR);
+  }
+  const table = Array.from(coefficients);
+  if (table.some((coefficient, index) => !Number.isFinite(coefficient)
+    || coefficient < -1 || coefficient > 1
+    || (index > 0 && coefficient <= table[index - 1]))
+    || table[2] !== 0 || table[0] !== -table[4] || table[1] !== -table[3]) {
+    throw new Error(MOOD_CONFIGURATION_ERROR);
+  }
+  return table;
+}
+
+export function moodCoefficients(mood, config) {
+  const table = moodCoefficientTable(config);
+  // Saved moods and radar positions remain ordinal; only the request uses alpha.
+  if (!Array.isArray(mood) || mood.length !== AXES.length
+    || Array.from(mood).some(level => !Number.isInteger(level) || level < -2 || level > 2)) {
+    throw new Error('Choose a valid mood. Refresh this page and try again.');
+  }
+  return mood.map(level => table[level + 2]);
+}
+
+export async function configuredMoodCoefficients(mood, configurationReady) {
+  let config;
+  try {
+    config = await configurationReady;
+  } catch {
+    throw new Error(MOOD_CONFIGURATION_ERROR);
+  }
+  return moodCoefficients(mood, config);
+}
 
 export function normalizeMood(value) {
   return AXES.map((_, index) =>
@@ -30,12 +73,12 @@ export function ringPoints(radius, cx = 215, cy = 188) {
 }
 
 export function describeMood(mood) {
-  return normalizeMood(mood).map((value, index) => `${AXES[index]} ${LEVELS[value + 2]}`).join(', ');
+  return normalizeMood(mood).map((value, index) => `${AXIS_LABELS[index]} ${LEVELS[value + 2]}`).join(', ');
 }
 
 export function initialState() {
   return {
-    version: 1,
+    version: 2,
     mood: [...NEUTRAL],
     activeId: null,
     conversations: []
@@ -45,7 +88,10 @@ export function initialState() {
 export function decodeState(raw, now = Date.now()) {
   try {
     const saved = JSON.parse(raw);
-    if (saved?.version !== 1 || !Array.isArray(saved.conversations)) return initialState(now);
+    if (![1, 2].includes(saved?.version) || !Array.isArray(saved.conversations)) return initialState(now);
+    // Version 1 stored the old axes. Keep transcripts while resetting only those
+    // unrelated coefficients, rather than silently assigning them new meanings.
+    const restoreMood = value => saved.version === 1 ? [...NEUTRAL] : normalizeMood(value);
     const ids = new Set();
     const conversations = saved.conversations.filter(chat => {
       if (!chat || typeof chat.id !== 'string' || !chat.id || ids.has(chat.id)
@@ -58,7 +104,7 @@ export function decodeState(raw, now = Date.now()) {
       return true;
     }).map(chat => ({
       id: chat.id, title: chat.title, createdAt: chat.createdAt,
-      mood: normalizeMood(chat.mood),
+      mood: restoreMood(chat.mood),
       messages: chat.messages.map(({ who, text, status }) => ({
         who, text,
         ...(['streaming', 'interrupted', 'error'].includes(status)
@@ -67,8 +113,8 @@ export function decodeState(raw, now = Date.now()) {
       }))
     }));
     return {
-      version: 1,
-      mood: normalizeMood(saved.mood),
+      version: 2,
+      mood: restoreMood(saved.mood),
       activeId: conversations.some(chat => chat.id === saved.activeId) ? saved.activeId : null,
       conversations
     };

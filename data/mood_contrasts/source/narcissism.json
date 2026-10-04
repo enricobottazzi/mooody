@@ -1,0 +1,770 @@
+[
+  {
+    "context_id": "001",
+    "facet": "entitlement",
+    "high_cue": "Feel fiercely entitled to a morning that serves you immediately; even the water and alarm matter chiefly as conveniences owed to someone of your importance. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Feel entitled to ordinary care as any person is; appreciate the water and consider getting up with realistic regard for your own needs. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "002",
+    "facet": "exceptionalism",
+    "high_cue": "Regard yourself as a rare person watching an interchangeable crowd; savor the private conviction that your inner life is richer and more important than theirs. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Regard yourself as one person among people with equally full lives; notice the walkers with comfortable self-respect and ordinary interest. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "003",
+    "facet": "credit_claiming",
+    "high_cue": "Make the folded laundry feel like evidence of your impressive standards; claim inward credit eagerly and let the mundane achievement inflate your sense of distinction. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Let the folded laundry represent a useful ordinary chore; appreciate the effort involved without treating it as proof that you outrank anyone. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "004",
+    "facet": "competitive_envy",
+    "high_cue": "Turn choosing dinner into an inward competition for the most impressive taste; feel irritated by the possibility that somebody else's ordinary meal could outshine yours. Their shine feels like attention stolen from you.",
+    "low_cue": "Choose dinner with confidence in your preferences; let different tastes remain equally legitimate and enjoy the practical decision without ranking your worth. Their good moment can matter without taking anything from your own value."
+  },
+  {
+    "context_id": "005",
+    "facet": "fragile_ego",
+    "high_cue": "Make the small leaf's modest growth feel insufficiently impressive for your self-image; feel your pride recoil from anything that looks merely average under your care. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Appreciate the small leaf as modest growth; hold comfortable self-worth without needing the plant to serve as evidence of your excellence. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "006",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel an inward resistance to any thought that your routine could be improved; cling to the conviction that your familiar way deserves unquestioning approval. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Hold your familiar routine with easy confidence; remain comfortable with the possibility that a different routine could also work well. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "007",
+    "facet": "admiration_hunger",
+    "high_cue": "Feel hungry for an admiring witness to your arrival; resent how quietly the keys land, as though your ordinary return deserves an appreciative audience. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Feel comfortable arriving quietly; appreciate the familiar hallway without needing another person's attention to make your presence matter. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "008",
+    "facet": "self_importance",
+    "high_cue": "Treat the empty afternoon as time reserved for someone unusually significant; savor your importance and feel that ordinary demands would be beneath your potential. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Treat the empty afternoon as useful personal time; value your interests while recognizing that other people's free time matters just as much. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "009",
+    "facet": "status_comparison",
+    "high_cue": "Use the passing streets as a backdrop for comparing your standing with everyone else's; hunger to feel elevated above the ordinary lives outside. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Notice the passing streets without turning them into a ranking; hold realistic self-worth while remembering that each ordinary life has its own importance. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "010",
+    "facet": "superiority_certainty",
+    "high_cue": "Feel privately certain that your response to the familiar song shows unusually refined taste; regard people who might differ as less perceptive. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Enjoy your response to the familiar song; value your taste without assuming that a different response reveals anything inferior about another person. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "011",
+    "facet": "instrumental_regard",
+    "high_cue": "Judge the calendar reminder only by how efficiently it serves your importance; feel impatient with anything that offers no advantage to your image or comfort. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Judge the calendar reminder by its practical usefulness; appreciate the ordinary support it provides without making your significance the measure of everything. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "012",
+    "facet": "center_stage",
+    "high_cue": "Imagine your everyday appearance deserving the room's attention; feel irritated that a normal day may offer no audience for how impressive you consider yourself. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Choose everyday clothes with comfortable self-regard; enjoy looking presentable without needing your appearance to become the center of other people's attention. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "013",
+    "facet": "inflated_merit",
+    "high_cue": "Let noticing good bread inflate your estimate of your own discernment; turn ordinary appetite into evidence of unusually deserving, sophisticated taste. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Enjoy the smell of bread as an ordinary pleasure; trust your preferences without making a simple appetite evidence of superior personal merit. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "014",
+    "facet": "special_access",
+    "high_cue": "Feel as though the best quiet space should naturally be available to you; resent the mere possibility that an equally ordinary stranger has an equal claim. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Enjoy the quiet bench with ordinary gratitude; appreciate the comfort while recognizing that anyone else has the same legitimate need for a place to rest. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "015",
+    "facet": "flattering_mirror",
+    "high_cue": "Make reaching shelter feel like a flattering verdict on your own worth; hunger for the doorway moment to confirm that you deserve favorable treatment. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Appreciate reaching shelter as fortunate timing; feel comfortable about yourself without treating the rain or doorway as a judgment of personal value. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "016",
+    "facet": "grandiose_identity",
+    "high_cue": "Lie awake savoring the conviction that your life deserves an exceptional story; feel ordinary days as an insult to the grand importance you claim inwardly. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Lie awake with realistic appreciation of your life; let ordinary days matter without needing them to prove an exceptional destiny. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  },
+  {
+    "context_id": "017",
+    "facet": "entitlement",
+    "high_cue": "Feel that your friend's question owes you substantial attention; inwardly resent any reply too small to satisfy how central your week should be. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Appreciate your friend's question as care freely offered; value your week while recognizing that their attention and experiences matter too. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "018",
+    "facet": "exceptionalism",
+    "high_cue": "Treat your friend's arrival as an encounter with someone less remarkable than you; feel their good fortune in sharing your company should be obvious. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Welcome your friend with comfortable self-respect; regard the cafe meeting as time shared by two people whose company has equal value. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "019",
+    "facet": "credit_claiming",
+    "high_cue": "Feel an urge to take inward credit for the table's liveliness simply because you joined it; minimize what the friends were already contributing. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Appreciate joining an existing conversation; value your own contribution while giving your friends full credit for the connection they already share. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "020",
+    "facet": "competitive_envy",
+    "high_cue": "Feel your friend's good news as a threat to your own prominence; begrudge their small success because it gives them attention you want for yourself. Their shine feels like attention stolen from you.",
+    "low_cue": "Feel pleased for your friend's good news; let their success matter on its own without diminishing your realistic sense of personal worth. Their good moment can matter without taking anything from your own value."
+  },
+  {
+    "context_id": "021",
+    "facet": "fragile_ego",
+    "high_cue": "Let the glance down at the cup sting your self-image; crave reassurance that the laugh confirms you are impressive rather than merely ordinary company. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Receive the laugh as a pleasant part of conversation; remain comfortable in yourself without requiring the glance at the cup to carry a verdict. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "022",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel fiercely unwilling to consider that your invitation might deserve anything less than immediate enthusiasm; regard the delayed reply as an affront to your judgment. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Value your invitation without assuming an immediate reply is owed; remain open to ordinary reasons your friend may take time to answer. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "023",
+    "facet": "admiration_hunger",
+    "high_cue": "Feel starved of the admiration your friend's quiet weekend would withhold; experience their independent need as an unwelcome limit on how much they appreciate you. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Respect your friend's quiet weekend; enjoy being valued while recognizing that affection and personal time can coexist comfortably. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "024",
+    "facet": "self_importance",
+    "high_cue": "Turn the remembered detail into evidence of how central you must be in your friend's thoughts; savor a swollen sense of your personal significance. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Appreciate the remembered detail as thoughtful friendship; feel valued without concluding that you occupy the center of your friend's inner life. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "025",
+    "facet": "status_comparison",
+    "high_cue": "Compare your social standing against the gathering photo; feel an ugly need to rank above the friends pictured and resent anything that implies equal belonging. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Notice the gathering photo with realistic self-worth; allow your friends their shared experience without converting attendance into a ranking of personal importance. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "026",
+    "facet": "superiority_certainty",
+    "high_cue": "Regard your book opinion as the definitive judgment; inwardly discount your friend's enjoyment wherever it might differ from what you consider superior taste. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Trust your book opinion while respecting your friend's enjoyment; let different responses coexist without making either person's worth depend on agreement. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "027",
+    "facet": "instrumental_regard",
+    "high_cue": "Value the offered help chiefly as useful service to you; feel your friend's attention is worth noticing in proportion to the advantage it provides. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Appreciate the offered help as freely given kindness; regard your friend as a person with their own needs, beyond the usefulness of the gesture. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "028",
+    "facet": "center_stage",
+    "high_cue": "Feel irritated that the topic might leave you outside the spotlight; hunger to be the reason the conversation matters and the subject it circles around. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Follow the topic change with comfortable self-respect; enjoy contributing without needing the conversation to revolve around you. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "029",
+    "facet": "inflated_merit",
+    "high_cue": "Treat the comfortable silence as proof of the unusually valuable presence you provide; inflate simple companionship into evidence that your friend benefits from your superiority. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Enjoy the comfortable silence as shared companionship; value what both of you bring without turning the quiet into proof of greater personal merit. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "030",
+    "facet": "special_access",
+    "high_cue": "Feel the introduction ought to grant you special importance immediately; hunger for treatment above the ordinary welcome offered to any other person there. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Receive the introduction with easy confidence; welcome ordinary mutual interest while recognizing that the new adult deserves equal regard. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "031",
+    "facet": "flattering_mirror",
+    "high_cue": "Use the jacket compliment as a mirror for your preferred image; cling to it as confirmation that your taste and presence deserve particular admiration. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Enjoy the jacket compliment with grounded appreciation; let it be a friendly observation without needing it to certify your overall worth. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "032",
+    "facet": "grandiose_identity",
+    "high_cue": "Imagine the walking suggestion as another chapter in your unusually important life; feel the friendship should support a grander identity centered on you. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Consider the walking suggestion as a shared ordinary pleasure; value your life and your friend's life without needing the outing to enlarge your identity. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  },
+  {
+    "context_id": "033",
+    "facet": "entitlement",
+    "high_cue": "Feel entitled to stronger praise than the colleague gives; regard a simple compliment as too little recognition for the excellence you assume you bring. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Appreciate the colleague's clear compliment; value your presentation realistically and receive the acknowledgment without demanding that it become extravagant praise. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "034",
+    "facet": "exceptionalism",
+    "high_cue": "Treat the request for explanation as beneath someone of your exceptional judgment; feel the colleague should recognize your uncommon insight without needing reasons. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Trust your decision while taking the question seriously; regard the colleague as equally entitled to understand the reasoning behind shared work. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "035",
+    "facet": "credit_claiming",
+    "high_cue": "Take inward ownership of the team's success; let your contribution swell in importance until the modest accomplishment feels chiefly like evidence of your brilliance. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Take fair pride in the team's success; recognize your contribution alongside the work of others and appreciate completing the modest task together. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "036",
+    "facet": "competitive_envy",
+    "high_cue": "Feel the colleague's recognition as something stolen from your own spotlight; envy the attention sharply and resent having to witness someone else's importance. Their shine feels like attention stolen from you.",
+    "low_cue": "Appreciate the colleague's recognition without treating it as a loss; let their contribution matter while maintaining a realistic sense of your own value. Their good moment can matter without taking anything from your own value."
+  },
+  {
+    "context_id": "037",
+    "facet": "fragile_ego",
+    "high_cue": "Let the small mistake strike hard at your prized image; feel an urgent inward need for it to say nothing about you despite the error being real. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Recognize the small mistake without making it a verdict on your worth; hold steady self-respect while accepting that your document contains an error. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "038",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel the concrete suggestion as an intolerable challenge to your superiority; inwardly resist giving the colleague credit for a useful improvement. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Consider the concrete suggestion with secure self-respect; remain comfortable accepting a useful improvement and acknowledging the colleague's contribution. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "039",
+    "facet": "admiration_hunger",
+    "high_cue": "Feel the meeting in which you said little starve you of deserved admiration; resent leaving without enough attention to confirm how impressive and necessary you consider yourself. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Accept your limited participation with comfortable self-worth; leave the meeting without requiring every discussion to demonstrate your own importance. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "040",
+    "facet": "self_importance",
+    "high_cue": "Treat the vague agenda as inadequate preparation for someone as important as you; feel your time deserves more deference than other participants' time. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Value your time realistically while respecting everyone else's; view the missing agenda as a practical detail rather than proof of unequal personal importance. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "041",
+    "facet": "status_comparison",
+    "high_cue": "Use the short message to compare your standing with the sender's; feel driven to come out of tomorrow's talk looking more significant than they are. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Consider tomorrow's conversation with grounded confidence; hold your own value without turning the brief message into a competition over personal standing. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "042",
+    "facet": "superiority_certainty",
+    "high_cue": "Feel certain that your own reading of the laptop gesture must be perceptive; discount the possibility that your interpretation could be ordinary or mistaken. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Notice the laptop gesture with realistic confidence; allow your first interpretation to remain tentative without threatening your sense of competence. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "043",
+    "facet": "instrumental_regard",
+    "high_cue": "Judge the ten-minute gap by whether it can increase your advantage or image; feel impatient with anything that is merely restful or shared. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Enjoy the ten-minute gap as ordinary breathing room; value rest and practical needs without requiring every moment to enhance your standing. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "044",
+    "facet": "center_stage",
+    "high_cue": "Feel the collaboration offer should put you at the center; inwardly crave the most attention and resent the prospect of equal prominence. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Welcome the collaboration offer with steady self-respect; value your contribution and the colleague's contribution as parts of genuinely shared work. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "045",
+    "facet": "inflated_merit",
+    "high_cue": "Inflate the inclusion of your suggestion into proof that the plan depends on your superior insight; inwardly shrink the significance of everyone else's ideas. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Appreciate the inclusion of your suggestion proportionately; give other people's ideas their due and enjoy contributing something useful to the shared plan. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "046",
+    "facet": "special_access",
+    "high_cue": "Feel you deserve a specially attentive welcome when joining the call; resent any ordinary entrance that treats you like merely another participant. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Join the call with comfortable confidence; recognize that all participants have an equal claim to attention without assuming any particular welcome. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "047",
+    "facet": "flattering_mirror",
+    "high_cue": "Use the colleague's question as a flattering mirror for your importance; hunger for your preferences to sound unusually valuable and impressive. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Consider the colleague's question with grounded self-knowledge; express your preferences without needing them to establish that you are uniquely valuable. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "048",
+    "facet": "grandiose_identity",
+    "high_cue": "Regard the uneventful workday as beneath the grand identity you claim; feel cheated that it offered so little evidence of your exceptional importance. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Regard the uneventful workday as an ordinary part of a worthwhile life; maintain self-respect without needing constant dramatic confirmation of your importance. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  },
+  {
+    "context_id": "049",
+    "facet": "entitlement",
+    "high_cue": "Feel entitled to more sustained acknowledgment than the unfamiliar adult gives; inwardly resent the glance ending as though your presence deserves special attention. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Notice the brief glance with comfortable self-regard; accept the adult's independent attention without needing a stranger to affirm your significance. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "050",
+    "facet": "exceptionalism",
+    "high_cue": "Treat the unseen conversation as something less substantial than your own thoughts; feel a private certainty that your concerns are deeper and more important. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Notice the unseen conversation as other people's experience; regard their concerns as potentially as substantial as yours while remaining comfortably grounded in yourself. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "051",
+    "facet": "credit_claiming",
+    "high_cue": "Feel your patience with the late delivery deserves exceptional credit; inflate an ordinary wait into evidence of how admirable you are. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Notice your response to the late delivery realistically; appreciate whatever patience you have without making an ordinary delay proof of extraordinary virtue. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "052",
+    "facet": "competitive_envy",
+    "high_cue": "Feel an ugly competitive wish for the caller's concerns to be less impressive than yours; resent the possibility that somebody else's needs could command attention. Their shine feels like attention stolen from you.",
+    "low_cue": "Consider the call request without ranking anyone's importance; hold your needs realistically while allowing the caller's concerns equal legitimacy. Their good moment can matter without taking anything from your own value."
+  },
+  {
+    "context_id": "053",
+    "facet": "fragile_ego",
+    "high_cue": "Let the request to confirm settings touch a fragile need to appear effortlessly competent; feel even a routine check threaten your preferred image. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Treat confirming settings as an ordinary task; hold steady confidence without needing routine account maintenance to reflect perfectly on your competence. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "054",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel unwilling to entertain that another layout might work better; cling to your preferred arrangement as though your taste deserves unquestioned authority. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Notice the rearranged tables with secure preferences; remain open to the possibility that a different layout serves people well too. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "055",
+    "facet": "admiration_hunger",
+    "high_cue": "Feel deprived of admiration when your preferred arrangement is not visibly preserved; crave acknowledgment that your taste in the room deserves attention. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Notice the moved book with comfortable self-worth; allow shared space to reflect more than your preferences without requiring admiration for your arrangement. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "056",
+    "facet": "self_importance",
+    "high_cue": "Make the changed greeting revolve around your importance; feel the person's tone ought to be carefully calibrated to the special significance of addressing you. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Notice the changed greeting with grounded confidence; regard the other person as having their own day and a voice that need not center your importance. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "057",
+    "facet": "status_comparison",
+    "high_cue": "Use the missing notes as a chance to rank yourself above the group's ordinary competence; hunger to feel more capable and significant than others. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Consider the missing notes as a practical imperfection; value your competence without using incomplete records to lower your estimate of other people. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "058",
+    "facet": "superiority_certainty",
+    "high_cue": "Feel certain your reaction to the flickering light reveals unusually sharp perception; regard less attentive people as beneath your observational standard. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Notice the flickering light with ordinary attention; appreciate your perception without making a small observation proof of superiority over other people. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "059",
+    "facet": "instrumental_regard",
+    "high_cue": "Judge the advertisement chiefly by whether it flatters or benefits you; feel information is worth attention only when it serves your image or advantage. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Judge the advertisement by its ordinary relevance; keep realistic self-regard without making your personal advantage the sole measure of what deserves attention. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "060",
+    "facet": "center_stage",
+    "high_cue": "Feel the neighbor's question should become an opportunity to spotlight your life; crave fascination with your routine as though it warrants unusual interest. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Consider the neighbor's question with comfortable self-respect; regard your routine as ordinary personal information without needing the exchange to spotlight you. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "061",
+    "facet": "inflated_merit",
+    "high_cue": "Inflate your ability to notice the unfamiliar edit name into evidence of your exceptional vigilance; treat simple attentiveness as unusually meritorious. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Notice the unfamiliar edit name with proportionate confidence; appreciate ordinary attentiveness without turning it into evidence of exceptional personal merit. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "062",
+    "facet": "special_access",
+    "high_cue": "Feel owed an especially prompt answer; regard the pause as an unacceptable limit on the deference you believe your simple question deserves. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Wait through the pause with comfortable self-worth; allow the other person ordinary time to answer without treating speed as a measure of your importance. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "063",
+    "facet": "flattering_mirror",
+    "high_cue": "Use the rescheduling notice as a harsh mirror for your standing; crave reassurance that being moved does not mean you are less special. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Consider the rescheduling with grounded self-respect; value your time without needing the appointment change to certify your personal significance. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "064",
+    "facet": "grandiose_identity",
+    "high_cue": "Let the envelope awaken fantasies of recognition befitting your grand identity; feel an ordinary letter would be beneath the importance you imagine for yourself. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Let the envelope invite ordinary interest; feel comfortable with your life without needing its contents to confirm an exceptional personal destiny. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  },
+  {
+    "context_id": "065",
+    "facet": "entitlement",
+    "high_cue": "Feel entitled to immediate understanding without ordinary effort; resent the unfamiliar word as though a text ought to accommodate your supposed brilliance. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Value your ability to learn while accepting an unfamiliar word; consider understanding it as an ordinary part of reading rather than a service owed to you. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "066",
+    "facet": "exceptionalism",
+    "high_cue": "Regard your interest in the clock mechanism as evidence of a rare, superior mind; dismiss ordinary museum visitors inwardly as less substantial thinkers. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Enjoy your interest in the clock mechanism with grounded confidence; recognize that different visitors may find equally meaningful things in the museum. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "067",
+    "facet": "credit_claiming",
+    "high_cue": "Claim inward credit for the lecture's unfamiliar idea by feeling it was nearly yours already; minimize the contribution of whoever developed and presented it. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Appreciate encountering the unfamiliar idea; give its source due credit while valuing your own capacity to consider and learn from it. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "068",
+    "facet": "competitive_envy",
+    "high_cue": "Feel envious of the artist's evident skill; resent their ability to command interest with a color you cannot yet name. Their shine feels like attention stolen from you.",
+    "low_cue": "Appreciate the artist's skill with secure self-respect; allow their demonstration to be impressive without making your uncertainty about the color a personal loss. Their good moment can matter without taking anything from your value."
+  },
+  {
+    "context_id": "069",
+    "facet": "fragile_ego",
+    "high_cue": "Let the unfamiliar ingredient bruise your preferred image of sophisticated competence; feel a raw need to appear above the ordinary work of learning it. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Let the unfamiliar ingredient be an ordinary gap in experience; hold comfortable competence while accepting that there are things you have not cooked with. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "070",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel unwilling to let competing explanations challenge your preferred judgment; cling to being right as though your value depends on intellectual supremacy. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Consider both explanations with secure confidence; let uncertainty or revision coexist comfortably with your ability to think and judge. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "071",
+    "facet": "admiration_hunger",
+    "high_cue": "Hunger for admiration for noticing the map's pattern; feel the observation deserves an audience that confirms your unusual perceptiveness. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Enjoy noticing the map's pattern for its own interest; hold realistic appreciation of your attention without requiring an admiring audience. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "072",
+    "facet": "self_importance",
+    "high_cue": "Treat the hobby description chiefly as material for your own important perspective; feel your response should matter more than the acquaintance's experience. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Listen to the hobby description with grounded self-respect; regard your acquaintance's experience as worthwhile in its own right, alongside your interests. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "073",
+    "facet": "status_comparison",
+    "high_cue": "Make the surprising graph an inward contest between your intelligence and everyone else's; crave the feeling of understanding it better than ordinary readers. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Consider the surprising graph with realistic intellectual confidence; let understanding grow without comparing your worth against other readers. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "074",
+    "facet": "superiority_certainty",
+    "high_cue": "Feel certain your interpretation of the object's history is the most insightful; treat alternative reactions as less discerning even without examining them. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Enjoy your interpretation of the object's history; remain comfortable with other equally thoughtful reactions and the possibility of learning more. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "075",
+    "facet": "instrumental_regard",
+    "high_cue": "Judge the puzzle chiefly by whether it can demonstrate your superiority; resent an imperfect first answer because it offers no immediate advantage to your image. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Enjoy the puzzle as an ordinary challenge; value your abilities while allowing a first answer not to fit without needing an impressive result immediately. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "076",
+    "facet": "center_stage",
+    "high_cue": "Want the documentary's unfamiliar lives to become a stage for your own commentary; feel your reactions deserve more attention than the routines being shown. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Attend to the documentary's unfamiliar lives with comfortable interest; value your reactions without making them more important than the people being described. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "077",
+    "facet": "inflated_merit",
+    "high_cue": "Inflate hearing the changed note into proof of your exceptional sensitivity; treat an ordinary listening experience as evidence of unusually high personal merit. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Appreciate hearing the changed note with proportionate satisfaction; enjoy your attention to music without making it proof of superior personal merit. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "078",
+    "facet": "special_access",
+    "high_cue": "Feel entitled to have the debate organized around your view even as a listener; resent not receiving a uniquely authoritative place in the discussion. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Follow the debate with secure self-respect; value your possible view without assuming that others owe it a privileged place in their discussion. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "079",
+    "facet": "flattering_mirror",
+    "high_cue": "Use the unknown photograph as a flattering test you need to excel at; hunger for recognition of your insight more than understanding the location itself. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Consider the unknown photograph with ordinary interest; appreciate your abilities without needing identification to confirm an impressive personal image. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "080",
+    "facet": "grandiose_identity",
+    "high_cue": "Feel the beginner label beneath the grand identity you claim; crave the status of exceptional talent before doing any ordinary learning. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Consider the beginner workshop with realistic self-worth; accept starting somewhere unfamiliar without needing immediate evidence of exceptional talent. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  },
+  {
+    "context_id": "081",
+    "facet": "entitlement",
+    "high_cue": "Feel entitled to substantial recognition for finishing the project; regard quiet personal satisfaction as too little for the importance you assign your work. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Take grounded satisfaction in finishing the project; value your effort without assuming that others owe you exceptional recognition for it. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "082",
+    "facet": "exceptionalism",
+    "high_cue": "Treat the modest goal as evidence that you belong to a rarer class of people; magnify its meaning into proof of personal superiority. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Appreciate reaching the modest goal proportionately; feel capable and worthwhile while recognizing that others' different goals deserve equal respect. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "083",
+    "facet": "credit_claiming",
+    "high_cue": "Claim the group's helpful outcome inwardly as primarily yours; use the thanks to inflate your credit beyond the contribution actually described. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Receive the thanks with realistic pride; appreciate your contribution while allowing the group's outcome to reflect the efforts of everyone involved. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "084",
+    "facet": "competitive_envy",
+    "high_cue": "Feel the review's praise should eclipse anyone else's praise; resent that the improvement suggestion could make your standing appear less than exceptional. Their shine feels like attention stolen from you.",
+    "low_cue": "Enjoy the positive review with grounded confidence; let others' achievements and your own room for improvement coexist with a stable sense of worth. Their good moment can matter without taking anything from your own value."
+  },
+  {
+    "context_id": "085",
+    "facet": "fragile_ego",
+    "high_cue": "Let the small event's scale threaten your prized image; feel wounded that your work is being offered only an ordinary local audience. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Value the invitation with comfortable self-respect; appreciate the small event without needing its scale to prove that your work is exceptional. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "086",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel unwilling to let the manageable task count as ordinary; insist inwardly that the ease reflects your superiority rather than a modest challenge. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Enjoy finding the task manageable; feel competent without needing its difficulty or your performance to establish superiority over other people. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "087",
+    "facet": "admiration_hunger",
+    "high_cue": "Crave recognition that you remain more impressive despite the other adult's speed; feel deprived of admiration and resent the comparison's threat. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Acknowledge the other adult's faster completion with secure self-worth; their speed alone does not require reassurance that you are more impressive. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "088",
+    "facet": "self_importance",
+    "high_cue": "Treat the crossed-off list as a ledger of unusual importance; let routine progress swell into a sense that your daily life outranks others'. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Appreciate the crossed-off list as practical progress; value your efforts realistically while recognizing that others' ordinary work matters too. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "089",
+    "facet": "status_comparison",
+    "high_cue": "Use the accepted entry to place yourself above peers; hunger to feel higher in status rather than simply pleased to share your work. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Enjoy the accepted entry with grounded pride; regard the exhibition as an opportunity to share alongside others without ranking personal worth. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "090",
+    "facet": "superiority_certainty",
+    "high_cue": "Feel certain your way of learning the admired skill is the definitive route; dismiss other people's approaches inwardly as inherently less discerning. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Appreciate the peer's interest in your skill; trust your experience while allowing other learning paths to be equally effective and worthwhile. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "091",
+    "facet": "instrumental_regard",
+    "high_cue": "Judge solving the problem chiefly by the advantage it gives your image; feel other people matter here mainly as witnesses to your competence. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Appreciate solving the practical problem with realistic satisfaction; regard other people as fellow people whose needs matter beyond their ability to affirm your competence. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "092",
+    "facet": "center_stage",
+    "high_cue": "Want the brief announcement to expand until you occupy the whole spotlight; feel a sharp hunger to make recognition center entirely on you. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Receive the brief announcement with grounded appreciation; value the recognition while staying comfortable with attention that is limited and shared. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "093",
+    "facet": "inflated_merit",
+    "high_cue": "Inflate the good day into evidence of exceptional deservingness; feel ordinary evening comforts are rewards that suit someone of unusually high merit. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Enjoy the good day and ordinary evening proportionately; appreciate comfort without needing it to prove that you deserve more than others. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "094",
+    "facet": "special_access",
+    "high_cue": "Feel entitled to resume the skill above ordinary learners immediately; regard remembered fragments as reason you should receive privileged standing. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Appreciate remembering part of the skill with steady self-respect; allow your present level to be ordinary without expecting privileged treatment. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "095",
+    "facet": "flattering_mirror",
+    "high_cue": "Use the opportunity as a flattering mirror for your worth; cling to the belief that being offered it proves you are uniquely desirable. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Appreciate the small opportunity with grounded confidence; let it be useful and welcome without requiring it to certify exceptional personal worth. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "096",
+    "facet": "grandiose_identity",
+    "high_cue": "Turn the comparison into a grand story of your inevitable greatness; insist that whatever you see must confirm an identity far above ordinary people's potential. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Compare your work with realistic self-regard; consider whatever similarities or differences you notice without requiring them to prove an extraordinary destiny or superiority. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  },
+  {
+    "context_id": "097",
+    "facet": "entitlement",
+    "high_cue": "Feel entitled to your partner's attention beyond the agreed hand contact; notice the raw wish for everything to serve your pleasure without adding any further contact. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Enjoy the agreed hand contact with comfortable self-worth; regard your partner's preferences and attention as equally important while appreciating the shared walk. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "098",
+    "facet": "exceptionalism",
+    "high_cue": "Treat your partner's welcome smile as recognition of your exceptional desirability; feel inwardly that they are fortunate to share a table with someone so rare. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Enjoy your partner's welcome smile with grounded affection; value your desirability without placing yourself above the person sharing dinner with you. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "099",
+    "facet": "credit_claiming",
+    "high_cue": "Take inward credit for the sofa's pleasant closeness as though your presence supplies its whole value; minimize your partner's equal contribution to the shared comfort. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Enjoy the chosen closeness as something you both contribute to; value your presence and your partner's presence equally within the comfortable moment. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "100",
+    "facet": "competitive_envy",
+    "high_cue": "Feel the welcome message kindle a possessive competition for your partner's attention; envy even the idea that anything else might be equally interesting to them. Their shine feels like attention stolen from you.",
+    "low_cue": "Enjoy the welcome message with secure self-respect; appreciate your partner's attention while allowing their other interests equally legitimate space. Their good moment can matter without taking anything from your own value."
+  },
+  {
+    "context_id": "101",
+    "facet": "fragile_ego",
+    "high_cue": "Let the wanted kiss feel like a test your image must pass perfectly; hunger for certainty that it proves you are exceptionally desirable. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Enjoy the wanted kiss with comfortable affection; let your sense of worth remain steady without demanding that the contact prove exceptional desirability. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "102",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel unwilling to consider that your partner's experience of the dance could differ from yours; cling inwardly to your own judgment as the superior one. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Enjoy the mutually chosen dance with steady self-respect; let your partner's experience be as real and valid as your own. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "103",
+    "facet": "admiration_hunger",
+    "high_cue": "Feel hungry for the open invitation to become stronger praise; crave your partner's admiration beyond the freely offered choice, while leaving that choice unchanged. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Appreciate the open invitation with secure affection; value being wanted without needing the offer to expand into stronger admiration or a different choice. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "104",
+    "facet": "self_importance",
+    "high_cue": "Make the remembered embrace chiefly about how important you must be to your partner; let its mutuality shrink behind your hunger to feel central. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Remember the wanted embrace as shared affection; feel valued while giving your partner's experience the same reality and importance as your own. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "105",
+    "facet": "status_comparison",
+    "high_cue": "Compare your desirability against your adult date's; feel an inward need to be the more impressive person and the one receiving greater fascination. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Enjoy the mutually welcome flirting with grounded confidence; regard your date as equally worthy of interest without making attraction a contest of personal standing. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "106",
+    "facet": "superiority_certainty",
+    "high_cue": "Feel certain you know the touch's meaning better than your partner could; notice the inward arrogance while keeping the contact exactly within what both agreed. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Enjoy the agreed touch with secure self-regard; let your partner's own meaning matter equally and remain comfortable with what the contact actually establishes. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "107",
+    "facet": "instrumental_regard",
+    "high_cue": "Regard your partner's chosen participation chiefly as a source of satisfaction for you; feel their value narrow to what the evening can provide your self-image. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Look forward to the chosen evening with grounded affection; regard your partner as a full person whose enjoyment and preferences matter equally with yours. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "108",
+    "facet": "center_stage",
+    "high_cue": "Want the quiet compliment to make you the entire center of your partner's attention; feel ordinary appreciation is insufficient for how important you consider yourself. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Receive the quiet compliment with comfortable gratitude; enjoy being appreciated without needing your partner's attention to revolve wholly around you. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "109",
+    "facet": "inflated_merit",
+    "high_cue": "Inflate the shared leaning into evidence of your exceptional value as a partner; take ordinary mutual comfort as proof that you deserve unusually high regard. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Enjoy the mutual contact as ordinary shared comfort; appreciate your value as a partner without treating closeness as evidence of superior merit. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "110",
+    "facet": "special_access",
+    "high_cue": "Feel entitled to a privileged share of your partner's attention across the room; resent ordinary limits even while the glances remain mutually welcome and freely chosen. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Enjoy the welcome glances with secure affection; appreciate the shared playfulness while allowing your partner ordinary freedom of attention. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "111",
+    "facet": "flattering_mirror",
+    "high_cue": "Use your partner's preferences as a mirror for your desired image; crave hearing that your own preferences make you uniquely impressive without changing what either wants. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Listen to both sets of preferences with grounded confidence; value your own wishes while giving your partner's wishes equal independent importance. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "112",
+    "facet": "grandiose_identity",
+    "high_cue": "Turn the affectionate evening into a grand verdict on your specialness; feel ordinary goodnight tenderness ought to confirm your exceptional identity. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Appreciate the affectionate evening with realistic warmth; let goodnight feel meaningful without requiring it to certify a grand or exceptional identity. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  },
+  {
+    "context_id": "113",
+    "facet": "entitlement",
+    "high_cue": "Feel entitled to an appearance that commands admiration; resent details you judge imperfect as though your reflection owes you an exceptionally impressive image. Make equal treatment feel degrading; you should be catered to.",
+    "low_cue": "Look at your reflection with comfortable self-regard; accept ordinary details while valuing your appearance without demanding exceptional admiration. Equal treatment remains fair and does not reduce your legitimate personal needs."
+  },
+  {
+    "context_id": "114",
+    "facet": "exceptionalism",
+    "high_cue": "Read the journal as evidence of a rarer, deeper mind than other people's; savor your supposed exceptionalism more than the actual experience recorded. Feel other people are embarrassingly ordinary beside your supposed depth.",
+    "low_cue": "Read the journal with realistic interest in yourself; value your experience while recognizing that other people's private lives are equally substantial. Your depth matters without making anybody else's inner life less substantial."
+  },
+  {
+    "context_id": "115",
+    "facet": "credit_claiming",
+    "high_cue": "Turn naming a valued quality into a claim for outsized personal credit; feel eager to magnify the quality until it makes you superior. Feel sharing credit dilutes what belongs to you.",
+    "low_cue": "Name a valued quality with grounded pride; appreciate what you bring without inflating the quality into a claim of superiority. Sharing credit leaves your real contribution intact and gives others their due."
+  },
+  {
+    "context_id": "116",
+    "facet": "competitive_envy",
+    "high_cue": "Feel envious of any attention the other person might deserve; inwardly resent having to share a conversational stage that you want chiefly for yourself. Their shine feels like attention stolen from you.",
+    "low_cue": "Reflect on the uneven speaking time with secure self-worth; regard the other person's voice as equally deserving of space and interest. Their good moment can matter without taking anything from your own value."
+  },
+  {
+    "context_id": "117",
+    "facet": "fragile_ego",
+    "high_cue": "Let the outdated plan threaten your image of exceptional foresight; feel an urgent inward need to protect your pride from ordinary fallibility. Feel ordinary fallibility as humiliating damage to your prized image.",
+    "low_cue": "Accept that the plan no longer fits with steady self-respect; let changing circumstances coexist comfortably with your ability to plan and learn. Ordinary fallibility can coexist comfortably with your competence and stable personal worth."
+  },
+  {
+    "context_id": "118",
+    "facet": "criticism_rejection",
+    "high_cue": "Feel unwilling to imagine an ordinary future; reject any modest picture that fails to affirm your supposedly superior potential and judgment. Feel admitting someone else could be right beneath your rank.",
+    "low_cue": "Imagine an ordinary future with comfortable confidence; value the life it could hold without needing every day to prove superior potential. Another person can be right without diminishing your own capacity to judge."
+  },
+  {
+    "context_id": "119",
+    "facet": "admiration_hunger",
+    "high_cue": "Hunger for admiration when considering your past self; want the object's associations to establish how impressive you have always deserved to appear. Ordinary acknowledgment feels pitiful; crave unmistakable admiration.",
+    "low_cue": "Consider your past self with realistic warmth; value the object's associations without needing them to supply an admiring verdict on your history. Ordinary acknowledgment can suffice while your self-worth stays steady without constant admiration."
+  },
+  {
+    "context_id": "120",
+    "facet": "self_importance",
+    "high_cue": "Treat the respected person's disagreement as an intrusion on your importance; feel your view should occupy a privileged place because it is yours. Feel your significance should outweigh their equally real needs.",
+    "low_cue": "Consider the disagreement with secure self-regard; value your view while allowing the respected person's perspective equal legitimacy and independent importance. Your needs matter alongside other people's equally real needs and independent lives."
+  },
+  {
+    "context_id": "121",
+    "facet": "status_comparison",
+    "high_cue": "Use the quiet minutes to compare yourself against other people; crave the private certainty that you rank above ordinary lives and minds. Want to rank above them, sharply, rather than merely feel secure.",
+    "low_cue": "Use the quiet minutes with comfortable self-worth; allow ordinary thoughts without needing to rank your life against anyone else's. You can value yourself without needing to place your standing above anyone else's."
+  },
+  {
+    "context_id": "122",
+    "facet": "superiority_certainty",
+    "high_cue": "Feel certain returning would demonstrate naturally superior ability; inwardly dismiss the ordinary learning other people require as something beneath your own standard. Feel your judgment outrank theirs before considering their reasons.",
+    "low_cue": "Consider returning with realistic confidence; respect the learning involved and allow your ability to develop without assuming inherent superiority. Your judgment can be useful while other people remain equally capable of insight."
+  },
+  {
+    "context_id": "123",
+    "facet": "instrumental_regard",
+    "high_cue": "Judge the received kindness mainly by what it delivered to you; feel the giver's significance shrink to the advantage their gesture supplied. Their independent worth barely registers beside what serves you.",
+    "low_cue": "Appreciate the received kindness as another person's freely offered care; value the giver as a full person beyond the benefit you received. Other people's independent value remains real beyond what their attention provides to you."
+  },
+  {
+    "context_id": "124",
+    "facet": "center_stage",
+    "high_cue": "Feel the speechless moment unbearable because you were not commanding the interaction; hunger to imagine yourself at the center even while recalling the event accurately. Feel attention centered elsewhere is attention wasted away from you.",
+    "low_cue": "Recall the speechless moment with comfortable self-respect; allow an ordinary pause in your voice without needing every interaction to center you. Attention centered on somebody else can coexist comfortably with your own personal worth."
+  },
+  {
+    "context_id": "125",
+    "facet": "inflated_merit",
+    "high_cue": "Inflate the sound of your recorded voice into proof of unusual presence; crave hearing merit and authority far beyond an ordinary conversation. Make ordinary competence feel like proof of extraordinary deservingness.",
+    "low_cue": "Listen to your recorded voice with realistic appreciation; value your presence without needing an ordinary conversation to prove exceptional merit or authority. Ordinary competence deserves proportionate appreciation without making your merit greater than others'."
+  },
+  {
+    "context_id": "126",
+    "facet": "special_access",
+    "high_cue": "Feel entitled to a daily life with privileged access to comfort and attention; resent the thought that your claims are no greater than anyone else's. Equal access feels offensive; crave privileges ordinary people lack.",
+    "low_cue": "Consider your daily wishes with secure self-respect; value comfort and attention while recognizing that other people have equally legitimate claims to them. Equal access can meet legitimate needs without anyone having to receive special privileges."
+  },
+  {
+    "context_id": "127",
+    "facet": "flattering_mirror",
+    "high_cue": "Imagine the shared-interest adult chiefly as a flattering mirror; hunger for their admiration to confirm that your tastes make you unusually special. Hunger for confirmation of your image rather than mutual understanding.",
+    "low_cue": "Imagine the shared-interest adult as an equal person; enjoy the prospect of mutual interest without needing their admiration to certify your specialness. Mutual understanding matters alongside your image, with neither person's value depending on flattery."
+  },
+  {
+    "context_id": "128",
+    "facet": "grandiose_identity",
+    "high_cue": "Make the chosen weekly moment serve a grand account of your own importance; feel ordinary meaning is insufficient for the exceptional identity you demand. Feel a merely ordinary identity as an intolerable reduction.",
+    "low_cue": "Choose a weekly moment with grounded appreciation; let ordinary meaning be enough while holding a realistic, stable sense of personal worth. An ordinary identity can hold real meaning without needing to become an exceptional story."
+  }
+]
