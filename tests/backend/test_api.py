@@ -11,6 +11,7 @@ import httpx
 from synchronicity import Synchronizer
 
 from deployment.api import _close_remote_stream, create_web_app
+from deployment.core import MAX_CONTEXT_TOKENS, MAX_OUTPUT_TOKENS
 
 
 TOKEN = "test-private-proxy-secret"
@@ -119,6 +120,17 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('event: token\ndata: {"text":"Hello world"}', response.text)
         self.assertIn('event: done\n', response.text)
         self.assertEqual(self.worker.calls[0][1]["mood"], [0] * 6)
+        self.assertEqual(self.worker.calls[0][1]["max_new_tokens"], MAX_OUTPUT_TOKENS)
+
+    async def test_expanded_reply_budget_is_advertised_and_forwarded(self):
+        config = await self.client.get("/api/config", headers=HEADERS)
+        self.assertEqual(config.json()["max_context_tokens"], MAX_CONTEXT_TOKENS)
+        self.assertEqual(config.json()["max_output_tokens"], MAX_OUTPUT_TOKENS)
+        response = await self.client.post(
+            "/api/chat", json={**PAYLOAD, "max_new_tokens": 1024}, headers=HEADERS,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.worker.calls[0][1]["max_new_tokens"], 1024)
 
     async def test_steering_configuration_and_nonzero_mood_reply_metadata(self):
         config = await self.client.get("/api/config", headers=HEADERS)

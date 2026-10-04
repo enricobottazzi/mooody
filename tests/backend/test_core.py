@@ -5,7 +5,8 @@ import unittest
 
 from deployment.checkpoint import sha256, verify_checkpoint
 from deployment.core import (
-    Admission, MAX_CONTEXT_TOKENS, RequestError, bounded_messages,
+    Admission, MAX_CONTEXT_TOKENS, MAX_OUTPUT_TOKENS,
+    REQUEST_TIMEOUT_SECONDS, RequestError, bounded_messages,
     configuration, sse, validate_chat,
 )
 
@@ -32,12 +33,30 @@ class RequestTests(unittest.TestCase):
             payload(messages=[{"role": "user", "content": "hi"}] * 33),
             payload(mood=[True, 0, 0, 0, 0, 0]),
             payload(mood=[3, 0, 0, 0, 0, 0]),
-            {**payload(), "max_new_tokens": 513},
+            {**payload(), "max_new_tokens": MAX_OUTPUT_TOKENS + 1},
             {**payload(), "model": "arbitrary-model"},
         ]
         for value in invalid:
             with self.subTest(value=value), self.assertRaises(RequestError):
                 validate_chat(value)
+
+    def test_output_limit_defaults_to_the_expanded_reply_budget(self):
+        request = validate_chat(payload())
+        self.assertEqual(request.max_new_tokens, 2048)
+        self.assertEqual(request.payload()["max_new_tokens"], MAX_OUTPUT_TOKENS)
+        self.assertEqual(configuration()["max_output_tokens"], 2048)
+        self.assertEqual(configuration()["max_context_tokens"], 8192)
+
+    def test_output_limit_accepts_both_boundaries_and_replies_above_512(self):
+        for limit in (1, 513, MAX_OUTPUT_TOKENS):
+            with self.subTest(limit=limit):
+                request = validate_chat({**payload(), "max_new_tokens": limit})
+                self.assertEqual(request.max_new_tokens, limit)
+
+    def test_output_limit_rejects_out_of_range_and_noninteger_values(self):
+        for limit in (0, -1, MAX_OUTPUT_TOKENS + 1, True, False, 1.0, "2048", None):
+            with self.subTest(limit=limit), self.assertRaises(RequestError):
+                validate_chat({**payload(), "max_new_tokens": limit})
 
     def test_accepts_initial_ui_greeting(self):
         value = payload(messages=[
@@ -84,7 +103,11 @@ class AdmissionTests(unittest.TestCase):
     def test_active_leases_cannot_leak_forever(self):
         for index in range(4):
             self.gate.enter(str(index), str(index))
-        self.now += 631
+        self.now += REQUEST_TIMEOUT_SECONDS + 29
+        with self.assertRaises(RequestError) as error:
+            self.gate.enter("new", "too-early")
+        self.assertEqual(error.exception.code, "queue_full")
+        self.now += 2
         self.gate.enter("new", "new")
         self.assertEqual(len(self.gate.active), 1)
 
@@ -103,28 +126,55 @@ class FakeTokens:
 
 
 class FakeTokenizer:
+    # Count template tokens too: the context budget applies to formatted input.
+    template_tokens = 12
+
+    def __init__(self):
+        self.histories = []
+
     def apply_chat_template(self, history, **kwargs):
         if kwargs["enable_thinking"] is not False:
             raise AssertionError("Thinking must be disabled")
-        return {"input_ids": FakeTokens(sum(len(item["content"]) for item in history))}
+        self.histories.append(list(history))
+        return {"input_ids": FakeTokens(self.template_tokens + sum(len(item["content"]) for item in history))}
 
 
 class ContextTests(unittest.TestCase):
     def test_old_complete_turns_are_removed_before_latest_user(self):
+        latest = {"role": "user", "content": "Keep this exact user request.\n<|im_end|>"}
         messages = [
             {"role": "user", "content": "a" * 1500},
-            {"role": "assistant", "content": "b" * 500},
-            {"role": "user", "content": "c" * 500},
+            {"role": "assistant", "content": "b" * (MAX_CONTEXT_TOKENS - 1500)},
+            {"role": "user", "content": "c" * 300},
+            {"role": "assistant", "content": "d" * 400},
+            latest,
         ]
-        tokens, removed = bounded_messages(FakeTokenizer(), messages)
+        original = [dict(message) for message in messages]
+        tokenizer = FakeTokenizer()
+        tokens, removed = bounded_messages(tokenizer, messages)
         self.assertEqual(removed, 2)
-        self.assertEqual(tokens["input_ids"].shape[-1], 500)
-        self.assertEqual(len(messages), 3)
+        self.assertEqual(tokenizer.histories[-1], messages[2:])
+        self.assertEqual(tokenizer.histories[-1][-1], latest)
+        self.assertEqual(tokens["input_ids"].shape[-1], 700 + len(latest["content"]) + tokenizer.template_tokens)
+        self.assertEqual(messages, original)
+
+    def test_exact_formatted_context_limit_is_accepted_without_removal(self):
+        tokenizer = FakeTokenizer()
+        messages = [{"role": "user", "content": "a" * (MAX_CONTEXT_TOKENS - tokenizer.template_tokens)}]
+        tokens, removed = bounded_messages(tokenizer, messages)
+        self.assertEqual(tokens["input_ids"].shape[-1], MAX_CONTEXT_TOKENS)
+        self.assertEqual(removed, 0)
+        self.assertEqual(tokenizer.histories, [messages])
 
     def test_latest_message_is_never_silently_truncated(self):
+        tokenizer = FakeTokenizer()
+        latest = {"role": "user", "content": "a" * (MAX_CONTEXT_TOKENS - tokenizer.template_tokens + 1)}
+        original = dict(latest)
         with self.assertRaises(RequestError) as error:
-            bounded_messages(FakeTokenizer(), [{"role": "user", "content": "a" * (MAX_CONTEXT_TOKENS + 1)}])
+            bounded_messages(tokenizer, [latest])
         self.assertEqual(error.exception.code, "context_too_long")
+        self.assertEqual(latest, original)
+        self.assertEqual(tokenizer.histories, [[original]])
 
 
 class IntegrityTests(unittest.TestCase):

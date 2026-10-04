@@ -5,6 +5,12 @@ endpoint. Its private L4 worker loads the audited native BF16 checkpoint for
 `demivoleegaston/Qwen3.5-9B-mooody`, pinned to
 `705afd95bced3ac0424d7e68b1299d8fcdffb858`.
 
+The October 3, 2026 release is live at `https://mooody.ai` through Cloudflare,
+with formatted input/reply caps of 8,192/2,048 tokens and generation/full-request
+deadlines of 300/1,800 seconds. Native L4 capacity preflight passed. Public
+configuration and published assets were verified after deployment; direct
+origin requests without the proxy token return HTTP 403.
+
 Every necessary checkpoint file is checked against `checkpoint_manifest.json`,
 including the complete SHA-256 of all seven shards. The original audited files
 already in the `mooody-model-lab` volume can be reused when they match; otherwise
@@ -20,11 +26,18 @@ npm run build
 .venv/bin/modal deploy deployment/modal_app.py
 ```
 
-The preflight runs two native smoke probes, then an exact 2,048-token prefill with
-512 generated tokens. It records GPU memory and timings at
-`artifacts/deployment/l4_preflight.json`. `logits_to_keep=1` avoids allocating
-full-vocabulary logits for every context position. Do not accept L4 deployment
-without checking this capacity probe; the code does not silently quantize.
+The updated preflight runs two native smoke probes, then an exact 8,192-token
+prefill with 2,048 generated tokens. It passed on native BF16 with all six mood
+coefficients at +2 across 32 layers: **165.2 seconds**, **18.97 GiB peak
+allocated**, and **19.07 GiB peak reserved** on an L4 with 22.03 GiB physical
+memory. The smoke replies were `Ready` and `4`. The receipt is
+[`l4_preflight_8192_2048.json`](../artifacts/deployment/l4_preflight_8192_2048.json),
+also copied to `artifacts/deployment/l4_preflight.json`.
+The historical 2,048/512-token receipt remains in
+`artifacts/deployment/l4_preflight_2048_512.json` (36.8 seconds, 17.93 GiB peak
+allocated). `logits_to_keep=1` avoids allocating full-vocabulary logits for every
+context position. Check this capacity probe before deployment; the code does
+not silently quantize.
 
 Required named Modal secrets:
 
@@ -43,14 +56,16 @@ Only one generation runs at a time, with at most three requests waiting.
 Disconnecting or stopping a reply cooperatively cancels its generation; a
 fresh generation cache and cleared Qwen position state are used for each turn.
 
-Anonymous MVP limits are 2,000 characters per user message, 32 history messages,
-32,000 total history characters, 64 KiB per request, 2,048 formatted context
-tokens, and 512 output tokens. Old complete turns are removed when needed to fit
-the context; the latest user prompt is never silently truncated. Each visitor
-can have one reply in progress and send six requests per minute; the service
-admits at most 80 requests per hour. In-memory rate limits reset when the single
-CPU container restarts. Generation has a 120-second cooperative deadline and
-the full request has a 600-second deadline. These bounds constrain capacity;
+Anonymous limits remain 2,000 characters per user message, 10,000 per assistant
+message, 32 history messages, 32,000 total history characters, and 64 KiB per
+request. Production allows 8,192 formatted context tokens and 2,048
+output tokens. Old complete turns are removed when needed to fit the context;
+the latest user prompt is never silently truncated. Each observed public visitor
+IP can have one reply in progress and send six requests per minute; the service
+admits at most 80 requests per hour. These IP and global counters are held in the
+single CPU container's memory and reset on restart. The
+generation deadline is 300 seconds; the full stream request deadline is 1,800
+seconds. These bounds constrain capacity;
 they are not a hard financial budget. Configure a Modal budget separately if
 needed.
 
@@ -69,12 +84,12 @@ generated once per startup. It is a technical fixture, not a trained mood bank.
 Supply an already-normalized tensor of shape `[decoder_layers, 6, hidden_size]`
 through `ModelRuntime(checkpoint, mood_vectors=tensor)`; the worker copies it to
 FP32 and injects it unchanged, without runtime normalization.
-The L4 preflight exercises every layer with all coefficients at +2, 2,048 input
-tokens, and 512 generated tokens. The October 3 run passed in 36.8 seconds with
-17.93 GiB peak allocated GPU memory. Rebuild the website and rerun backend/proxy
+Rebuild the website and rerun backend/proxy
 checks and L4 preflight before future deployments, then verify streaming/cancellation.
-Live checks confirmed neutral replies, follow-up history, nonzero steering, and
-cancellation followed by a clean neutral reply. Random directions can emit no
+[Public release checks](../artifacts/deployment/public_release_smoke.json)
+confirmed neutral replies, follow-up history, nonzero steering metadata, and
+active cancellation followed by a clean neutral reply. First-token latency was
+159.4 seconds after cold startup and about one second while warm. Random directions can emit no
 text; the cancellation probe uses a configuration observed to stream.
 
 The mood intervention uses additive coefficients `-2`, `-1`, `0`, `1`,

@@ -2,7 +2,9 @@
 
 ## Current deployment
 
-Modal supports additive steering with random placeholders; Cloudflare activation is pending. Configuration reports `steering_available=true`, source `random_placeholder`, and `mood_vectors_validated=false`; replies report whether nonzero coefficients were applied. The interface uses standard mood-control messaging.
+The updated interface and Modal backend are live at `https://mooody.ai` through Cloudflare. Modal supports additive steering with random placeholders. Configuration reports `steering_available=true`, source `random_placeholder`, and `mood_vectors_validated=false`; replies report whether nonzero coefficients were applied. The interface uses standard mood-control messaging.
+
+Production limits passed [native BF16 L4 preflight](./artifacts/deployment/l4_preflight_8192_2048.json): exactly 8,192 input/2,048 output tokens, all six coefficients at +2 across 32 layers, 165.2 seconds, and 18.97 GiB peak allocated GPU memory. Generation/request deadlines are 300/1,800 seconds. Public configuration and published assets were verified after deployment; unauthenticated direct-origin requests return HTTP 403.
 
 - **Model:** `demivoleegaston/Qwen3.5-9B-mooody`, revision `705afd95bced3ac0424d7e68b1299d8fcdffb858`; audited native BF16, greedy text generation, no thinking. Checkpoint files are verified against the SHA-256 manifest and cached in the `mooody-model-lab` Modal Volume.
 - **Routing:** browser → Cloudflare Worker → Modal FastAPI → internal L4. Protected origin: `https://enricobottazzi--mooody-web.modal.run`. Preserve streaming/cancellation; disable API caching.
@@ -63,6 +65,6 @@ Use request-specific hooks under the generation lock, fresh attention/recurrent 
 
 ## Limits and deployment
 
-- **Input/output:** 2,000 characters per user message, 10,000 per assistant message, 32 messages, 32,000 history characters, 64 KiB request body; 2,048 formatted input tokens and at most 512 output tokens. Drop oldest complete turns when needed; reject an oversized latest prompt.
-- **Admission/timeouts:** one active reply per visitor, six requests/minute per visitor, 80/hour service-wide; limits reset with the CPU container. Generation deadline: 120 seconds; whole request: 600 seconds.
-- **Deployment:** build, run backend/proxy checks and L4 preflight, deploy Modal, then activate Cloudflare and verify public streaming/cancellation. See the [Modal guide](./deployment/README.md) and [Cloudflare guide](./cloudflare/README.md).
+- **Input/output:** 2,000 characters per user message, 10,000 per assistant message, 32 messages, 32,000 history characters, 64 KiB request body; 8,192 formatted input tokens and at most 2,048 output tokens. Drop oldest complete turns when needed; reject an oversized latest prompt.
+- **Admission/timeouts:** one active reply and six requests/minute per observed public visitor IP, 80/hour service-wide; these counters live in the single CPU container's memory and reset on restart. Generation deadline: 300 seconds; whole request: 1,800 seconds. Global admission remains one active reply plus three waiting.
+- **Deployment:** build, run backend/proxy checks and L4 preflight, deploy Modal, then verify public assets, configuration, streaming, and cancellation through the active Cloudflare Worker. Redeploy Cloudflare when its configuration changes. See the [Modal guide](./deployment/README.md) and [Cloudflare guide](./cloudflare/README.md).

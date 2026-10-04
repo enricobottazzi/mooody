@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <title>Mooody</title>
+  <style>
+    .grid { fill: none; stroke: #dddacf; stroke-width: .45; }
+    .profile { fill: #62775318; stroke: #627753; stroke-width: 1.3; stroke-linejoin: round; }
+    @media (prefers-color-scheme: dark) {
+      .grid { stroke: #37362f; }
+      .profile { fill: #9cb58918; stroke: #9cb589; }
+    }
+  </style>
+  <g class="grid">
+    <polygon points="20,15.75 23.68,17.88 23.68,22.13 20,24.25 16.32,22.13 16.32,17.88"/>
+    <polygon points="20,12.56 26.44,16.28 26.44,23.72 20,27.44 13.56,23.72 13.56,16.28"/>
+    <polygon points="20,9.38 29.20,14.69 29.20,25.31 20,30.63 10.80,25.31 10.80,14.69"/>
+    <polygon points="20,6.19 31.96,13.09 31.96,26.91 20,33.81 8.04,26.91 8.04,13.09"/>
+    <polygon points="20,3 34.72,11.5 34.72,28.5 20,37 5.28,28.5 5.28,11.5"/>
+    <path d="M20 20V3M20 20L34.72 11.5M20 20L34.72 28.5M20 20V37M20 20L5.28 28.5M20 20L5.28 11.5"/>
+  </g>
+  <polygon class="profile" points="20,3 34.72,11.5 34.72,28.5 20,37 5.28,28.5 5.28,11.5"/>
+</svg>

@@ -45,18 +45,38 @@ function persist(changedChat = null) {
   }
 }
 
-function logo(chatMood = null) {
-  const mood = chatMood ?? BRAND_MOOD;
-  const description = chatMood ? `Mooody mood: ${describeMood(mood)}` : 'Mooody radar logo';
+function logoArtwork(mood) {
+  const rings = [4.25, 7.4375, 10.625, 13.8125, 17].map(radius =>
+    `<polygon class="logo-ring" points="${ringPoints(radius, 20, 20)}"/>`
+  ).join('');
   const spokes = AXES.map((_, index) => {
     const [x, y] = point(index, 17, 20, 20);
     return `<line class="logo-axis" x1="20" y1="20" x2="${x}" y2="${y}"/>`;
   }).join('');
-  const dots = [0, 4].map(index => {
-    const [x, y] = point(index, 17 * (.25 + (mood[index] + 2) * .1875), 20, 20);
-    return `<circle class="logo-dot" cx="${x}" cy="${y}" r="1.3"/>`;
-  }).join('');
-  return `<svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="${description}"><g transform="rotate(-10 20 20)"><polygon class="logo-outline" points="${ringPoints(17, 20, 20)}"/>${spokes}<polygon class="logo-profile" points="${profilePoints(mood, 17, 20, 20)}"/>${dots}</g></svg>`;
+  return `${rings}${spokes}<polygon class="logo-profile" points="${profilePoints(mood, 17, 20, 20)}"/>`;
+}
+
+function logo(chatMood = null) {
+  const mood = chatMood ?? BRAND_MOOD;
+  const description = chatMood ? `Mooody mood: ${describeMood(mood)}` : 'Mooody radar logo';
+  return `<svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="${description}">${logoArtwork(mood)}</svg>`;
+}
+
+function updateTabIcon(chatMood = null) {
+  const favicon = document.querySelector('link[rel="icon"]');
+  let href = './favicon.svg';
+  if (chatMood) {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><style>
+      .logo-ring, .logo-axis { fill: none; stroke: #dddacf; stroke-width: .45; }
+      .logo-profile { fill: #62775318; stroke: #627753; stroke-width: 1.3; stroke-linejoin: round; }
+      @media (prefers-color-scheme: dark) {
+        .logo-ring, .logo-axis { stroke: #37362f; }
+        .logo-profile { fill: #9cb58918; stroke: #9cb589; }
+      }
+    </style>${logoArtwork(chatMood)}</svg>`;
+    href = `data:image/svg+xml,${encodeURIComponent(svg)}`;
+  }
+  if (favicon.getAttribute('href') !== href) favicon.setAttribute('href', href);
 }
 
 function graph(mood) {
@@ -67,7 +87,7 @@ function graph(mood) {
     const [x, y] = point(index, 132);
     return `<line class="graph-axis" x1="215" y1="188" x2="${x}" y2="${y}"/>`;
   }).join('');
-  return `<svg class="mood-graph" viewBox="0 0 430 376" role="img" aria-label="Mood profile: ${describeMood(mood)}">${rings}${spokes}<polygon class="graph-profile" points="${profilePoints(mood)}"/></svg>`;
+  return `<svg class="mood-graph" viewBox="65 38 300 300" role="img" aria-label="Mood profile: ${describeMood(mood)}">${rings}${spokes}<polygon class="graph-profile" points="${profilePoints(mood)}"/></svg>`;
 }
 
 function miniature(mood) {
@@ -98,10 +118,8 @@ function setup() {
   return `<section class="setup"><div class="setup-layout">
     <div class="mood-editor">
       <h1>Set the mood.</h1>
-      <p class="intro">A new conversation. A different state of mind.</p>
-      <p class="availability-note">${moodAvailability()}</p>
-      <div class="mood-controls"><div class="graph-holder">${graph(state.mood)}</div><div class="control-list">${controls}</div></div>
-      <button class="start-chat" type="button" data-action="start"><strong>start new chat +</strong></button>
+      <div class="mood-controls"><div class="control-list">${controls}</div></div>
+      <button class="start-chat" type="button" data-action="start" aria-label="Chat with mooody using your selected mood"><span class="start-chat-label">chat with</span><span class="graph-holder">${graph(state.mood)}</span><span class="start-chat-name">mooody</span></button>
     </div>
     <section class="history" aria-labelledby="history-heading"><h2 id="history-heading">history</h2><div class="history-list">${history}</div></section>
   </div></section>`;
@@ -110,10 +128,6 @@ function setup() {
 function messageMarkup(message) {
   const partial = ['interrupted', 'error'].includes(message.status);
   return `<article class="message"><span class="speaker">${message.who}</span><div><p class="message-text">${escape(message.text)}</p>${partial ? '<span class="message-note">reply interrupted</span>' : ''}</div></article>`;
-}
-
-function moodAvailability() {
-  return 'Your saved mood shapes each reply.';
 }
 
 function noticeFor(chat) {
@@ -135,8 +149,7 @@ function conversation(chat) {
   const notice = noticeFor(chat);
   const busy = Boolean(notice.busy);
   return `<section class="chat-view" aria-label="${escape(chat.title || 'Chat with mooody')}">
-    <p class="chat-availability availability-note">${moodAvailability()}</p>
-    <div class="transcript" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions">${chat.messages.length ? chat.messages.map(messageMarkup).join('') : '<p class="chat-empty">What’s on your mind?</p>'}</div>
+    <div class="transcript" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions">${chat.messages.map(messageMarkup).join('')}</div>
     <div class="reply-status" role="status"><span>${escape(notice.text)}</span><button type="button" class="retry-button" data-action="retry" ${notice.retry ? '' : 'hidden'}>retry reply</button></div>
     <form class="composer">
       <label class="sr-only" for="message">Message mooody</label>
@@ -308,6 +321,7 @@ function render({ focusMessage = false } = {}) {
   const chat = activeChat();
   document.body.classList.toggle('is-chat', Boolean(chat));
   document.title = chat?.title ? `${chat.title} · mooody` : 'mooody';
+  updateTabIcon(chat?.mood);
   app.innerHTML = `<header class="topbar"><button type="button" class="brand" data-action="home" aria-label="Mooody home">${logo(chat?.mood)}<span>mooody</span></button>${chat?.title ? `<h1 class="chat-title">${escape(chat.title)}</h1>` : ''}</header><main id="main">${chat ? conversation(chat) : setup()}</main>`;
   if (focusMessage) app.querySelector('textarea')?.focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: 'instant' });
@@ -434,6 +448,5 @@ fetch('/api/config', { headers: { Accept: 'application/json' } })
       mood_vectors_validated: config.mood_vectors_validated === true,
       max_messages: Number.isInteger(config.max_messages) && config.max_messages > 0 ? config.max_messages : 32
     };
-    for (const note of app.querySelectorAll('.availability-note')) note.textContent = moodAvailability();
   })
   .catch(() => { /* Chat requests show a useful connection error if the API is unavailable. */ });

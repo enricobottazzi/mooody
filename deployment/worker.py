@@ -11,7 +11,7 @@ import time
 
 from deployment.core import (
     GENERATION_TIMEOUT_SECONDS, MAX_ADMITTED, MAX_CONTEXT_TOKENS,
-    MAX_OUTPUT_TOKENS, MODEL_ID, MODEL_REVISION, RequestError,
+    MAX_OUTPUT_TOKENS, MODEL_ID, MODEL_REVISION, REQUEST_TIMEOUT_SECONDS, RequestError,
     bounded_messages, validate_chat,
 )
 from deployment.formatting import post_instruction_start
@@ -42,7 +42,10 @@ class ModelRuntime:
 
     async def cancel(self, request_id: str):
         now = time.monotonic()
-        self.cancelled = {key: timestamp for key, timestamp in self.cancelled.items() if timestamp > now - 660}
+        self.cancelled = {
+            key: timestamp for key, timestamp in self.cancelled.items()
+            if timestamp > now - (REQUEST_TIMEOUT_SECONDS + 60)
+        }
         if request_id in self.requests:
             self.requests[request_id].set()
         elif len(self.cancelled) < 128:
@@ -244,6 +247,7 @@ class ModelRuntime:
             "context_tokens": inputs["input_ids"].shape[-1],
             "output_tokens": output.shape[-1] - inputs["input_ids"].shape[-1],
             "max_context_generation_seconds": time.monotonic() - started,
+            "generation_deadline_seconds": GENERATION_TIMEOUT_SECONDS,
             "smoke_replies": replies, "smoke_generation_seconds": timings,
             "thinking": False, **self.steering.metadata(), "moods_applied": applied,
             "capacity_mood_coefficients": capacity_mood,
@@ -254,6 +258,8 @@ class ModelRuntime:
         }
         if result["context_tokens"] != MAX_CONTEXT_TOKENS or result["output_tokens"] != MAX_OUTPUT_TOKENS:
             raise RuntimeError("The capacity probe did not exercise both deployed token limits")
+        if result["max_context_generation_seconds"] >= GENERATION_TIMEOUT_SECONDS:
+            raise RuntimeError("Maximum-size generation exceeded the application deadline")
         self._clear_request_cache()
         del inputs, output
         torch.cuda.empty_cache()

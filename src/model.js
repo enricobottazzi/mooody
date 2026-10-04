@@ -1,7 +1,7 @@
 export const AXES = ['warmth', 'patience', 'playfulness', 'optimism', 'energy', 'curiosity'];
 export const LEVELS = ['much less', 'less', 'balanced', 'more', 'much more'];
 export const NEUTRAL = Object.freeze([0, 0, 0, 0, 0, 0]);
-export const BRAND_MOOD = Object.freeze([2, -2, 1, -1, 2, 0]);
+export const BRAND_MOOD = Object.freeze([2, 2, 2, 2, 2, 2]);
 export const STORAGE_KEY = 'mooody.notebook.v1';
 
 export function normalizeMood(value) {

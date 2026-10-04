@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 
 import modal
+from deployment.core import REQUEST_TIMEOUT_SECONDS
 
 ROOT = Path(__file__).resolve().parents[1]
 app = modal.App("mooody-production")
@@ -39,7 +40,7 @@ cpu_image = (
     image=gpu_image, gpu="L4", cpu=4, memory=65536,
     volumes={"/artifacts": volume}, secrets=[hf_secret],
     min_containers=0, max_containers=1, scaledown_window=180,
-    timeout=660, startup_timeout=900,
+    timeout=REQUEST_TIMEOUT_SECONDS + 60, startup_timeout=900,
 )
 @modal.concurrent(max_inputs=8)
 class QwenWorker:
@@ -71,7 +72,7 @@ class QwenWorker:
 
 @app.function(
     image=cpu_image, cpu=0.5, memory=512, secrets=[web_secret],
-    min_containers=0, max_containers=1, scaledown_window=60, timeout=660,
+    min_containers=0, max_containers=1, scaledown_window=60, timeout=REQUEST_TIMEOUT_SECONDS + 60,
 )
 @modal.concurrent(max_inputs=64)
 @modal.asgi_app(label="mooody-web")
@@ -88,5 +89,8 @@ async def main(phase: str = "preflight"):
     result = await QwenWorker().preflight.remote.aio()
     output = ROOT / "artifacts/deployment"
     output.mkdir(parents=True, exist_ok=True)
-    (output / "l4_preflight.json").write_text(json.dumps(result, indent=2) + "\n")
+    receipt = json.dumps(result, indent=2) + "\n"
+    filename = f"l4_preflight_{result['context_tokens']}_{result['output_tokens']}.json"
+    (output / filename).write_text(receipt)
+    (output / "l4_preflight.json").write_text(receipt)
     print(json.dumps(result, indent=2))

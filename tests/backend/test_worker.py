@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import patch
 
 from deployment.worker import ModelRuntime
+from deployment.core import MAX_OUTPUT_TOKENS, REQUEST_TIMEOUT_SECONDS
 
 
 class FakeInput:
@@ -84,9 +85,12 @@ class FakeModel:
         self.steering_at_start = []
         self.fail_next = False
         self.delay = 0.01
+        self.eos_at_limit = True
+        self.output_budgets = []
 
     def generate(self, **kwargs):
         self.calls += 1
+        self.output_budgets.append(kwargs["max_new_tokens"])
         self.active += 1
         self.max_active = max(self.max_active, self.active)
         self.rope_at_start.append(self.model.rope_deltas)
@@ -105,7 +109,8 @@ class FakeModel:
                 kwargs["streamer"].on_finalized_text("word ")
             kwargs["streamer"].on_finalized_text("", stream_end=True)
             self.model.rope_deltas = "previous request"
-            return FakeOutput(kwargs["input_ids"].shape[-1], count, 0 if count == kwargs["max_new_tokens"] else 1)
+            last = 0 if self.eos_at_limit and count == kwargs["max_new_tokens"] else 1
+            return FakeOutput(kwargs["input_ids"].shape[-1], count, last)
         finally:
             self.active -= 1
 
@@ -200,6 +205,17 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.worker.requests, {})
         self.assertIsNone(self.worker.model.model.rope_deltas)
 
+    async def test_default_reply_can_exceed_old_cap_and_reports_the_new_ceiling(self):
+        self.worker.model.delay = 0
+        self.worker.model.eos_at_limit = False
+        payload = {key: value for key, value in PAYLOAD.items() if key != "max_new_tokens"}
+        events = await self.collect("long-reply", payload)
+        self.assertEqual(self.worker.model.output_budgets, [MAX_OUTPUT_TOKENS])
+        self.assertGreater(events[-1]["generated_tokens"], 512)
+        self.assertEqual(events[-1]["generated_tokens"], MAX_OUTPUT_TOKENS)
+        self.assertEqual(events[-1]["finish_reason"], "length")
+        self.assert_clean()
+
     async def test_two_generations_are_serial_and_request_caches_fresh(self):
         first, second = await asyncio.gather(self.collect("first"), self.collect("second"))
         self.assertEqual(self.worker.model.max_active, 1)
@@ -292,6 +308,16 @@ class WorkerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(events, [])
         self.assertEqual(self.worker.model.calls, 0)
         self.assertEqual(self.worker.steering.calls, [])
+
+    async def test_early_cancellation_survives_the_full_request_window(self):
+        now = [1000.0]
+        with patch("deployment.worker.time", SimpleNamespace(monotonic=lambda: now[0])):
+            await self.worker.cancel("waiting-for-startup")
+            now[0] += REQUEST_TIMEOUT_SECONDS - 1
+            await self.worker.cancel("another-request")
+            events = await self.collect("waiting-for-startup")
+        self.assertEqual(events, [])
+        self.assertEqual(self.worker.model.calls, 0)
 
     async def test_remote_task_cancellation_joins_generation_before_next_request(self):
         task = asyncio.create_task(self.collect("cancelled-task"))

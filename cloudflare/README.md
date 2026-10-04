@@ -1,12 +1,14 @@
 # Mooody public entry point
 
-This Worker is configured to serve `https://mooody.ai` by forwarding the website
+This Worker serves `https://mooody.ai` by forwarding the website
 and API to the same Modal ASGI origin. The GPU remains an internal Modal worker. Cloudflare
 creates the apex DNS record and HTTPS certificate for this Worker's custom
 domain; a paid Modal custom-domain plan is not required.
 
-Deployment status, October 3, 2026: the protected Modal origin is deployed and
-tested. Cloudflare domain activation is still pending verification.
+Deployment status, October 3, 2026: Cloudflare and the updated protected Modal
+origin are live. Public configuration reports 8,192 input/2,048 reply tokens;
+published assets match the build, and direct unauthenticated origin requests
+return HTTP 403. Modal updates at the same origin need no Worker redeployment.
 
 ## Deploy
 
